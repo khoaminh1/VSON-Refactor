@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 54eb3d64929e46ebfe5dc485bbb2ce4bef6ab356 Frederick Dang <Fred.dang@vinova.sg> 1775272123 +0800	commit (initial): Initial commit: programme structure + Sprint 1 build (Corporate + Advisory)
+54eb3d64929e46ebfe5dc485bbb2ce4bef6ab356 54eb3d64929e46ebfe5dc485bbb2ce4bef6ab356 Frederick Dang <Fred.dang@vinova.sg> 1775272132 +0800	Branch: renamed refs/heads/master to refs/heads/main
+54eb3d64929e46ebfe5dc485bbb2ce4bef6ab356 2575e3059dfed090a4de4cd9e1c24cdd02bdcf63 Frederick Dang <Fred.dang@vinova.sg> 1775274472 +0800	commit: Add netlify.toml to configure publish directory for both sites
+2575e3059dfed090a4de4cd9e1c24cdd02bdcf63 2f56c6733e19d617f6afa9056363f20ba762e51e Frederick Dang <Fred.dang@vinova.sg> 1775275354 +0800	commit: Sprint 1 accepted, wireframe cleanup, Sprint 2 prep
+2f56c6733e19d617f6afa9056363f20ba762e51e faac0f8697c17283c2c71d0ee1893e0bc7e9be58 Frederick Dang <Fred.dang@vinova.sg> 1775276419 +0800	commit: Sprint 2 build: solution pages, brain trust, vault, capabilities, UAT test script
+faac0f8697c17283c2c71d0ee1893e0bc7e9be58 822cf90706eadd32b1a37fecc49bf770b1abfc04 Frederick Dang <Fred.dang@vinova.sg> 1775279800 +0800	commit: Sprint 3 complete: case studies, QA polish, dropdown fix (D016)

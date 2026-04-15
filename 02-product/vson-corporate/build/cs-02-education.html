@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Case Study: National English Education Network</title>
+  <meta name="description" content="Fewer cold leads. More students ready to enrol. Automated CRM journeys across 100+ branches nationwide." />
+  <meta property="og:title" content="VSON | Case Study: National English Education Network" />
+  <meta property="og:description" content="Fewer cold leads. More students ready to enrol. Automated CRM journeys across 100+ branches nationwide." />
+  <meta property="og:image" content="https://vson.vn/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vson.vn/cs-02-education.html" />
+  <link rel="canonical" href="https://vson.vn/cs-02-education.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Hero with unique gradient for this case study */
+    .cs-hero {
+      background: linear-gradient(135deg, #1a3552 0%, #1B4D3E 100%);
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 68px;
+    }
+
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 65% 45%, rgba(167,255,235,0.07) 0%, transparent 55%);
+    }
+
+    .cs-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(167,255,235,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(167,255,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .cs-hero__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cs-hero__breadcrumb {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.5);
+      margin-bottom: 20px;
+    }
+
+    .cs-hero__breadcrumb a {
+      color: rgba(167,255,235,0.5);
+      text-decoration: none;
+    }
+
+    .cs-hero__breadcrumb a:hover,
+    .cs-hero__breadcrumb a:focus-visible {
+      color: var(--tech-mint);
+    }
+
+    .cs-hero__breadcrumb span {
+      color: var(--tech-mint);
+    }
+
+    .cs-hero h1 {
+      color: #fff;
+      margin-bottom: 24px;
+      max-width: 780px;
+    }
+
+    .cs-hero h1 em {
+      font-style: normal;
+      color: var(--tech-mint);
+    }
+
+    .cs-hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cs-hero__tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+    }
+
+    .cs-hero__tag--track {
+      background: rgba(167,255,235,0.15);
+      color: var(--tech-mint);
+    }
+
+    .cs-hero__tag--sector {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Snapshot Bar */
+    .snapshot {
+      background: #fff;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .snapshot__inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .snapshot__stat {
+      padding: 36px 32px;
+      border-right: 1px solid var(--border-light);
+    }
+
+    .snapshot__stat:last-child {
+      border-right: none;
+    }
+
+    .snapshot__num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--forest-green);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .snapshot__num em {
+      font-style: normal;
+      color: var(--digital-emerald);
+    }
+
+    .snapshot__label {
+      font-size: 0.82rem;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    /* Body layout */
+    .cs-body {
+      background: var(--mint-white);
+    }
+
+    .cs-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .cs-main h2 {
+      color: var(--forest-green);
+      margin-bottom: 20px;
+    }
+
+    .cs-main p {
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .cs-main h3 {
+      color: var(--forest-green);
+      font-size: 1rem;
+      margin: 32px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Steps list */
+    .cs-steps {
+      list-style: none;
+      counter-reset: step;
+      margin: 0 0 32px;
+      padding: 0;
+    }
+
+    .cs-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cs-steps li:last-child {
+      border-bottom: none;
+    }
+
+    .cs-steps li::before {
+      content: counter(step, decimal-leading-zero);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--tech-mint);
+      background: var(--forest-green);
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cs-steps li p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    /* Sidebar */
+    .cs-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .cs-sidebar__card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .cs-sidebar__card h4 {
+      color: var(--forest-green);
+      margin-bottom: 16px;
+    }
+
+    .cs-sidebar__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.83rem;
+      gap: 12px;
+    }
+
+    .cs-sidebar__row:last-child {
+      border-bottom: none;
+    }
+
+    .cs-sidebar__key {
+      color: #888;
+      flex-shrink: 0;
+    }
+
+    .cs-sidebar__val {
+      color: #333;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Quote */
+    .cs-quote {
+      background: linear-gradient(135deg, #1a3552 0%, #1B4D3E 100%);
+      border-radius: 12px;
+      padding: 36px;
+      margin: 40px 0 0;
+    }
+
+    .cs-quote__mark {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--tech-mint);
+      line-height: 0.8;
+      margin-bottom: 12px;
+    }
+
+    .cs-quote p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .cs-quote__attr {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tech-mint);
+    }
+
+    /* Outcomes */
+    .cs-outcomes {
+      background: #fff;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .outcome-card {
+      background: var(--mint-white);
+      border-radius: 10px;
+      padding: 28px 24px;
+      border: 1px solid var(--border-light);
+    }
+
+    .outcome-card__num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--forest-green);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .outcome-card__num em {
+      font-style: normal;
+      color: var(--digital-emerald);
+    }
+
+    .outcome-card p {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Nav between case studies */
+    .cs-nav {
+      background: var(--mint-white);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .cs-nav__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border-light);
+    }
+
+    .cs-nav__link {
+      background: #fff;
+      padding: 32px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.2s;
+      min-height: 44px;
+      align-items: flex-start;
+    }
+
+    .cs-nav__link:hover,
+    .cs-nav__link:focus-visible {
+      background: var(--mint-white);
+    }
+
+    .cs-nav__link--next {
+      text-align: right;
+      align-items: flex-end;
+    }
+
+    .cs-nav__dir {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .cs-nav__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--forest-green);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .cs-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .cs-sidebar {
+        position: static;
+      }
+      .snapshot__inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cs-hero {
+        padding: 100px 0 60px;
+      }
+      .cs-hero h1 {
+        font-size: 1.75rem;
+      }
+      .snapshot__stat {
+        padding: 24px 16px;
+      }
+      .snapshot__num {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cs-hero {
+        padding: 80px 0 40px;
+      }
+      .cs-hero h1 {
+        font-size: 1.5rem;
+      }
+      .snapshot__inner {
+        grid-template-columns: 1fr;
+      }
+      .snapshot__stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 20px 0;
+      }
+      .snapshot__stat:last-child {
+        border-bottom: none;
+      }
+      .cs-nav__inner {
+        grid-template-columns: 1fr;
+      }
+      .cs-nav__link {
+        padding: 20px;
+      }
+      .cs-nav__link--next {
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only" style="position:absolute; top:0; left:0; z-index:9999; padding:1rem; background:#fff; color:#000;">
+  Skip to main content
+</a>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="VSON Home">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu"><div class="nav__dropdown-menu-inner">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div></div>
+        </li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="case-studies.html" aria-current="page">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="cs-hero" id="main-content">
+  <div class="container">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__breadcrumb"><a href="case-studies.html">Case Studies</a> <span>/ Education</span></div>
+      <h1>Fewer cold leads. More students <em>ready to enrol.</em></h1>
+      <div class="cs-hero__meta">
+        <span class="cs-hero__tag cs-hero__tag--track">Market Development</span>
+        <span class="cs-hero__tag cs-hero__tag--sector">Education | Vietnam</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Snapshot Stats -->
+<div class="snapshot">
+  <div class="container">
+    <div class="snapshot__inner">
+      <div class="snapshot__stat">
+        <div class="snapshot__num"><em>100</em>+</div>
+        <div class="snapshot__label">Branches aligned on one campaign system</div>
+      </div>
+      <div class="snapshot__stat">
+        <div class="snapshot__num">−<em>40%</em></div>
+        <div class="snapshot__label">Reduction in manual follow-up workload</div>
+      </div>
+      <div class="snapshot__stat">
+        <div class="snapshot__num"><em>3</em></div>
+        <div class="snapshot__label">Personalised journey types built and deployed</div>
+      </div>
+      <div class="snapshot__stat">
+        <div class="snapshot__num"><em>Q1</em></div>
+        <div class="snapshot__label">Enrolment conversion improved in first quarter</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Body Content -->
+<section class="cs-body section">
+  <div class="container">
+    <div class="cs-layout">
+      <div class="cs-main">
+
+        <span class="label">The Challenge</span>
+        <h2>A 100-branch network. Still running on manual phone calls.</h2>
+        <p>The client is a national English-language learning centre, one of Vietnam's most recognised names in the sector with over 100 branches from HCMC to Hanoi. Each year, tens of thousands of people enquire about trial classes. Converting those enquiries into enrolled students was the problem. Follow-up was largely manual: sales staff called leads one by one, or sent the same generic email blast to everyone. Response windows were long. Conversion rates varied wildly between branches.</p>
+        <p>Re-enrollment was equally underdeveloped. Students who completed a course level received no automated outreach to continue. The client was leaving a significant share of potential revenue on the table from an audience that already trusted the brand.</p>
+
+        <span class="label" style="margin-top:48px;display:block;">The Solution</span>
+        <h2>Automated journeys. Personalised by level, age, and location.</h2>
+        <p>VSON designed a CRM-powered lead nurture workflow that replaced the manual follow-up process with automated, personalised communication via Zalo and SMS. Every prospect received a relevant message at the right moment: not a generic blast, but a sequence matched to their learning level, age group, and nearest branch location.</p>
+
+        <h3>What we did, step by step</h3>
+        <ul class="cs-steps">
+          <li><p>Audited the existing lead capture and follow-up process across all 100+ branches to identify where leads were being lost.</p></li>
+          <li><p>Mapped three primary journey types: new enquiry to trial class to enrolment; post-trial non-converter; and programme completer to re-enrolment.</p></li>
+          <li><p>Built automated Zalo and SMS sequences for each journey, with branching logic based on response behaviour (opened, clicked, no response).</p></li>
+          <li><p>Personalised message content by learning level (beginner to advanced), age group (children, teens, adults), and branch location.</p></li>
+          <li><p>Trained branch managers to monitor lead status via a shared dashboard rather than relying on manual phone tracking.</p></li>
+          <li><p>Launched re-enrolment journey for programme completers, with personalised course recommendations based on their completed level.</p></li>
+        </ul>
+
+        <div class="cs-quote">
+          <div class="cs-quote__mark">"</div>
+          <p>We had the students. We just weren't staying in touch with them well enough. VSON built journeys that felt personal even at scale. Our enrolment team noticed the difference within the first few weeks; fewer cold leads, more students arriving already ready to say yes.</p>
+          <div class="cs-quote__attr">Director of Marketing</div>
+        </div>
+
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar__card">
+          <h4>Project snapshot</h4>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Track</span><span class="cs-sidebar__val">Market Development</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Sector</span><span class="cs-sidebar__val">English language education</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Market</span><span class="cs-sidebar__val">Vietnam nationwide</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Branches covered</span><span class="cs-sidebar__val">100+</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Channels</span><span class="cs-sidebar__val">Zalo | SMS | CRM</span></div>
+        </div>
+        <div class="cs-sidebar__card">
+          <h4>Services used</h4>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">CRM workflow design</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Lead journey automation</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Zalo / SMS sequences</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Audience segmentation</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Re-enrolment campaigns</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Outcomes -->
+<section class="cs-outcomes section">
+  <div class="container">
+    <span class="label">The Outcomes</span>
+    <h2 style="color:var(--forest-green);margin-bottom:40px;">Consistent. Personalised. Measurable.</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-card__num"><em>100</em>+</div>
+        <p>Branches operating on one unified campaign system for the first time</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-card__num">−<em>40%</em></div>
+        <p>Reduction in manual follow-up workload for the sales team, freeing time for higher-value conversations</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-card__num"><em>Q1</em></div>
+        <p>Measurable improvement in lead-to-enrolment conversion rate achieved within the first quarter</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Navigation between case studies -->
+<section class="cs-nav">
+  <div class="cs-nav__inner">
+    <a href="cs-01-electronics-retail.html" class="cs-nav__link">
+      <span class="cs-nav__dir">Previous story</span>
+      <span class="cs-nav__title">Electronics Retail Chain</span>
+    </a>
+    <a href="cs-03-fashion-retail.html" class="cs-nav__link cs-nav__link--next">
+      <span class="cs-nav__dir">Next story</span>
+      <span class="cs-nav__title">Fast-Growing Fashion Retailer</span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to make every lead count?</h2>
+    <p>We'll design the journey. You focus on delivering the experience.</p>
+    <a href="contact.html" class="btn btn--primary arrow">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="nav__logo-icon">V</div>
+          <span class="nav__logo-text">VSON</span>
+        </div>
+        <p class="footer__tagline">
+          Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>
+          MST: 0313403180
+        </p>
+        <div class="footer__contact-item">
+          <span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>0902.964.858</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>contact@vson.vn</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About VSON</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="activation-solutions.html">Activation Solutions</a></li>
+          <li><a href="market-development.html">Market Development</a></li>
+          <li><a href="store.html">VSON Store</a></li>
+          <li><a href="contact.html">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Facebook">fb</a>
+        <a href="#" class="social-link" aria-label="Zalo">za</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

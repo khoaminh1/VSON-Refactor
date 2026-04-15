@@ -1,0 +1,8 @@
+# VSON Advisory robots.txt
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /admin
+Disallow: /private
+
+Sitemap: https://vsonadvisory.com/sitemap.xml

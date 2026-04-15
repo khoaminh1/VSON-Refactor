@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Prototype Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Inter',sans-serif; background:#0e2b23; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 24px; }
+    :root { --forest-green:#1B4D3E; --tech-mint:#A7FFEB; --digital-emerald:#2E8B57; }
+
+    .proto-header { text-align:center; margin-bottom:56px; }
+    .proto-logo { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:24px; }
+    .proto-logo-icon { width:44px; height:44px; background:var(--tech-mint); border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.2rem; color:var(--forest-green); }
+    .proto-logo-text { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.4rem; color:#fff; }
+    .proto-badge { display:inline-block; font-family:'Montserrat',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--tech-mint); background:rgba(167,255,235,0.1); border:1px solid rgba(167,255,235,0.25); padding:6px 14px; border-radius:20px; margin-bottom:16px; }
+    .proto-header h1 { font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:800; color:#fff; margin-bottom:8px; }
+    .proto-header p { color:rgba(255,255,255,0.55); font-size:0.9rem; }
+
+    .pages-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:960px; width:100%; margin-bottom:48px; }
+    .page-card { background:rgba(255,255,255,0.04); border:1px solid rgba(167,255,235,0.12); border-radius:12px; padding:28px 24px; text-decoration:none; transition:all 0.2s; display:flex; flex-direction:column; gap:12px; }
+    .page-card:hover { background:rgba(167,255,235,0.07); border-color:rgba(167,255,235,0.3); transform:translateY(-2px); }
+    .page-card__num { font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:800; color:rgba(167,255,235,0.25); line-height:1; }
+    .page-card__name { font-family:'Montserrat',sans-serif; font-size:0.88rem; font-weight:700; color:#fff; }
+    .page-card__desc { font-size:0.78rem; color:rgba(255,255,255,0.45); line-height:1.5; flex:1; }
+    .page-card__status { font-family:'Montserrat',sans-serif; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--tech-mint); display:flex; align-items:center; gap:6px; }
+    .page-card__status::before { content:'●'; font-size:0.5rem; }
+
+    .page-card--home { border-color:rgba(167,255,235,0.25); background:rgba(167,255,235,0.05); }
+    .page-card--store .page-card__status { color:#ED9A60; }
+    .page-card--store .page-card__status::before { color:#ED7D28; }
+
+    .proto-notes { max-width:960px; width:100%; background:rgba(255,255,255,0.03); border:1px solid rgba(167,255,235,0.1); border-radius:12px; padding:32px; }
+    .proto-notes h3 { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--tech-mint); margin-bottom:20px; }
+    .notes-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+    .note-group h4 { font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:700; color:rgba(255,255,255,0.6); margin-bottom:10px; }
+    .note-item { display:flex; align-items:flex-start; gap:8px; margin-bottom:8px; color:rgba(255,255,255,0.5); font-size:0.82rem; line-height:1.5; }
+    .note-item::before { content:'›'; color:rgba(167,255,235,0.35); flex-shrink:0; }
+    .note-item strong { color:rgba(255,255,255,0.75); font-weight:500; }
+
+    .proto-footer { margin-top:40px; text-align:center; font-family:'Montserrat',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+
+<div class="proto-header">
+  <div class="proto-logo">
+    <div class="proto-logo-icon">V</div>
+    <span class="proto-logo-text">VSON</span>
+  </div>
+  <div class="proto-badge">Visual Concept v0.1</div>
+  <h1>Prototype Navigator</h1>
+  <p>Click any page to preview. All pages are fully linked and navigate as a real site.</p>
+</div>
+
+<div class="pages-grid">
+  <a href="home.html" class="page-card page-card--home">
+    <div class="page-card__num">01</div>
+    <div class="page-card__name">Home</div>
+    <div class="page-card__desc">Hero, Two Pillars, Ecosystem, Heritage &amp; Trust, Case Studies preview, Footer</div>
+    <div class="page-card__status">Complete</div>
+  </a>
+  <a href="about.html" class="page-card">
+    <div class="page-card__num">02</div>
+    <div class="page-card__name">About</div>
+    <div class="page-card__desc">Company story, Leadership team (Frederick, Henry, Emily, Duy), CTA</div>
+    <div class="page-card__status">Complete</div>
+  </a>
+  <a href="activation-solutions.html" class="page-card">
+    <div class="page-card__num">03</div>
+    <div class="page-card__name">Activation Solutions</div>
+    <div class="page-card__desc">Three-layer stack: Merchandise, Data Platform, Marketing Automation</div>
+    <div class="page-card__status">Complete</div>
+  </a>
+  <a href="market-development.html" class="page-card">
+    <div class="page-card__num">04</div>
+    <div class="page-card__name">Market Development</div>
+    <div class="page-card__desc">MRA grant, 3 service pillars, Why VSON, 4-step process, CTA</div>
+    <div class="page-card__status">Complete</div>
+  </a>
+  <a href="store.html" class="page-card page-card--store">
+    <div class="page-card__num">05</div>
+    <div class="page-card__name">Store</div>
+    <div class="page-card__desc">4 brands (Torayvino, Zojirushi, Kingbag, Nepia), channels, partner form</div>
+    <div class="page-card__status" style="color:#ED9A60;">Complete</div>
+  </a>
+  <a href="case-studies.html" class="page-card">
+    <div class="page-card__num">06</div>
+    <div class="page-card__name">Case Studies</div>
+    <div class="page-card__desc">Live filter bar (Brands / Solutions / Services), 3 anonymised cards, taxonomy</div>
+    <div class="page-card__status">Complete</div>
+  </a>
+  <a href="contact.html" class="page-card">
+    <div class="page-card__num">07</div>
+    <div class="page-card__name">Contact</div>
+    <div class="page-card__desc">Contact form with enquiry routing, direct details, email routing card</div>
+    <div class="page-card__status">Complete</div>
+  </a>
+  <div class="page-card" style="opacity:0.35;cursor:default;">
+    <div class="page-card__num">◦</div>
+    <div class="page-card__name">Vietnamese (/vi/)</div>
+    <div class="page-card__desc">Phase 2: bilingual rollout after English site is live</div>
+    <div class="page-card__status" style="color:rgba(167,255,235,0.4);">Phase 2</div>
+  </div>
+</div>
+
+<div class="proto-notes">
+  <h3>Review Notes: What to check</h3>
+  <div class="notes-grid">
+    <div class="note-group">
+      <h4>Design Decisions Made</h4>
+      <div class="note-item"><span><strong>Full visual concept</strong>: not greyscale wireframes. Brand system applied throughout.</span></div>
+      <div class="note-item"><span><strong>Store page uses orange</strong> (Warm Orange #ED7D28) per spec: distinct from corporate green.</span></div>
+      <div class="note-item"><span><strong>Case Studies filter bar</strong> is functional JavaScript: try clicking Brands / Solutions / Services.</span></div>
+      <div class="note-item"><span><strong>MRA grant amounts visible</strong> in hero on Market Development page: confirm if comfortable showing S$ figures publicly.</span></div>
+      <div class="note-item"><span><strong>Store partner form</strong> is placeholder: will need backend routing to hello@vson.vn.</span></div>
+    </div>
+    <div class="note-group">
+      <h4>Still Needs Your Input</h4>
+      <div class="note-item"><span><strong>Logo images</strong>: all four brands (Torayvino, Zojirushi, Kingbag, Nepia) shown as emoji placeholders.</span></div>
+      <div class="note-item"><span><strong>Clients logo row</strong>: Dell, HP, Lenovo, ASUS need logo files + usage approval before going live.</span></div>
+      <div class="note-item"><span><strong>Case study content</strong>: 3 cards anonymised. Real content needed before launch.</span></div>
+      <div class="note-item"><span><strong>Hero visuals</strong>: home page and section imagery are placeholders.</span></div>
+      <div class="note-item"><span><strong>Leadership photos</strong>: initials shown. Headshots needed for About page.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="proto-footer">VSON Corporate · vson.vn · Visual Concept v0.1 · 2026-03-31</div>
+
+</body>
+</html>

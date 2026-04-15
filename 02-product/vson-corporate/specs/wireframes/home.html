@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Visual Concept - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ─── Home - Page-Specific Styles ─────────────────────── */
+
+    /* ─── Hero ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--forest-green);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 50%, rgba(167,255,235,0.07) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(46,139,87,0.3) 0%, transparent 50%);
+    }
+    /* Subtle grid lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(167,255,235,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,255,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero__content { padding: 80px 0; }
+    .hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .hero__eyebrow-line {
+      width: 32px; height: 2px;
+      background: var(--tech-mint);
+    }
+    .hero__eyebrow-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tech-mint);
+    }
+    .hero__headline {
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .hero__headline em {
+      font-style: normal;
+      color: var(--tech-mint);
+    }
+    .hero__sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+    .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero__visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+    .hero__placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: rgba(167,255,235,0.06);
+      border: 1px solid rgba(167,255,235,0.18);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .hero__placeholder-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.45);
+    }
+
+    /* ─── Two Pillars ──────────────────────────────────────── */
+    .pillars { background: var(--mint-white); }
+    .pillars__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .pillars__header h2 { color: var(--forest-green); }
+    .pillars__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .pillar-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 48px 40px;
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .pillar-card:hover {
+      box-shadow: 0 16px 48px rgba(27,77,62,0.1);
+      transform: translateY(-3px);
+    }
+    .pillar-card--solutions {
+      background: var(--forest-green);
+    }
+    .pillar-card--store h3 { color: var(--forest-green); margin-bottom: 12px; }
+    .pillar-card--solutions h3 { color: #fff; margin-bottom: 12px; }
+    .pillar-card--store p { color: #555; margin-bottom: 24px; }
+    .pillar-card--solutions p { color: rgba(255,255,255,0.72); margin-bottom: 24px; }
+    .pillar-card__sub-labels {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .sub-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(167,255,235,0.15);
+      color: var(--tech-mint);
+      border: 1px solid rgba(167,255,235,0.2);
+    }
+
+    /* ─── Ecosystem ────────────────────────────────────────── */
+    .ecosystem { background: #fff; }
+    .ecosystem__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .ecosystem__header h2 { color: var(--forest-green); }
+    .ecosystem__header h2 em {
+      font-style: normal;
+      color: var(--digital-emerald);
+    }
+    .ecosystem__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .eco-item {
+      background: #fff;
+      padding: 48px 40px;
+      position: relative;
+    }
+    .eco-item__number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--mint-white);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .eco-item__line {
+      width: 32px; height: 3px;
+      background: var(--tech-mint);
+      margin-bottom: 20px;
+    }
+    .eco-item h3 { color: var(--forest-green); margin-bottom: 12px; }
+    .eco-item p { color: #666; font-size: 0.95rem; }
+
+    /* ─── Heritage & Trust ─────────────────────────────────── */
+    .heritage { background: var(--forest-green); }
+    .heritage__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .heritage__content h2 { color: #fff; margin-bottom: 20px; }
+    .heritage__content h2 em { font-style: normal; color: var(--tech-mint); }
+    .heritage__sub { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 36px; }
+    .heritage__proofs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .proof-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--tech-mint);
+      flex-shrink: 0;
+    }
+    .proof-item span {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+    }
+    .heritage__logos { }
+    .logo-row {
+      margin-bottom: 36px;
+    }
+    .logo-row__label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.55);
+      margin-bottom: 16px;
+    }
+    .logo-row__items {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .logo-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(167,255,235,0.18);
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      min-width: 100px;
+      text-align: center;
+    }
+    .logo-chip:hover {
+      background: rgba(167,255,235,0.1);
+      border-color: rgba(167,255,235,0.35);
+      color: var(--tech-mint);
+    }
+    .logo-chip--plus {
+      background: transparent;
+      border-style: dashed;
+      color: rgba(167,255,235,0.3);
+      font-size: 0.72rem;
+    }
+
+    /* ─── Case Studies ─────────────────────────────────────── */
+    .case-studies { background: var(--mint-white); }
+    .case-studies__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+    .case-studies__header h2 { color: var(--forest-green); }
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .cs-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .cs-card:hover {
+      box-shadow: 0 12px 36px rgba(27,77,62,0.1);
+      transform: translateY(-2px);
+    }
+    .cs-card__image {
+      height: 180px;
+      background: var(--forest-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cs-card:nth-child(2) .cs-card__image {
+      background: #1a3d52;
+    }
+    .cs-card__image-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.45);
+    }
+    .cs-card__body { padding: 28px 32px 32px; }
+    .cs-card__track {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--digital-emerald);
+      background: rgba(46,139,87,0.08);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 12px;
+    }
+    .cs-card h3 { color: var(--forest-green); margin-bottom: 10px; font-size: 1rem; }
+    .cs-card p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+    .cs-card__link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--digital-emerald);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cs-card__link:hover { color: var(--forest-green); }
+
+  </style>
+</head>
+<body>
+
+<!-- ──────────────────────────────────────────────────────────
+     NAVIGATION
+──────────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div>
+        </li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ──────────────────────────────────────────────────────────
+     HERO
+──────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <div class="hero__eyebrow-line"></div>
+          <span class="hero__eyebrow-text">Vietnam's Commerce Ecosystem</span>
+        </div>
+        <h1 class="hero__headline">
+          Vietnam's<br>
+          <em>Phygital</em><br>
+          Commerce<br>Ecosystem
+        </h1>
+        <p class="hero__sub">
+          20 years connecting world-class brands to Vietnamese households and powering the campaigns, data, and market entry strategies that drive growth.
+        </p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary arrow">Request a Consultation</a>
+          <a href="#" class="btn btn--ghost-light">Explore Solutions</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__placeholder">
+          <span class="hero__placeholder-label">Hero Visual Placeholder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────
+     TWO STRATEGIC PILLARS
+──────────────────────────────────────────────────────────── -->
+<section class="pillars section">
+  <div class="container">
+    <div class="pillars__header">
+      <span class="label">Our Business</span>
+      <h2>Two businesses. One ecosystem.</h2>
+    </div>
+    <div class="pillars__grid">
+      <!-- Store -->
+      <div class="pillar-card pillar-card--store">
+        <h3>VSON Store</h3>
+        <p>International-standard health and household products trusted by millions of Vietnamese households.</p>
+        <a href="#" class="btn btn--outline arrow">Visit VSON Store</a>
+      </div>
+      <!-- Solutions -->
+      <div class="pillar-card pillar-card--solutions">
+        <h3>VSON Solutions</h3>
+        <p style="color:rgba(255,255,255,0.72); margin-bottom:20px;">Brand activation and market development solutions powered by 20 years of on-the-ground expertise and Phygital technology.</p>
+        <div class="pillar-card__sub-labels">
+          <span class="sub-label">Activation Solutions</span>
+          <span class="sub-label">Market Development</span>
+        </div>
+        <a href="#" class="btn btn--ghost-light arrow">Explore Solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────
+     ONE ECOSYSTEM
+──────────────────────────────────────────────────────────── -->
+<section class="ecosystem section">
+  <div class="container">
+    <div class="ecosystem__header">
+      <span class="label">What We Do</span>
+      <h2><em>One ecosystem.</em> Every channel.</h2>
+    </div>
+    <div class="ecosystem__grid">
+      <div class="eco-item">
+        <div class="eco-item__number">01</div>
+        <div class="eco-item__line"></div>
+        <h3>Reach</h3>
+        <p>A nationwide distribution network bringing world-class products to millions of Vietnamese households and businesses.</p>
+      </div>
+      <div class="eco-item">
+        <div class="eco-item__number">02</div>
+        <div class="eco-item__line"></div>
+        <h3>Activate</h3>
+        <p>Brand campaigns and customer experiences that convert awareness into loyalty across retail, events, and digital channels.</p>
+      </div>
+      <div class="eco-item">
+        <div class="eco-item__number">03</div>
+        <div class="eco-item__line"></div>
+        <h3>Grow</h3>
+        <p>Market intelligence and development strategies that help brands and businesses scale sustainably in Vietnam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────
+     HERITAGE & TRUST
+──────────────────────────────────────────────────────────── -->
+<section class="heritage section">
+  <div class="container">
+    <div class="heritage__inner">
+      <div class="heritage__content">
+        <span class="label label--light">Our Track Record</span>
+        <h2><em>Built on 20 years</em><br>of trust.</h2>
+        <p class="heritage__sub">From our first distribution partnership to powering national brand campaigns, VSON has grown alongside the companies and families we serve.</p>
+        <div class="heritage__proofs">
+          <div class="proof-item">
+            <div class="proof-dot"></div>
+            <span>Millions of Vietnamese households served</span>
+          </div>
+          <div class="proof-item">
+            <div class="proof-dot"></div>
+            <span>World-class brand partners across categories</span>
+          </div>
+          <div class="proof-item">
+            <div class="proof-dot"></div>
+            <span>Nationwide distribution network</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn--ghost-light arrow">Read Our Story</a>
+      </div>
+      <div class="heritage__logos">
+        <div class="logo-row">
+          <div class="logo-row__label">Brands we distribute</div>
+          <div class="logo-row__items">
+            <div class="logo-chip">Torayvino</div>
+            <div class="logo-chip">Zojirushi</div>
+            <div class="logo-chip">Kingbag</div>
+            <div class="logo-chip">Nepia</div>
+          </div>
+        </div>
+        <div class="logo-row">
+          <div class="logo-row__label">Clients we've served</div>
+          <div class="logo-row__items">
+            <div class="logo-chip">Dell</div>
+            <div class="logo-chip">HP</div>
+            <div class="logo-chip">Lenovo</div>
+            <div class="logo-chip">ASUS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────
+     CASE STUDIES PREVIEW
+──────────────────────────────────────────────────────────── -->
+<section class="case-studies section">
+  <div class="container">
+    <div class="case-studies__header">
+      <div>
+        <span class="label">Selected Work</span>
+        <h2>Real work. Real outcomes.</h2>
+      </div>
+      <a href="#" class="btn btn--outline arrow">View All Case Studies</a>
+    </div>
+    <div class="cs-grid">
+      <div class="cs-card">
+        <div class="cs-card__image">
+          <span class="cs-card__image-label">Case Study Visual</span>
+        </div>
+        <div class="cs-card__body">
+          <span class="cs-card__track">Activation Solutions</span>
+          <h3>A leading international household brand</h3>
+          <p>Placeholder: outcome-led one-liner describing the campaign result and commercial impact.</p>
+          <a href="#" class="cs-card__link arrow">Read the story</a>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card__image">
+          <span class="cs-card__image-label">Case Study Visual</span>
+        </div>
+        <div class="cs-card__body">
+          <span class="cs-card__track">Market Development</span>
+          <h3>A Singapore financial services firm</h3>
+          <p>Placeholder: outcome-led one-liner describing the market entry journey and measurable result.</p>
+          <a href="#" class="cs-card__link arrow">Read the story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────
+     CTA BAND
+──────────────────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to explore what VSON can do for you?</h2>
+    <p>Whether you're a brand, a Singapore corporate, or a distribution partner, we're happy to start a conversation.</p>
+    <a href="#" class="btn btn--primary arrow">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────
+     FOOTER
+──────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="nav__logo-icon">V</div>
+          <span class="nav__logo-text">VSON</span>
+        </div>
+        <p class="footer__tagline">
+          Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>
+          MST: 0313403180
+        </p>
+        <div class="footer__contact-item">
+          <span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>0902.964.858</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>hello@vson.vn · solutions@vson.vn</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About VSON</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#">Activation Solutions</a></li>
+          <li><a href="#">Market Development</a></li>
+          <li><a href="#">VSON Store</a></li>
+          <li><a href="#">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">fb</a>
+        <a href="#" class="social-link">za</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Visual concept badge -->
+<div class="vc-badge">Visual Concept v0.1 · Home</div>
+
+</body>
+</html>

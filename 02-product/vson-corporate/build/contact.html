@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Contact Us</title>
+  <meta name="description" content="Get in touch with VSON. Contact our team at hello@vson.vn or solutions@vson.vn. We're happy to start a conversation about your business." />
+  <meta property="og:title" content="VSON | Contact Us" />
+  <meta property="og:description" content="Get in touch with VSON. Contact our team at hello@vson.vn or solutions@vson.vn." />
+  <meta property="og:image" content="https://vson.vn/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vson.vn/contact.html" />
+  <link rel="canonical" href="https://vson.vn/contact.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Page Hero */
+    .page-hero {
+      background: var(--forest-green);
+      padding: 160px 0 80px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 68px;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 50%, rgba(167,255,235,0.07) 0%, transparent 55%);
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(167,255,235,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,255,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .page-hero__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero h1 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .page-hero h1 em {
+      font-style: normal;
+      color: var(--tech-mint);
+    }
+
+    .page-hero__sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 580px;
+    }
+
+    /* Contact Body */
+    .contact-body {
+      background: var(--mint-white);
+    }
+
+    .contact-body__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Form */
+    .contact-form {
+      background: #fff;
+      border-radius: 12px;
+      padding: 48px;
+      border: 1px solid var(--border-light);
+    }
+
+    .contact-form h2 {
+      color: var(--forest-green);
+      margin-bottom: 8px;
+    }
+
+    .contact-form p {
+      color: #666;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+    }
+
+    .form-routing-note {
+      background: var(--mint-white);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+    }
+
+    .form-routing-note p {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .form-routing-note strong {
+      color: var(--forest-green);
+    }
+
+    /* Contact Details */
+    .contact-details { }
+
+    .contact-details__head {
+      margin-bottom: 36px;
+    }
+
+    .contact-details__head h2 {
+      color: var(--forest-green);
+      margin-bottom: 8px;
+    }
+
+    .contact-details__head p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .contact-info-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      border: 1px solid var(--border-light);
+      margin-bottom: 20px;
+    }
+
+    .contact-info-card h3 {
+      color: var(--forest-green);
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .contact-info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-info-item__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--mint-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--digital-emerald);
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-info-item__label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 3px;
+    }
+
+    .contact-info-item__value {
+      color: var(--forest-green);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .routing-card {
+      background: var(--forest-green);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .routing-card h3 {
+      color: var(--tech-mint);
+      margin-bottom: 20px;
+      font-size: 0.82rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .routing-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(167,255,235,0.1);
+    }
+
+    .routing-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .routing-item__label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .routing-item__email {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--tech-mint);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .contact-body__inner {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 120px 0 60px;
+      }
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+      .page-hero__sub {
+        font-size: 1rem;
+      }
+      .contact-form {
+        padding: 32px;
+      }
+      .contact-info-card {
+        padding: 24px;
+      }
+      .routing-card {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-hero {
+        padding: 100px 0 48px;
+        margin-top: 68px;
+      }
+      .contact-body__inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .contact-form {
+        padding: 24px;
+      }
+      .form-routing-note {
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only" style="position:absolute; top:0; left:0; z-index:9999; padding:1rem; background:#fff; color:#000;">
+  Skip to main content
+</a>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="VSON Home">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu"><div class="nav__dropdown-menu-inner">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div></div>
+        </li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero" id="main-content">
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="label label--light">Get in Touch</span>
+      <h1><em>Let's talk.</em></h1>
+      <p class="page-hero__sub">Whether you're a brand, a Singapore corporate, a distribution partner, or just exploring, we're happy to start a conversation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Body -->
+<section class="contact-body section">
+  <div class="container">
+    <div class="contact-body__inner">
+      <!-- Form -->
+      <div class="contact-form">
+        <h2>Send us a message</h2>
+        <p>Fill in the form and we'll route your enquiry to the right person.</p>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <!-- Honeypot field (SA CRITICAL) -->
+          <p class="sr-only">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Your company name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+84 or +65..." />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="enquiry-type">Enquiry Type *</label>
+            <select id="enquiry-type" name="enquiry-type" required>
+              <option value="">Select one</option>
+              <option value="Activation Solutions">Activation Solutions</option>
+              <option value="Market Development">Market Development</option>
+              <option value="Distribution & Store Partnership">Distribution &amp; Store Partnership</option>
+              <option value="General Enquiry">General Enquiry</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking for..." required></textarea>
+          </div>
+
+          <div class="form-routing-note">
+            <p><strong>Routing note:</strong> Activation &amp; Market Development enquiries → solutions@vson.vn · Distribution &amp; General → hello@vson.vn</p>
+          </div>
+
+          <button class="btn btn--primary" style="width:100%; justify-content:center;" type="submit">Send Message →</button>
+        </form>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="contact-details">
+        <div class="contact-details__head">
+          <h2>Direct contact</h2>
+          <p>Prefer to reach us directly? All the details you need are below.</p>
+        </div>
+
+        <div class="contact-info-card">
+          <h3>Office</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">ADR</div>
+            <div>
+              <div class="contact-info-item__label">Address</div>
+              <div class="contact-info-item__value">58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">TEL</div>
+            <div>
+              <div class="contact-info-item__label">Phone</div>
+              <div class="contact-info-item__value"><a href="tel:0902964858" style="color:inherit; text-decoration:none;">0902.964.858</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">GEN</div>
+            <div>
+              <div class="contact-info-item__label">General Enquiries</div>
+              <div class="contact-info-item__value"><a href="mailto:hello@vson.vn" style="color:inherit; text-decoration:none;">hello@vson.vn</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">SOL</div>
+            <div>
+              <div class="contact-info-item__label">Solutions Enquiries</div>
+              <div class="contact-info-item__value"><a href="mailto:solutions@vson.vn" style="color:inherit; text-decoration:none;">solutions@vson.vn</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">REG</div>
+            <div>
+              <div class="contact-info-item__label">Company Registration</div>
+              <div class="contact-info-item__value">MST: 0313403180</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="routing-card">
+          <h3>Enquiry Routing</h3>
+          <div class="routing-item">
+            <div class="routing-item__label">Activation Solutions</div>
+            <div class="routing-item__email">solutions@vson.vn</div>
+          </div>
+          <div class="routing-item">
+            <div class="routing-item__label">Market Development</div>
+            <div class="routing-item__email">solutions@vson.vn</div>
+          </div>
+          <div class="routing-item">
+            <div class="routing-item__label">Distribution &amp; Store Partnership</div>
+            <div class="routing-item__email">hello@vson.vn</div>
+          </div>
+          <div class="routing-item">
+            <div class="routing-item__label">General Enquiry</div>
+            <div class="routing-item__email">hello@vson.vn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="nav__logo-icon">V</div>
+          <span class="nav__logo-text">VSON</span>
+        </div>
+        <p class="footer__tagline">
+          Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>
+          MST: 0313403180
+        </p>
+        <div class="footer__contact-item">
+          <span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>0902.964.858</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>hello@vson.vn · solutions@vson.vn</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About VSON</a></li>
+          <li><a href="index.html#case-studies">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#solutions-activation">Activation Solutions</a></li>
+          <li><a href="#solutions-market">Market Development</a></li>
+          <li><a href="index.html#store">VSON Store</a></li>
+          <li><a href="contact.html">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Facebook">fb</a>
+        <a href="#" class="social-link" aria-label="Zalo">za</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

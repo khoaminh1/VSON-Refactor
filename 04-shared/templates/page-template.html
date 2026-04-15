@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ═══════════════════════════════════════════════════════════════
+       META TAGS — Customize for each page
+       ═══════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page Title (40-60 characters, include primary keyword) -->
+  <title>[PAGE TITLE] — [Company Name]</title>
+
+  <!-- Page Description (120-160 characters, readable in search results) -->
+  <meta name="description" content="[Brief summary of what this page is about. Describes value to the reader.]" />
+
+  <!-- Keywords (3-5 primary keywords separated by commas) -->
+  <meta name="keywords" content="[keyword1], [keyword2], [keyword3], [keyword4], [keyword5]" />
+
+  <!-- Canonical Link (prevents duplicate content issues) -->
+  <link rel="canonical" href="https://example.com/[page-path]" />
+
+  <!-- Open Graph Tags (for social media sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[PAGE TITLE]" />
+  <meta property="og:description" content="[Summary for social sharing]" />
+  <meta property="og:image" content="/assets/og-[page-slug].png" />
+  <meta property="og:url" content="https://example.com/[page-path]" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[PAGE TITLE]" />
+  <meta name="twitter:description" content="[Summary]" />
+  <meta name="twitter:image" content="/assets/og-[page-slug].png" />
+
+  <!-- Font Preloading (improves performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system-tokens.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Theme Color (mobile browser chrome) -->
+  <meta name="theme-color" content="#0f172a" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION — Copy from your existing site navigation
+       (Do not modify structure; keep consistent across all pages)
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <!-- Logo -->
+      <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+        <div class="nav-logomark">V</div>
+        <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);">
+          [COMPANY NAME]
+        </div>
+      </a>
+
+      <!-- Menu Items (desktop) -->
+      <div class="nav-menu" role="menubar">
+        <a href="/" class="nav-link" role="menuitem">Home</a>
+        <a href="/about.html" class="nav-link" role="menuitem">About</a>
+        <a href="/services.html" class="nav-link" role="menuitem">Services</a>
+        <a href="/contact.html" class="nav-link" role="menuitem">Contact</a>
+        <a class="btn btn-primary" style="margin-left:24px;">Get Started</a>
+      </div>
+
+      <!-- Mobile Hamburger Menu -->
+      <div class="nav__burger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT AREA — Your page content goes here
+       ═══════════════════════════════════════════════════════════════ -->
+  <main role="main" id="main-content">
+
+    <!-- SECTION 1: Hero Section (optional) -->
+    <section class="hero" style="background:var(--navy);color:white;padding:120px 0;min-height:60vh;display:flex;align-items:center;">
+      <div class="container">
+        <h1 style="font-family:var(--serif);font-size:3.5rem;line-height:1.2;margin-bottom:24px;">
+          Page Heading
+        </h1>
+        <p style="font-size:1.25rem;color:var(--s300);max-width:600px;margin-bottom:40px;">
+          Supporting paragraph that explains the value proposition or context.
+        </p>
+        <a class="btn btn-primary" style="background:white;color:var(--navy);">Call to Action</a>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Content Section (example pattern) -->
+    <section style="background:white;padding:80px 0;">
+      <div class="container">
+        <!-- Section Eyebrow + Divider + Heading -->
+        <div class="section-eyebrow">Optional label</div>
+        <div style="width:60px;height:3px;background:var(--blue);margin:12px 0 32px;"></div>
+
+        <h2 style="font-family:var(--serif);font-size:2.5rem;margin-bottom:16px;">
+          Section Heading
+        </h2>
+        <p style="font-size:1.125rem;color:var(--s600);max-width:800px;margin-bottom:40px;">
+          Introduction paragraph that provides context for the section.
+        </p>
+
+        <!-- Two-Column Layout -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px;">
+          <div>
+            <h3 style="font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;">
+              Column 1 Heading
+            </h3>
+            <p>Body content for the left column.</p>
+            <ul style="margin-top:20px;display:flex;flex-direction:column;gap:12px;">
+              <li>• First benefit or point</li>
+              <li>• Second benefit or point</li>
+              <li>• Third benefit or point</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;">
+              Column 2 Heading
+            </h3>
+            <p>Body content for the right column.</p>
+            <!-- Image or other content here -->
+            <img src="/assets/images/placeholder.png" alt="Descriptive alt text for image" style="width:100%;border-radius:8px;margin-top:20px;" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Responsive Adjustment -->
+      <style>
+        @media (max-width: 768px) {
+          /* Stack columns on mobile */
+          [style*="grid-template-columns:1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- SECTION 3: Card Grid (example) -->
+    <section style="background:var(--s50);padding:80px 0;">
+      <div class="container">
+        <h2 style="font-family:var(--serif);font-size:2.5rem;margin-bottom:48px;">
+          Our Offering
+        </h2>
+
+        <!-- 3-Column Auto-Responsive Grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;">
+          <!-- Card 1 -->
+          <div class="card">
+            <div style="font-size:2rem;font-weight:700;color:var(--blue);margin-bottom:16px;">01</div>
+            <h3 style="font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;">
+              Service Title
+            </h3>
+            <p>Description of the service or offering in 1-2 sentences.</p>
+            <a href="#" class="btn btn-ghost" style="margin-top:16px;">Learn More →</a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div style="font-size:2rem;font-weight:700;color:var(--blue);margin-bottom:16px;">02</div>
+            <h3 style="font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;">
+              Service Title
+            </h3>
+            <p>Description of the service or offering in 1-2 sentences.</p>
+            <a href="#" class="btn btn-ghost" style="margin-top:16px;">Learn More →</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div style="font-size:2rem;font-weight:700;color:var(--blue);margin-bottom:16px;">03</div>
+            <h3 style="font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;">
+              Service Title
+            </h3>
+            <p>Description of the service or offering in 1-2 sentences.</p>
+            <a href="#" class="btn btn-ghost" style="margin-top:16px;">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Call-to-Action Band -->
+    <section style="background:var(--navy);color:white;padding:80px 0;text-align:center;">
+      <div class="container">
+        <h2 style="font-family:var(--serif);font-size:2.5rem;margin-bottom:24px;">
+          Ready to Take the Next Step?
+        </h2>
+        <p style="font-size:1.125rem;max-width:600px;margin:0 auto 32px;color:var(--s300);">
+          Brief call-to-action message that encourages the user to engage.
+        </p>
+        <a class="btn btn-primary" style="background:white;color:var(--navy);">
+          Primary CTA Button
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER — Copy from your existing site footer
+       (Keep consistent across all pages)
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <!-- Footer Grid (4 columns on desktop, 2 on mobile) -->
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+            <div class="nav-logomark">V</div>
+            <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:white;">
+              [COMPANY NAME]
+            </div>
+          </a>
+          <p>Company tagline or brief description of your business value.</p>
+          <div style="margin-top:16px;font-size:12px;color:var(--s600);">
+            City 1 · City 2 · City 3
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="/services/service-1.html">Service One</a></li>
+            <li><a href="/services/service-2.html">Service Two</a></li>
+            <li><a href="/services/service-3.html">Service Three</a></li>
+            <li><a href="/services/service-4.html">Service Four</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/team.html">Team</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-8900</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Legal, Copyright, Links) -->
+      <div class="footer-bottom">
+        <div style="width:100%;font-size:12px;color:var(--s600);margin-bottom:12px;">
+          [Company Legal Name] · License/Registration Number · Registered at Address
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;width:100%;">
+          <p class="footer-copy">© 2026 [Company Name]. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="/legal/privacy.html">Privacy Policy</a>
+            <a href="/legal/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCRIPTS — Shared JavaScript and page-specific code
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Shared JavaScript Library (handles nav, animations, forms) -->
+  <script src="/js/shared-interactions.js"></script>
+
+  <!-- Page-Specific JavaScript (if needed) -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Your page-specific code here
+      // Keep minimal; prefer shared-interactions.js for common functionality
+
+      console.log('Page loaded successfully');
+    })();
+  </script>
+
+</body>
+</html>

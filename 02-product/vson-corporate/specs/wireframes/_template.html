@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | [Page Name]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ─── [Page Name] - Page-Specific Styles ──────────────── */
+    /*
+     * Only write styles here that are UNIQUE to this page.
+     * All tokens, typography, utilities, buttons, nav, and
+     * footer are already provided by shared.css.
+     *
+     * Common page-level patterns to start from:
+     */
+
+    /* Page Hero (standard inner-page pattern) */
+    .page-hero {
+      background: var(--forest-green);
+      padding: 160px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 40%, rgba(167,255,235,0.08) 0%, transparent 55%);
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(167,255,235,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,255,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .page-hero__inner { position: relative; z-index: 1; }
+    .page-hero__breadcrumb {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.5);
+      margin-bottom: 20px;
+    }
+    .page-hero__breadcrumb span { color: var(--tech-mint); }
+    .page-hero h1 { color: #fff; margin-bottom: 24px; }
+    .page-hero h1 em { font-style: normal; color: var(--tech-mint); }
+    .page-hero__sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    /* Add page-specific sections below ↓ */
+
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ───────────────────────────────────────────────
+     Active state: add class="active" to the current page link.
+     ──────────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="home.html" class="nav__logo">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div>
+        </li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="page-hero__breadcrumb">VSON <span>/ [Page Name]</span></div>
+      <h1>[Page <em>Headline</em>]</h1>
+      <p class="page-hero__sub">[Supporting subheadline: one to two sentences.]</p>
+      <a href="#" class="btn btn--primary arrow">Primary CTA</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 1 ──────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <span class="label">Section Label</span>
+    <h2>[Section Headline]</h2>
+    <p>[Section content placeholder.]</p>
+  </div>
+</section>
+
+<!-- ── CTA BAND ───────────────────────────────────────────────── -->
+<section class="cta-band">
+  <div class="container">
+    <h2>[CTA Headline]</h2>
+    <p>[One sentence supporting message.]</p>
+    <a href="contact.html" class="btn btn--primary arrow">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="nav__logo-icon">V</div>
+          <span class="nav__logo-text">VSON</span>
+        </div>
+        <p class="footer__tagline">
+          Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>
+          MST: 0313403180
+        </p>
+        <div class="footer__contact-item"><span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span></div>
+        <div class="footer__contact-item"><span>0902.964.858</span></div>
+        <div class="footer__contact-item"><span>hello@vson.vn · solutions@vson.vn</span></div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About VSON</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="activation-solutions.html">Activation Solutions</a></li>
+          <li><a href="market-development.html">Market Development</a></li>
+          <li><a href="store.html">VSON Store</a></li>
+          <li><a href="contact.html">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">fb</a>
+        <a href="#" class="social-link">za</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Visual concept badge -->
+<div class="vc-badge">Visual Concept v0.1 · [Page Name]</div>
+
+</body>
+</html>

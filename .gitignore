@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Claude working files
+.claude/
+
+# Do not commit specs, integration configs, or artifacts
+# Only build/ folders should be deployed
+# But we version everything for governance

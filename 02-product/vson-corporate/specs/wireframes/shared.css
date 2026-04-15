@@ -1,0 +1,338 @@
+/*
+ * ================================================================
+ *  VSON Corporate - Shared Stylesheet
+ *  Visual Concept v0.1
+ *
+ *  Scope: All tokens, typography, utilities, buttons, nav, footer,
+ *         and the vc-badge. Import this file in every page.
+ *
+ *  Page-specific styles live in a <style> block inside each .html.
+ * ================================================================
+ */
+
+/* ── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* ── Design Tokens ─────────────────────────────────────────────── */
+:root {
+  --forest-green:    #1B4D3E;
+  --digital-emerald: #2E8B57;
+  --tech-mint:       #A7FFEB;
+  --mint-white:      #F1F8F6;
+  --clean-white:     #FFFFFF;
+  --neutral-grey:    #333333;
+  --store-green:     #2AA84E;
+  --store-orange:    #ED7D28;
+  --border-light:    rgba(27,77,62,0.12);
+}
+
+/* ── Typography ────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.1; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; line-height: 1.2; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; line-height: 1.3; }
+h4 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+p  { font-size: 1rem; line-height: 1.7; }
+
+/* ── Utilities ─────────────────────────────────────────────────── */
+.container   { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.section     { padding: 96px 0; }
+.section--sm { padding: 64px 0; }
+
+.label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--digital-emerald);
+  margin-bottom: 16px;
+}
+.label--light { color: var(--tech-mint); }
+
+.divider {
+  width: 48px; height: 3px;
+  background: var(--tech-mint);
+  margin: 0 auto 32px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn--primary {
+  background: var(--digital-emerald);
+  color: #fff;
+}
+.btn--primary:hover { background: #236b43; transform: translateY(-1px); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--forest-green);
+  border: 2px solid var(--forest-green);
+}
+.btn--outline:hover { background: var(--forest-green); color: #fff; }
+
+.btn--ghost-light {
+  background: transparent;
+  color: var(--tech-mint);
+  border: 1.5px solid rgba(167,255,235,0.4);
+}
+.btn--ghost-light:hover { background: rgba(167,255,235,0.1); }
+
+.btn--store {
+  background: var(--store-orange);
+  color: #fff;
+}
+.btn--store:hover { background: #c8671e; }
+
+/* Arrow suffix */
+.arrow::after { content: ' →'; }
+
+/* ── Navigation ────────────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(27,77,62,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(167,255,235,0.12);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav__logo-icon {
+  width: 36px; height: 36px;
+  background: var(--tech-mint);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--forest-green);
+}
+.nav__logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav__links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav__links a:hover,
+.nav__links a.active { color: var(--tech-mint); }
+
+.nav__dropdown { position: relative; }
+.nav__dropdown-toggle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+.nav__dropdown-toggle::after { content: ' ▾'; font-size: 0.7rem; }
+.nav__dropdown-toggle:hover { color: var(--tech-mint); }
+
+.nav__dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 16px);
+  left: -20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(27,77,62,0.18);
+  padding: 8px 0;
+  min-width: 220px;
+  border: 1px solid var(--border-light);
+}
+.nav__dropdown:hover .nav__dropdown-menu { display: block; }
+.nav__dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--forest-green) !important;
+  text-decoration: none;
+}
+.nav__dropdown-menu a:hover { background: var(--mint-white); }
+
+.nav__cta {
+  background: var(--tech-mint);
+  color: var(--forest-green) !important;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700 !important;
+}
+.nav__cta:hover { background: #8fffdb !important; color: var(--forest-green) !important; }
+
+/* ── CTA Band (shared across pages) ───────────────────────────── */
+.cta-band {
+  background: var(--digital-emerald);
+  padding: 72px 0;
+  text-align: center;
+}
+.cta-band h2 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.cta-band p { color: rgba(255,255,255,0.82); max-width: 480px; margin: 0 auto 36px; }
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.footer { background: var(--forest-green); padding: 64px 0 0; }
+.footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(167,255,235,0.12);
+}
+.footer__brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.footer__tagline {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.footer__contact-item::before {
+  content: '›';
+  color: rgba(167,255,235,0.4);
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  margin-top: 1px;
+}
+.footer__col h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tech-mint);
+  margin-bottom: 20px;
+}
+.footer__col ul { list-style: none; }
+.footer__col ul li { margin-bottom: 10px; }
+.footer__col ul li a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.footer__col ul li a:hover { color: var(--tech-mint); }
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.footer__legal { font-size: 0.78rem; color: rgba(255,255,255,0.38); }
+.footer__social { display: flex; gap: 16px; }
+.social-link {
+  width: 34px; height: 34px;
+  border-radius: 6px;
+  background: rgba(167,255,235,0.08);
+  border: 1px solid rgba(167,255,235,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.78rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.social-link:hover {
+  background: rgba(167,255,235,0.15);
+  color: var(--tech-mint);
+}
+
+/* ── Visual Concept Badge ──────────────────────────────────────── */
+.vc-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--forest-green);
+  color: var(--tech-mint);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(167,255,235,0.3);
+  z-index: 200;
+}

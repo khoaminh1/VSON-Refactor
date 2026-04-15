@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Activation Solutions</title>
+  <meta name="description" content="Brand activation and market development solutions powered by 20 years of on-the-ground expertise. Three integrated layers: merchandise, data & campaign platform, and marketing automation." />
+  <meta property="og:title" content="VSON | Activation Solutions" />
+  <meta property="og:description" content="Brand activation and market development solutions powered by 20 years of on-the-ground expertise. Three integrated layers: merchandise, data & campaign platform, and marketing automation." />
+  <meta property="og:image" content="https://vson.vn/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vson.vn/activation-solutions.html" />
+  <link rel="canonical" href="https://vson.vn/activation-solutions.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ─── Activation Solutions: Page-Specific Styles ──────────────── */
+
+    /* Page Hero */
+    .page-hero {
+      background: var(--forest-green);
+      padding: 160px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 40%, rgba(167,255,235,0.09) 0%, transparent 55%);
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(167,255,235,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,255,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .page-hero__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero__breadcrumb {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.5);
+      margin-bottom: 20px;
+    }
+
+    .page-hero__breadcrumb span {
+      color: var(--tech-mint);
+    }
+
+    .page-hero h1 {
+      color: #fff;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    .page-hero h1 em {
+      font-style: normal;
+      color: var(--tech-mint);
+    }
+
+    .page-hero__sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .page-hero__tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(167,255,235,0.3);
+      color: rgba(167,255,235,0.75);
+    }
+
+    /* Three Layers */
+    .layers {
+      background: #fff;
+    }
+
+    .layers__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .layers__header h2 {
+      color: var(--forest-green);
+    }
+
+    .layers__stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .layer-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      gap: 0;
+      background: var(--border-light);
+    }
+
+    .layer-row:first-child {
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+
+    .layer-row:last-child {
+      border-radius: 0 0 12px 12px;
+      overflow: hidden;
+    }
+
+    .layer-row__badge {
+      background: var(--forest-green);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .layer-row:nth-child(2) .layer-row__badge {
+      background: #1a3d30;
+    }
+
+    .layer-row:nth-child(3) .layer-row__badge {
+      background: #132e24;
+    }
+
+    .layer-row__type {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.5);
+    }
+
+    .layer-row__name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .layer-row__num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: rgba(167,255,235,0.25);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .layer-row__content {
+      background: #fff;
+      padding: 40px;
+    }
+
+    .layer-row__content h3 {
+      color: var(--forest-green);
+      margin-bottom: 12px;
+    }
+
+    .layer-row__content p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .layer-row__features {
+      background: var(--mint-white);
+      padding: 40px;
+    }
+
+    .layer-row__features-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--digital-emerald);
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: #444;
+    }
+
+    .feature-list li::before {
+      content: '›';
+      color: var(--digital-emerald);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Why Brands */
+    .why-brands {
+      background: var(--mint-white);
+    }
+
+    .why-brands__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-brands__content h2 {
+      color: var(--forest-green);
+      margin-bottom: 20px;
+    }
+
+    .why-brands__content h2 em {
+      font-style: normal;
+      color: var(--digital-emerald);
+    }
+
+    .why-brands__content p {
+      color: #555;
+      margin-bottom: 32px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .why-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid var(--border-light);
+      border-top: 3px solid var(--tech-mint);
+    }
+
+    .why-item h4 {
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    .stat-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stat-box {
+      background: var(--forest-green);
+      border-radius: 10px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .stat-box:nth-child(2) {
+      background: #1a3d30;
+      margin-left: 24px;
+    }
+
+    .stat-box:nth-child(3) {
+      background: #132e24;
+      margin-left: 48px;
+    }
+
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--tech-mint);
+      flex-shrink: 0;
+    }
+
+    .stat-desc {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .why-brands__inner {
+        gap: 40px;
+      }
+      .layer-row {
+        grid-template-columns: 1fr;
+      }
+      .layer-row__badge {
+        padding: 24px 32px;
+      }
+      .layer-row__content {
+        padding: 32px;
+      }
+      .layer-row__features {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+      .why-brands__inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .why-grid {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-hero__tags {
+        flex-direction: column;
+      }
+      .hero-tag {
+        width: 100%;
+        text-align: center;
+      }
+      .layer-row {
+        grid-template-columns: 1fr;
+      }
+      .stat-box:nth-child(2) {
+        margin-left: 0;
+      }
+      .stat-box:nth-child(3) {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only" style="position:absolute; top:0; left:0; z-index:9999; padding:1rem; background:#fff; color:#000;">
+  Skip to main content
+</a>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="VSON Home">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu"><div class="nav__dropdown-menu-inner">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div></div>
+        </li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero" id="main-content">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="page-hero__breadcrumb">Solutions <span>| Activation Solutions</span></div>
+      <h1>Activate your brand<br>in <em>Vietnam.</em></h1>
+      <p class="page-hero__sub">From premium merchandise to campaign intelligence, VSON gives brands the tools, the team, and the infrastructure to create real impact with Vietnamese consumers.</p>
+      <div class="page-hero__tags">
+        <span class="hero-tag">Merchandise & Activation</span>
+        <span class="hero-tag">Data & Campaign Platform</span>
+        <span class="hero-tag">Marketing & Automation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Three Layers -->
+<section class="layers section">
+  <div class="container">
+    <div class="layers__header">
+      <span class="label">Our Capability Stack</span>
+      <h2>Three layers. One integrated approach.</h2>
+    </div>
+    <div class="layers__stack">
+      <div class="layer-row">
+        <div class="layer-row__badge">
+          <span class="layer-row__num">01</span>
+          <span class="layer-row__type">Layer 1: Physical</span>
+          <span class="layer-row__name">Merchandise & Activation</span>
+        </div>
+        <div class="layer-row__content">
+          <h3>Premium branded touchpoints that create real-world presence.</h3>
+          <p>We design and produce brand merchandise, corporate gifts, and in-market activations that give your brand a physical presence in the moments that matter at retail, at events, and in the hands of your customers.</p>
+        </div>
+        <div class="layer-row__features">
+          <div class="layer-row__features-label">What this covers</div>
+          <ul class="feature-list">
+            <li>Premium branded merchandise design & production</li>
+            <li>Corporate gifting programmes</li>
+            <li>Retail & event activations</li>
+            <li>POSM and in-store display materials</li>
+          </ul>
+        </div>
+      </div>
+      <div class="layer-row">
+        <div class="layer-row__badge">
+          <span class="layer-row__num">02</span>
+          <span class="layer-row__type">Layer 2: Intelligence</span>
+          <span class="layer-row__name">Data & Campaign Platform</span>
+        </div>
+        <div class="layer-row__content">
+          <h3>A connected platform that tracks every touchpoint.</h3>
+          <p>Our campaign intelligence platform measures what's working across every channel, surfaces actionable insight, and gives brand managers the visibility they need to make faster, smarter decisions in the Vietnamese market.</p>
+        </div>
+        <div class="layer-row__features">
+          <div class="layer-row__features-label">What this covers</div>
+          <ul class="feature-list">
+            <li>Campaign performance tracking & dashboards</li>
+            <li>Consumer data capture and profiling</li>
+            <li>Omni-channel attribution reporting</li>
+            <li>Market intelligence and insight briefs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="layer-row">
+        <div class="layer-row__badge">
+          <span class="layer-row__num">03</span>
+          <span class="layer-row__type">Layer 3: Growth</span>
+          <span class="layer-row__name">Marketing & Automation</span>
+        </div>
+        <div class="layer-row__content">
+          <h3>Automated workflows that turn data into the next action.</h3>
+          <p>We deploy marketing automation that uses campaign data to reach the right Vietnamese consumers, at the right time, through the right channel, faster and at a scale that manual execution cannot match.</p>
+        </div>
+        <div class="layer-row__features">
+          <div class="layer-row__features-label">What this covers</div>
+          <ul class="feature-list">
+            <li>CRM and lifecycle marketing automation</li>
+            <li>Multi-channel campaign deployment</li>
+            <li>Audience segmentation and targeting</li>
+            <li>Performance optimisation workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Brands -->
+<section class="why-brands section">
+  <div class="container">
+    <div class="why-brands__inner">
+      <div class="why-brands__content">
+        <span class="label">Why VSON</span>
+        <h2>We don't just run campaigns.<br><em>We own the outcome.</em></h2>
+        <p>Most activation agencies in Vietnam handle one layer. VSON connects all three, so your brand doesn't lose value between strategy, execution, and insight.</p>
+        <a href="contact.html" class="btn btn--primary arrow">Talk to Our Activation Team</a>
+      </div>
+      <div class="why-brands__visual">
+        <div class="why-grid">
+          <div class="why-item"><h4>On-Ground Network</h4><p>Nationwide distribution infrastructure, not just campaign management from a desk.</p></div>
+          <div class="why-item"><h4>Integrated Stack</h4><p>Physical, data, and automation layers designed to work together from day one.</p></div>
+          <div class="why-item"><h4>Proven Track Record</h4><p>Serving Dell, HP, Lenovo, ASUS and leading consumer brands in Vietnam.</p></div>
+          <div class="why-item"><h4>Phygital Expertise</h4><p>20 years bridging physical and digital commerce, before it had a name.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to activate?</h2>
+    <p>Talk to our activation team about what's possible for your brand in Vietnam.</p>
+    <a href="contact.html" class="btn btn--primary arrow">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="nav__logo-icon">V</div>
+          <span class="nav__logo-text">VSON</span>
+        </div>
+        <p class="footer__tagline">
+          Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>
+          MST: 0313403180
+        </p>
+        <div class="footer__contact-item">
+          <span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>0902.964.858</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>contact@vson.vn</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About VSON</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="activation-solutions.html">Activation Solutions</a></li>
+          <li><a href="market-development.html">Market Development</a></li>
+          <li><a href="store.html">VSON Store</a></li>
+          <li><a href="contact.html">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Facebook">fb</a>
+        <a href="#" class="social-link" aria-label="Zalo">za</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

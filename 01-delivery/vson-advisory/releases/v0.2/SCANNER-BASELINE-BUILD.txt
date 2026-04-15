@@ -1,0 +1,213 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/index.html
+Total lines: 391  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✗ 10 violation(s)
+    L76  [SG-H1] SG  match: "attract capital"
+          Positions firm as fundraising intermediary
+          <p style="color:var(--slate-400);max-width:640px;margin-bottom:2.5rem;line-height:1.75;">We serve two complementary client groups: mid-marke
+    L107  [SG-C2/C4] SG  match: "fundraising"
+          SFA §82 — implies regulated capital-raising activity
+          <p>Investment readiness, fundraising readiness, M&A positioning, cross-border expansion, and stronger valuation narratives.</p>
+    L107  [SG-stem] SG  match: "fundrais"
+          stem form of "fundraise"
+          <p>Investment readiness, fundraising readiness, M&A positioning, cross-border expansion, and stronger valuation narratives.</p>
+    L107  [SG-H3] SG  match: "valuation narrative"
+          SG memo DON'T #4 — no company valuations
+          <p>Investment readiness, fundraising readiness, M&A positioning, cross-border expansion, and stronger valuation narratives.</p>
+    L220  [SG-style] SG  match: "investor-ready"
+          Implies fundraising positioning — use "board-ready"
+          <p style="color:var(--slate-400);">We build CDP, BI, and decision systems that create management visibility and investor-ready reporting inf
+    L230  [SG-C3] SG/US  match: "capital raising"
+          Implies corporate finance / broker-dealer activity
+          <p style="color:var(--slate-400);">We prepare businesses for capital raising, M&A positioning, and exit execution, structuring the governanc
+    L230  [SG-H3] SG  match: "valuation narrative"
+          SG memo DON'T #4 — no company valuations
+          <p style="color:var(--slate-400);">We prepare businesses for capital raising, M&A positioning, and exit execution, structuring the governanc
+    L249  [SG-H2] SG/US/VN  match: "international capital markets"
+          Triple-convergent — SEC/FINRA broker-dealer + CFC/GILTI exposure for US partner
+          <p style="font-size:0.9375rem;">Henry brings over 25 years of hands-on operating experience building technology and consumer markets across 
+    L263  [SG-C2/C4] SG  match: "fundraising"
+          SFA §82 — implies regulated capital-raising activity
+          <p style="font-size:0.9375rem;">Emily brings 18 years of operating and leadership experience in F&amp;B, education, and hospitality. She has
+    L263  [SG-stem] SG  match: "fundrais"
+          stem form of "fundraise"
+          <p style="font-size:0.9375rem;">Emily brings 18 years of operating and leadership experience in F&amp;B, education, and hospitality. She has
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ⚠ 7 warning(s) — manual review
+    L76  [style]  match: "investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <p style="color:var(--slate-400);max-width:640px;margin-bottom:2.5rem;line-height:1.75;">We serve two complementary client groups: mid-marke
+    L129  [style]  match: "Investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <h3 style="margin-bottom:0.75rem;">For Investors &amp; Partners</h3>
+    L130  [style]  match: "investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <p style="margin-bottom:1rem;">For investors, family offices, and strategic partners seeking trusted operating context across Vietnam, Singa
+    L220  [style]  match: "investor"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <p style="color:var(--slate-400);">We build CDP, BI, and decision systems that create management visibility and investor-ready reporting inf
+    L230  [style]  match: "investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <p style="color:var(--slate-400);">We prepare businesses for capital raising, M&A positioning, and exit execution, structuring the governanc
+    L261  [IN-04-NEW-01]  match: "Managing Partner"
+          Per De-linked Partnership Model, ONLY Fred Dang (SG) may use this title. Henry and Emily must use "Strategic Partner".
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--vson-blue);margin-bottom:0.75rem;">M
+    L312  [style]  match: "Investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <h3 style="font-size:1.125rem;margin:0;">What Investors Look For Beyond the Pitch Deck</h3>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/approach.html
+Total lines: 235  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✗ 2 violation(s)
+    L126  [SG-H3] SG  match: "Valuation narrative"
+          SG memo DON'T #4 — no company valuations
+          <li style="display:flex;align-items:flex-start;gap:0.5rem;"><span style="color:var(--vson-blue);margin-top:0.25rem;">•</span> Valuation narr
+    L128  [SG-H4] SG  match: "institutional capital"
+          Implies placement of institutional funds
+          <blockquote style="border-left:2px solid var(--slate-300);padding-left:1rem;margin:0;color:var(--slate-500);font-style:italic;font-size:0.93
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ✓ no warnings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/brain-trust.html
+Total lines: 208  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✗ 3 violation(s)
+    L95  [SG-H2] SG/US/VN  match: "international capital markets"
+          Triple-convergent — SEC/FINRA broker-dealer + CFC/GILTI exposure for US partner
+          <p style="font-size:0.9375rem;">Henry brings over 25 years of hands-on operating experience building technology and consumer markets across 
+    L109  [SG-C2/C4] SG  match: "fundraising"
+          SFA §82 — implies regulated capital-raising activity
+          <p style="font-size:0.9375rem;">Emily brings 18 years of operating and leadership experience in food and beverage, education, and hospitalit
+    L109  [SG-stem] SG  match: "fundrais"
+          stem form of "fundraise"
+          <p style="font-size:0.9375rem;">Emily brings 18 years of operating and leadership experience in food and beverage, education, and hospitalit
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ⚠ 3 warning(s) — manual review
+    L86  [IN-04-NEW-01]  match: "Managing Partner"
+          Per De-linked Partnership Model, ONLY Fred Dang (SG) may use this title. Henry and Emily must use "Strategic Partner".
+          <!-- Managing Partners -->
+    L88  [IN-04-NEW-01]  match: "Managing Partner"
+          Per De-linked Partnership Model, ONLY Fred Dang (SG) may use this title. Henry and Emily must use "Strategic Partner".
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--slate-500);margin-bottom:2rem;">Man
+    L107  [IN-04-NEW-01]  match: "Managing Partner"
+          Per De-linked Partnership Model, ONLY Fred Dang (SG) may use this title. Henry and Emily must use "Strategic Partner".
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--vson-blue);margin-bottom:1rem;">Mana
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/capabilities.html
+Total lines: 192  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✗ 3 violation(s)
+    L104  [SG-style] SG  match: "investor-ready"
+          Implies fundraising positioning — use "board-ready"
+          <p style="color:var(--slate-400);">We build CDP, BI, and decision systems that create management visibility and investor-ready reporting inf
+    L114  [SG-C3] SG/US  match: "capital raising"
+          Implies corporate finance / broker-dealer activity
+          <p style="color:var(--slate-400);">We prepare businesses for capital raising, M&A positioning, and exit execution, structuring the governanc
+    L114  [SG-H3] SG  match: "valuation narrative"
+          SG memo DON'T #4 — no company valuations
+          <p style="color:var(--slate-400);">We prepare businesses for capital raising, M&A positioning, and exit execution, structuring the governanc
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ⚠ 2 warning(s) — manual review
+    L104  [style]  match: "investor"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <p style="color:var(--slate-400);">We build CDP, BI, and decision systems that create management visibility and investor-ready reporting inf
+    L114  [style]  match: "investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <p style="color:var(--slate-400);">We prepare businesses for capital raising, M&A positioning, and exit execution, structuring the governanc
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/contact.html
+Total lines: 289  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✓ clean
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ⚠ 4 warning(s) — manual review
+    L116  [style]  match: "investor"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <input type="radio" name="inquiry-type" value="investor">
+    L117  [style]  match: "Investor"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <span>Institutional Investor or Capital Partner</span>
+    L202  [IN-04-NEW-01]  match: "Managing Partner"
+          Per De-linked Partnership Model, ONLY Fred Dang (SG) may use this title. Henry and Emily must use "Strategic Partner".
+          <div style="font-size:0.8125rem;color:var(--slate-400);margin-bottom:0.75rem;">Managing Partner</div>
+    L213  [IN-04-NEW-01]  match: "Managing Partner"
+          Per De-linked Partnership Model, ONLY Fred Dang (SG) may use this title. Henry and Emily must use "Strategic Partner".
+          <div style="font-size:0.8125rem;color:var(--slate-400);margin-bottom:0.75rem;">Managing Partner</div>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/vault.html
+Total lines: 217  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✓ clean
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ⚠ 1 warning(s) — manual review
+    L130  [style]  match: "Investors"
+          Word "investor" is contextually sensitive — prefer "strategic partners" or "institutional partners" unless referring to generic market context
+          <h3 style="font-size:1.125rem;margin:0;">What Investors Look For Beyond the Pitch Deck</h3>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+File: 02-product/vson-advisory/build/thank-you.html
+Total lines: 140  ·  Excluded (frozen zones): 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [HARD-FORBIDDEN]    ✓ clean
+
+  [REQUIRED]          ✗ 3 missing
+    [SG-C1] Mandatory SFA disclaimer (memo Section 6)
+    [NEW-03] SG entity identification required
+    [SG-safe-harbor] Required positioning per memo Section 3 (safe harbor language)
+
+  [CONTEXTUAL]        ✓ no warnings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Files scanned:        7
+  Hard violations:      18
+  Required missing:     21
+  Contextual warnings:  17
+
+  RESULT: FAIL — hard compliance violations (exit 1)

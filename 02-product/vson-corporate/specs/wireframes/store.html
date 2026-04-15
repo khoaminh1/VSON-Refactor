@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+.btn--store { background:var(--store-orange); color:#fff; }
+    .btn--store:hover { background:#c8671e; }
+.ext::after { content:' ↗'; }
+/* Hero: Store uses orange accent */
+    .page-hero { background:var(--forest-green); padding:160px 0 96px; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 70% 50%, rgba(237,125,40,0.08) 0%, transparent 55%); }
+    .page-hero::after { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(167,255,235,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(167,255,235,0.03) 1px,transparent 1px); background-size:60px 60px; }
+    .page-hero__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .page-hero__breadcrumb { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(237,125,40,0.6); margin-bottom:20px; }
+    .page-hero h1 { color:#fff; margin-bottom:24px; }
+    .page-hero h1 em { font-style:normal; color:#ED9A60; }
+    .page-hero__sub { color:rgba(255,255,255,0.72); font-size:1.05rem; margin-bottom:36px; }
+    .page-hero__actions { display:flex; gap:16px; flex-wrap:wrap; }
+    .page-hero__visual { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .brand-preview-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:24px; text-align:center; }
+    .brand-preview-card__initial { width:40px; height:40px; border-radius:8px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:rgba(255,255,255,0.6); margin:0 auto 10px; }
+    .brand-preview-card__name { font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:700; color:#fff; margin-bottom:4px; }
+    .brand-preview-card__cat { font-size:0.72rem; color:rgba(255,255,255,0.45); }
+
+    /* Brand Showcase */
+    .brands { background:var(--mint-white); }
+    .brands__header { text-align:center; margin-bottom:56px; }
+    .brands__header h2 { color:var(--forest-green); }
+    .brands__grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:48px; }
+    .brand-card { background:#fff; border-radius:12px; border:1px solid var(--border-light); overflow:hidden; transition:box-shadow 0.2s, transform 0.2s; }
+    .brand-card:hover { box-shadow:0 12px 36px rgba(27,77,62,0.1); transform:translateY(-3px); }
+    .brand-card__image { height:160px; display:flex; align-items:center; justify-content:center; }
+    .brand-card__image-label { font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(27,77,62,0.35); }
+    .brand-card:nth-child(1) .brand-card__image { background:#e8f4f0; }
+    .brand-card:nth-child(2) .brand-card__image { background:#e8ecf4; }
+    .brand-card:nth-child(3) .brand-card__image { background:#f4ece8; }
+    .brand-card:nth-child(4) .brand-card__image { background:#f0f4e8; }
+    .brand-card__body { padding:20px 24px; }
+    .brand-card__name { font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:800; color:var(--forest-green); margin-bottom:4px; }
+    .brand-card__origin { font-size:0.72rem; color:#888; font-family:'Montserrat',sans-serif; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px; }
+    .brand-card__desc { font-size:0.82rem; color:#666; line-height:1.55; }
+
+    /* Where to Buy */
+    .where-to-buy { background:#fff; }
+    .where-to-buy__inner { display:grid; grid-template-columns:1fr 2fr; gap:80px; align-items:center; }
+    .where-to-buy__content h2 { color:var(--forest-green); margin-bottom:16px; }
+    .where-to-buy__content p { color:#555; margin-bottom:32px; }
+    .channels-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .channel-card { background:var(--mint-white); border-radius:10px; padding:20px 24px; border:1px solid var(--border-light); display:flex; align-items:center; gap:16px; text-decoration:none; transition:all 0.2s; }
+    .channel-card:hover { background:var(--forest-green); border-color:var(--forest-green); }
+    .channel-card:hover .channel-card__name { color:#fff; }
+    .channel-card:hover .channel-card__sub { color:rgba(255,255,255,0.65); }
+    .channel-card__abbr { width:36px; height:36px; border-radius:6px; background:var(--forest-green); display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:800; color:var(--tech-mint); flex-shrink:0; letter-spacing:0.04em; transition:background 0.2s; }
+    .channel-card:hover .channel-card__abbr { background:rgba(167,255,235,0.15); }
+    .channel-card__name { font-family:'Montserrat',sans-serif; font-size:0.9rem; font-weight:700; color:var(--forest-green); transition:color 0.2s; }
+    .channel-card__sub { font-size:0.75rem; color:#888; transition:color 0.2s; }
+
+    /* Partner CTA */
+    .partner { background:var(--forest-green); }
+    .partner__inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+    .partner__content h2 { color:#fff; margin-bottom:16px; }
+    .partner__content h2 em { font-style:normal; color:#ED9A60; }
+    .partner__content p { color:rgba(255,255,255,0.72); margin-bottom:20px; }
+    .partner__offers { display:flex; flex-direction:column; gap:10px; margin-bottom:36px; }
+    .partner__offer-item { display:flex; align-items:flex-start; gap:12px; }
+    .partner__offer-dot { width:6px; height:6px; border-radius:50%; background:#ED9A60; flex-shrink:0; margin-top:7px; }
+    .partner__offer-item span { color:rgba(255,255,255,0.75); font-size:0.9rem; }
+    .partner__form { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:36px; }
+    .partner__form h3 { color:#fff; margin-bottom:24px; font-size:1rem; }
+    .form-field { margin-bottom:16px; }
+    .form-field label { display:block; font-family:'Montserrat',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(167,255,235,0.65); margin-bottom:6px; }
+    .form-field input, .form-field select, .form-field textarea { width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:10px 14px; color:#fff; font-family:'Inter',sans-serif; font-size:0.875rem; outline:none; transition:border-color 0.2s; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color:rgba(255,255,255,0.35); }
+    .form-field input:focus, .form-field select:focus { border-color:rgba(167,255,235,0.4); }
+    .form-field select option { background:var(--forest-green); }
+    .form-field textarea { resize:vertical; min-height:80px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="home.html" class="nav__logo">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div>
+        </li>
+        <li><a href="store.html" class="active">Store</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div>
+        <div class="page-hero__breadcrumb">VSON Store</div>
+        <h1>Premium brands.<br><em>Trusted</em> distribution.</h1>
+        <p class="page-hero__sub">VSON Store brings world-class household and health products to Vietnamese consumers through our own platform and across the channels where they already shop.</p>
+        <div class="page-hero__actions">
+          <a href="#" class="btn btn--store ext">Shop at store.vson.vn</a>
+          <a href="#partner" class="btn btn--ghost-light arrow">Partner with Us</a>
+        </div>
+      </div>
+      <div class="page-hero__visual">
+        <div class="brand-preview-card"><div class="brand-preview-card__initial">TR</div><div class="brand-preview-card__name">Torayvino</div><div class="brand-preview-card__cat">Water filtration</div></div>
+        <div class="brand-preview-card"><div class="brand-preview-card__initial">ZO</div><div class="brand-preview-card__name">Zojirushi</div><div class="brand-preview-card__cat">Kitchen appliances</div></div>
+        <div class="brand-preview-card"><div class="brand-preview-card__initial">KB</div><div class="brand-preview-card__name">Kingbag</div><div class="brand-preview-card__cat">Bags &amp; accessories</div></div>
+        <div class="brand-preview-card"><div class="brand-preview-card__initial">NP</div><div class="brand-preview-card__name">Nepia</div><div class="brand-preview-card__cat">Paper products</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands section">
+  <div class="container">
+    <div class="brands__header">
+      <span class="label">Our Portfolio</span>
+      <h2>Four world-class brands.<br>One trusted partner.</h2>
+    </div>
+    <div class="brands__grid">
+      <div class="brand-card">
+        <div class="brand-card__image"><span class="brand-card__image-label">Brand Logo</span></div>
+        <div class="brand-card__body">
+          <div class="brand-card__name">Torayvino</div>
+          <div class="brand-card__origin">Japan</div>
+          <p class="brand-card__desc">Japan's leading tap and shower water filtration brand, protecting the health of families across Vietnam.</p>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-card__image"><span class="brand-card__image-label">Brand Logo</span></div>
+        <div class="brand-card__body">
+          <div class="brand-card__name">Zojirushi</div>
+          <div class="brand-card__origin">Japan</div>
+          <p class="brand-card__desc">Premium Japanese kitchen and home appliances, built to the highest standards of quality and longevity.</p>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-card__image"><span class="brand-card__image-label">Brand Logo</span></div>
+        <div class="brand-card__body">
+          <div class="brand-card__name">Kingbag</div>
+          <div class="brand-card__origin">Premium Brand</div>
+          <p class="brand-card__desc">Modern laptop backpacks and crossbody bags designed for style, function, and durability for the urban professional.</p>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-card__image"><span class="brand-card__image-label">Brand Logo</span></div>
+        <div class="brand-card__body">
+          <div class="brand-card__name">Nepia</div>
+          <div class="brand-card__origin">Japan</div>
+          <p class="brand-card__desc">Japanese premium tissue and paper products, soft, reliable, and trusted by households across Asia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="where-to-buy section">
+  <div class="container">
+    <div class="where-to-buy__inner">
+      <div class="where-to-buy__content">
+        <span class="label">Where to Buy</span>
+        <h2>Find us on<br>every channel.</h2>
+        <p>Shop VSON brands on our own storefront or on your favourite marketplace, wherever it's most convenient for you.</p>
+      </div>
+      <div class="channels-grid">
+        <a href="#" class="channel-card">
+          <div class="channel-card__abbr">VS</div>
+          <div><div class="channel-card__name">VSON Store</div><div class="channel-card__sub">shop at store.vson.vn ↗</div></div>
+        </a>
+        <a href="#" class="channel-card">
+          <div class="channel-card__abbr">SP</div>
+          <div><div class="channel-card__name">Shopee</div><div class="channel-card__sub">Find us on Shopee ↗</div></div>
+        </a>
+        <a href="#" class="channel-card">
+          <div class="channel-card__abbr">LZ</div>
+          <div><div class="channel-card__name">Lazada</div><div class="channel-card__sub">Find us on Lazada ↗</div></div>
+        </a>
+        <a href="#" class="channel-card">
+          <div class="channel-card__abbr">ZL</div>
+          <div><div class="channel-card__name">Zalo Shop</div><div class="channel-card__sub">Find us on Zalo ↗</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partner section" id="partner">
+  <div class="container">
+    <div class="partner__inner">
+      <div class="partner__content">
+        <span class="label label--light">Partnership</span>
+        <h2>Looking for a B2C partner<br>in <em>Vietnam?</em></h2>
+        <p>If you're a brand (local or international) seeking a trusted distribution partner to reach Vietnamese consumers, VSON Store is built for exactly that.</p>
+        <div class="partner__offers">
+          <div class="partner__offer-item"><div class="partner__offer-dot"></div><span>Retail, e-commerce, and marketplace channel presence</span></div>
+          <div class="partner__offer-item"><div class="partner__offer-dot"></div><span>Operational and logistics infrastructure already in place</span></div>
+          <div class="partner__offer-item"><div class="partner__offer-dot"></div><span>A consumer base that trusts the VSON name</span></div>
+        </div>
+      </div>
+      <div class="partner__form">
+        <h3>Tell us about your brand</h3>
+        <div class="form-field"><label>Brand Name</label><input type="text" placeholder="Your brand name" /></div>
+        <div class="form-field"><label>Product Category</label><input type="text" placeholder="e.g. Health, Kitchen, Lifestyle" /></div>
+        <div class="form-field"><label>Target Market</label><select><option>Vietnamese consumers (B2C)</option><option>Corporate buyers (B2B)</option><option>Both</option></select></div>
+        <div class="form-field"><label>Current Channels</label><input type="text" placeholder="e.g. Shopee, own website" /></div>
+        <div class="form-field"><label>Message</label><textarea placeholder="Tell us more about your brand and what you're looking for..."></textarea></div>
+        <button class="btn btn--store" style="width:100%;justify-content:center;">Explore a Partnership →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;"><div class="nav__logo-icon">V</div><span class="nav__logo-text">VSON</span></div>
+        <p class="footer__tagline">Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>MST: 0313403180</p>
+        <div class="footer__contact-item"><span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span></div>
+        <div class="footer__contact-item"><span>0902.964.858</span></div>
+        <div class="footer__contact-item"><span>hello@vson.vn · solutions@vson.vn</span></div>
+      </div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About VSON</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h4>Solutions</h4><ul><li><a href="activation-solutions.html">Activation Solutions</a></li><li><a href="market-development.html">Market Development</a></li><li><a href="store.html">VSON Store</a></li></ul></div>
+      <div class="footer__col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social"><a href="#" class="social-link">in</a><a href="#" class="social-link">fb</a><a href="#" class="social-link">za</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="vc-badge">Visual Concept v0.1 · Store</div>
+</body>
+</html>

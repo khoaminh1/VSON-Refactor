@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Case Study: OEM Corporate Merchandise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .cs-hero { background:linear-gradient(135deg, #1c2d2a 0%, #1B4D3E 100%); padding:160px 0 100px; position:relative; overflow:hidden; }
+    .cs-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 70% 45%, rgba(167,255,235,0.07) 0%, transparent 55%); }
+    .cs-hero::after { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(167,255,235,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(167,255,235,0.04) 1px,transparent 1px); background-size:60px 60px; }
+    .cs-hero__inner { position:relative; z-index:1; }
+    .cs-hero__breadcrumb { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(167,255,235,0.5); margin-bottom:20px; }
+    .cs-hero__breadcrumb a { color:rgba(167,255,235,0.5); text-decoration:none; }
+    .cs-hero__breadcrumb a:hover { color:var(--tech-mint); }
+    .cs-hero__breadcrumb span { color:var(--tech-mint); }
+    .cs-hero h1 { color:#fff; margin-bottom:24px; max-width:780px; }
+    .cs-hero h1 em { font-style:normal; color:var(--tech-mint); }
+    .cs-hero__meta { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .cs-hero__tag { font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:5px 12px; border-radius:3px; }
+    .cs-hero__tag--track { background:rgba(167,255,235,0.15); color:var(--tech-mint); }
+    .cs-hero__tag--sector { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7); }
+    .snapshot { background:#fff; border-bottom:1px solid var(--border-light); }
+    .snapshot__inner { display:grid; grid-template-columns:repeat(4,1fr); }
+    .snapshot__stat { padding:36px 32px; border-right:1px solid var(--border-light); }
+    .snapshot__stat:last-child { border-right:none; }
+    .snapshot__num { font-family:'Montserrat',sans-serif; font-size:2.4rem; font-weight:800; color:var(--forest-green); line-height:1; margin-bottom:6px; }
+    .snapshot__num em { font-style:normal; color:var(--digital-emerald); }
+    .snapshot__label { font-size:0.82rem; color:#777; line-height:1.4; }
+    .cs-body { background:var(--mint-white); }
+    .cs-layout { display:grid; grid-template-columns:1fr 340px; gap:60px; align-items:start; }
+    .cs-main h2 { color:var(--forest-green); margin-bottom:20px; }
+    .cs-main p { color:#555; margin-bottom:20px; line-height:1.8; }
+    .cs-steps { list-style:none; counter-reset:step; margin:0 0 32px; }
+    .cs-steps li { counter-increment:step; display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border-light); }
+    .cs-steps li:last-child { border-bottom:none; }
+    .cs-steps li::before { content:counter(step,'0'counter(step)); font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:700; color:var(--tech-mint); background:var(--forest-green); min-width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+    .cs-steps li p { margin:0; font-size:0.9rem; color:#444; }
+    .cs-sidebar { position:sticky; top:100px; }
+    .cs-sidebar__card { background:#fff; border:1px solid var(--border-light); border-radius:12px; padding:28px; margin-bottom:20px; }
+    .cs-sidebar__card h4 { color:var(--forest-green); margin-bottom:16px; }
+    .cs-sidebar__row { display:flex; justify-content:space-between; align-items:flex-start; padding:10px 0; border-bottom:1px solid var(--border-light); font-size:0.83rem; gap:12px; }
+    .cs-sidebar__row:last-child { border-bottom:none; }
+    .cs-sidebar__key { color:#888; flex-shrink:0; }
+    .cs-sidebar__val { color:#333; font-weight:600; text-align:right; }
+    .cs-quote { background:linear-gradient(135deg, #1c2d2a 0%, #1B4D3E 100%); border-radius:12px; padding:36px; margin:40px 0 0; }
+    .cs-quote__mark { font-family:'Montserrat',sans-serif; font-size:3rem; font-weight:800; color:var(--tech-mint); line-height:0.8; margin-bottom:12px; }
+    .cs-quote p { font-size:1rem; color:rgba(255,255,255,0.88); line-height:1.75; font-style:italic; margin-bottom:16px; }
+    .cs-quote__attr { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--tech-mint); }
+    .cs-outcomes { background:#fff; }
+    .outcomes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .outcome-card { background:var(--mint-white); border-radius:10px; padding:28px 24px; border:1px solid var(--border-light); }
+    .outcome-card__num { font-family:'Montserrat',sans-serif; font-size:2.2rem; font-weight:800; color:var(--forest-green); line-height:1; margin-bottom:6px; }
+    .outcome-card__num em { font-style:normal; color:var(--digital-emerald); }
+    .outcome-card p { font-size:0.85rem; color:#666; margin:0; line-height:1.5; }
+    .cs-nav { background:var(--mint-white); border-top:1px solid var(--border-light); }
+    .cs-nav__inner { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border-light); }
+    .cs-nav__link { background:#fff; padding:32px; text-decoration:none; display:flex; flex-direction:column; gap:6px; transition:background 0.2s; }
+    .cs-nav__link:hover { background:var(--mint-white); }
+    .cs-nav__link--next { text-align:right; }
+    .cs-nav__dir { font-family:'Montserrat',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#aaa; }
+    .cs-nav__title { font-family:'Montserrat',sans-serif; font-size:0.95rem; font-weight:700; color:var(--forest-green); }
+  </style>
+</head>
+<body>
+<nav class="nav"><div class="container"><div class="nav__inner"><a href="home.html" class="nav__logo"><div class="nav__logo-icon">V</div><span class="nav__logo-text">VSON</span></a><ul class="nav__links"><li><a href="about.html">About</a></li><li class="nav__dropdown"><span class="nav__dropdown-toggle">Solutions</span><div class="nav__dropdown-menu"><a href="activation-solutions.html">Activation Solutions</a><a href="market-development.html">Market Development</a></div></li><li><a href="store.html">Store</a></li><li><a href="case-studies.html" class="active">Case Studies</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html" class="nav__cta">Request a Consultation</a></li></ul></div></div></nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__breadcrumb"><a href="case-studies.html">Case Studies</a> <span>/ OEM Merchandise</span></div>
+      <h1>5,000+ branded units. <em>20+ locations. Zero rejections.</em></h1>
+      <div class="cs-hero__meta">
+        <span class="cs-hero__tag cs-hero__tag--track">Activation Solutions</span>
+        <span class="cs-hero__tag cs-hero__tag--sector">ICT &amp; Technology · Vietnam Nationwide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="snapshot">
+  <div class="container">
+    <div class="snapshot__inner">
+      <div class="snapshot__stat"><div class="snapshot__num"><em>5,000</em>+</div><div class="snapshot__label">Branded units produced and delivered</div></div>
+      <div class="snapshot__stat"><div class="snapshot__num"><em>20</em>+</div><div class="snapshot__label">Event locations across Vietnam</div></div>
+      <div class="snapshot__stat"><div class="snapshot__num"><em>0</em></div><div class="snapshot__label">Brand compliance rejections at QC</div></div>
+      <div class="snapshot__stat"><div class="snapshot__num"><em>3</em></div><div class="snapshot__label">Product types: bags, polo shirts, event kits</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="cs-body section">
+  <div class="container">
+    <div class="cs-layout">
+      <div class="cs-main">
+        <span class="label">The Challenge</span>
+        <h2>Global brand standards. A Vietnam-wide deadline. No local production partner.</h2>
+        <p>A global ICT brand with a large partner and reseller network across Vietnam needed to produce and deliver custom-branded merchandise for a national partner conference: over 5,000 units of branded laptop bags, polo shirts, and event kits across more than 20 event locations spanning HCMC, Hanoi, Da Nang, and regional cities.</p>
+        <p>The brief came with tight timelines, strict global brand guidelines, and no room for delays. The client's regional team in Singapore was responsible for the programme but did not have the Vietnam production relationships or local logistics infrastructure to execute at this scale. A single compliance failure or late delivery to any venue would reflect directly on the brand.</p>
+
+        <span class="label" style="margin-top:48px;display:block;">The Solution</span>
+        <h2>End-to-end production management. On brand. On time. Everywhere.</h2>
+        <p>VSON took ownership of the full OEM production run: from supplier selection through to last-mile delivery. We managed every stage of the process: material specification, supplier qualification, logo and embroidery sign-off against the client's global brand guidelines, quality control inspections at production, packaging, and delivery coordination to all 20+ event locations across Vietnam.</p>
+
+        <h3>What we did, step by step</h3>
+        <ul class="cs-steps">
+          <li><p>Reviewed the client's brand guidelines and created a production compliance checklist covering logo placement, thread colour, stitching spec, and packaging requirements for each product type.</p></li>
+          <li><p>Qualified and shortlisted certified Vietnamese OEM manufacturers with demonstrable experience in branded corporate merchandise at volume.</p></li>
+          <li><p>Coordinated pre-production sampling for all three product types: bags, polo shirts, event kits and obtained sign-off from the client's regional marketing team before full run approval.</p></li>
+          <li><p>Managed quality control inspections at the production facility, including a full compliance review against the approved samples before packing.</p></li>
+          <li><p>Coordinated packaging and labelling per event location, and managed last-mile delivery logistics to all 20+ venues within the required window.</p></li>
+          <li><p>Produced a full production brief and supplier documentation package for the client's procurement records, enabling repeat ordering without restarting the sourcing process.</p></li>
+        </ul>
+
+        <div class="cs-quote">
+          <div class="cs-quote__mark">"</div>
+          <p>Managing a production run of this size across multiple cities is not straightforward in any market. VSON handled every detail: sampling, compliance sign-offs, logistics. We received zero complaints from any of our partner locations. That kind of reliability is rare.</p>
+          <div class="cs-quote__attr">Regional Marketing Manager, APAC</div>
+        </div>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar__card">
+          <h4>Project snapshot</h4>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Track</span><span class="cs-sidebar__val">Activation Solutions</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Sector</span><span class="cs-sidebar__val">ICT &amp; technology</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Market</span><span class="cs-sidebar__val">Vietnam nationwide</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Volume</span><span class="cs-sidebar__val">5,000+ units</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Delivery points</span><span class="cs-sidebar__val">20+ locations</span></div>
+        </div>
+        <div class="cs-sidebar__card">
+          <h4>Services used</h4>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">OEM supplier management</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Brand compliance review</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Production QC inspection</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Sampling &amp; sign-off loop</span></div>
+          <div class="cs-sidebar__row"><span class="cs-sidebar__key">Last-mile logistics</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="cs-outcomes section--sm">
+  <div class="container">
+    <span class="label">The Outcomes</span>
+    <h2 style="color:var(--forest-green);margin-bottom:40px;">On brand. On time. Every location.</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-card"><div class="outcome-card__num"><em>5,000</em>+</div><p>Branded units produced across 3 product types and delivered to 20+ locations nationwide</p></div>
+      <div class="outcome-card"><div class="outcome-card__num"><em>0</em> rejections</div><p>Zero brand compliance rejections at quality control across all product types and all batches</p></div>
+      <div class="outcome-card"><div class="outcome-card__num"><em>1</em> template</div><p>Full production brief and supplier documentation adopted by the client as the standard for future Vietnam merchandise campaigns</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-nav">
+  <div class="cs-nav__inner">
+    <a href="cs-03-fashion-retail.html" class="cs-nav__link"><span class="cs-nav__dir">Previous story</span><span class="cs-nav__title">Fast-Growing Fashion Retailer</span></a>
+    <a href="cs-05-ict-distribution.html" class="cs-nav__link cs-nav__link--next"><span class="cs-nav__dir">Next story</span><span class="cs-nav__title">ICT Brand: Vietnam Distribution</span></a>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Need branded merchandise delivered right across Vietnam?</h2>
+    <p>We manage production, compliance, and logistics so you don't have to.</p>
+    <a href="contact.html" class="btn btn--ghost-light arrow">Request a Consultation</a>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer__top"><div><div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;"><div class="nav__logo-icon">V</div><span class="nav__logo-text">VSON</span></div><p class="footer__tagline">Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>MST: 0313403180</p><div class="footer__contact-item"><span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span></div><div class="footer__contact-item"><span>0902.964.858</span></div><div class="footer__contact-item"><span>hello@vson.vn · solutions@vson.vn</span></div></div><div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About VSON</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer__col"><h4>Solutions</h4><ul><li><a href="activation-solutions.html">Activation Solutions</a></li><li><a href="market-development.html">Market Development</a></li><li><a href="store.html">VSON Store</a></li></ul></div><div class="footer__col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div></div><div class="footer__bottom"><span class="footer__legal">© 2026 VSON. All rights reserved.</span><div class="footer__social"><a href="#" class="social-link">in</a><a href="#" class="social-link">fb</a><a href="#" class="social-link">za</a></div></div></div></footer>
+<div class="vc-badge">Visual Concept v0.1 · CS-04 OEM Merchandise</div>
+</body>
+</html>

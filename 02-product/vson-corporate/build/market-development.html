@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSON | Market Development</title>
+  <meta name="description" content="Market entry support for Singapore companies entering Vietnam. MRA-eligible across all three pillars: business development, market set-up, and market promotion." />
+  <meta property="og:title" content="VSON | Market Development" />
+  <meta property="og:description" content="Market entry support for Singapore companies entering Vietnam. MRA-eligible across all three pillars: business development, market set-up, and market promotion." />
+  <meta property="og:image" content="https://vson.vn/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vson.vn/market-development.html" />
+  <link rel="canonical" href="https://vson.vn/market-development.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ─── Market Development: Page-Specific Styles ───────────────── */
+
+    .btn--outline-white {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+
+    .btn--outline-white:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Page Hero */
+    .page-hero {
+      background: var(--forest-green);
+      padding: 160px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 40%, rgba(167,255,235,0.08) 0%, transparent 55%);
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(167,255,235,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,255,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .page-hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .page-hero__breadcrumb {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.5);
+      margin-bottom: 20px;
+    }
+
+    .page-hero__breadcrumb span {
+      color: var(--tech-mint);
+    }
+
+    .page-hero h1 {
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .page-hero h1 em {
+      font-style: normal;
+      color: var(--tech-mint);
+    }
+
+    .page-hero__sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .page-hero__referral {
+      color: rgba(167,255,235,0.6);
+      font-size: 0.875rem;
+      font-style: italic;
+      margin-bottom: 36px;
+    }
+
+    .page-hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .page-hero__mra {
+      background: rgba(167,255,235,0.08);
+      border: 1px solid rgba(167,255,235,0.2);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .page-hero__mra-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tech-mint);
+      margin-bottom: 12px;
+    }
+
+    .mra-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mra-pillar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+    }
+
+    .mra-pillar__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--tech-mint);
+      flex-shrink: 0;
+    }
+
+    .mra-pillar__name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .mra-pillar__cap {
+      font-size: 0.72rem;
+      color: rgba(167,255,235,0.6);
+      margin-left: auto;
+    }
+
+    .mra-total {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-top: 1px solid rgba(167,255,235,0.15);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mra-total span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--tech-mint);
+    }
+
+    /* Services */
+    .services {
+      background: #fff;
+    }
+
+    .services__header {
+      margin-bottom: 56px;
+    }
+
+    .services__header h2 {
+      color: var(--forest-green);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 16px 48px rgba(27,77,62,0.1);
+      transform: translateY(-3px);
+    }
+
+    .service-card__top {
+      background: var(--forest-green);
+      padding: 32px;
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:nth-child(2) .service-card__top {
+      background: #1a3d30;
+    }
+
+    .service-card:nth-child(3) .service-card__top {
+      background: #132e24;
+    }
+
+    .service-card__top::after {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -10px;
+      right: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.05);
+      line-height: 1;
+    }
+
+    .service-card__mra-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(167,255,235,0.6);
+      background: rgba(167,255,235,0.08);
+      padding: 4px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .service-card__top h3 {
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .service-card__body {
+      padding: 28px 32px;
+    }
+
+    .service-card__body p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .service-card__pillar {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--digital-emerald);
+    }
+
+    /* Why VSON */
+    .why-vson {
+      background: var(--forest-green);
+    }
+
+    .why-vson__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .why-vson__header h2 {
+      color: #fff;
+    }
+
+    .why-vson__header h2 em {
+      font-style: normal;
+      color: var(--tech-mint);
+    }
+
+    .why-vson__header p {
+      color: rgba(255,255,255,0.65);
+      max-width: 540px;
+      margin: 16px auto 0;
+    }
+
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      background: rgba(167,255,235,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .signal-item {
+      background: rgba(27,77,62,0.4);
+      padding: 32px 24px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .signal-item:hover {
+      background: rgba(167,255,235,0.08);
+    }
+
+    .signal-item__num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: rgba(167,255,235,0.25);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .signal-item h4 {
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .signal-item p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: var(--mint-white);
+    }
+
+    .how-it-works__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .how-it-works__header h2 {
+      color: var(--forest-green);
+    }
+
+    .steps-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .steps-track::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: var(--border-light);
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step__circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--forest-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--tech-mint);
+      border: 4px solid var(--mint-white);
+    }
+
+    .step h3 {
+      color: var(--forest-green);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .step p {
+      font-size: 0.875rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* CTA Dual */
+    .cta-dual {
+      background: var(--digital-emerald);
+      padding: 72px 0;
+    }
+
+    .cta-dual__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .cta-dual h2 {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-dual p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+    }
+
+    .cta-dual__secondary {
+      border-left: 1px solid rgba(255,255,255,0.2);
+      padding-left: 64px;
+    }
+
+    .cta-dual__secondary p {
+      font-size: 0.875rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+
+    .cta-dual__secondary a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-dual__secondary a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .page-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .signals-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .steps-track {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .steps-track::before {
+        display: none;
+      }
+      .cta-dual__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .cta-dual__secondary {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-left: 0;
+        padding-top: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+      .signals-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-hero__actions {
+        flex-direction: column;
+      }
+      .page-hero__actions .btn {
+        width: 100%;
+      }
+      .steps-track {
+        grid-template-columns: 1fr;
+      }
+      .step__circle {
+        width: 56px;
+        height: 56px;
+        font-size: 1rem;
+      }
+      .cta-dual {
+        padding: 48px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only" style="position:absolute; top:0; left:0; z-index:9999; padding:1rem; background:#fff; color:#000;">
+  Skip to main content
+</a>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="VSON Home">
+        <div class="nav__logo-icon">V</div>
+        <span class="nav__logo-text">VSON</span>
+      </a>
+      <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="about.html">About</a></li>
+        <li class="nav__dropdown">
+          <span class="nav__dropdown-toggle">Solutions</span>
+          <div class="nav__dropdown-menu"><div class="nav__dropdown-menu-inner">
+            <a href="activation-solutions.html">Activation Solutions</a>
+            <a href="market-development.html">Market Development</a>
+          </div></div>
+        </li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero" id="main-content">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div>
+        <div class="page-hero__breadcrumb">Solutions <span>| Market Development</span></div>
+        <h1>Enter Vietnam<br>with <em>confidence</em><br>and the right partner.</h1>
+        <p class="page-hero__sub">VSON helps Singapore companies navigate the Vietnamese market, from finding the right partners to setting up operations and building brand presence. MRA-eligible across all three pillars.</p>
+        <p class="page-hero__referral">Not yet familiar with the MRA grant? We can connect you with our consultant network in Singapore.</p>
+        <div class="page-hero__actions">
+          <a href="contact.html" class="btn btn--primary arrow">Request a Consultation</a>
+          <a href="contact.html" class="btn btn--outline-white">Talk to Our Singapore Network</a>
+        </div>
+      </div>
+      <div class="page-hero__mra">
+        <div class="page-hero__mra-label">MRA Grant: Up to S$100,000, 70% Funded</div>
+        <div class="mra-pillars">
+          <div class="mra-pillar">
+            <div class="mra-pillar__dot"></div>
+            <span class="mra-pillar__name">Overseas Business Development</span>
+          </div>
+          <div class="mra-pillar">
+            <div class="mra-pillar__dot"></div>
+            <span class="mra-pillar__name">Overseas Market Set-up</span>
+          </div>
+          <div class="mra-pillar">
+            <div class="mra-pillar__dot"></div>
+            <span class="mra-pillar__name">Overseas Market Promotion</span>
+          </div>
+        </div>
+        <div class="mra-total">
+          <span>VSON covers all 3 pillars</span>
+          <span>Direct + partner network</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services section">
+  <div class="container">
+    <div class="services__header">
+      <span class="label">Our Services</span>
+      <h2>Three services.<br>All three MRA pillars covered.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card__top" data-num="01">
+          <span class="service-card__mra-tag">Overseas Business Development</span>
+          <h3>Find Your Footing</h3>
+        </div>
+        <div class="service-card__body">
+          <p>We identify the right distributors, JV partners, and logistics operators for your business in Vietnam and build the BD strategy to engage them.</p>
+          <span class="service-card__pillar">MRA Pillar 1</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__top" data-num="02">
+          <span class="service-card__mra-tag">Overseas Market Set-up</span>
+          <h3>Set Up Right</h3>
+        </div>
+        <div class="service-card__body">
+          <p>Through our partner network, we facilitate your incorporation, IP protection, and compliance so your Vietnam entity is built on solid ground.</p>
+          <span class="service-card__pillar">MRA Pillar 2</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__top" data-num="03">
+          <span class="service-card__mra-tag">Overseas Market Promotion</span>
+          <h3>Get Known</h3>
+        </div>
+        <div class="service-card__body">
+          <p>We run your market entry campaign in Vietnam, from trade introductions to brand visibility, using the same activation infrastructure we deploy for leading international brands.</p>
+          <span class="service-card__pillar">MRA Pillar 3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why VSON -->
+<section class="why-vson section">
+  <div class="container">
+    <div class="why-vson__header">
+      <span class="label label--light">Why VSON</span>
+      <h2>Five reasons to choose<br><em>VSON for Vietnam.</em></h2>
+      <p>We're not a consultancy that advises from a distance. We're an operating business in Vietnam, working in this market every single day.</p>
+    </div>
+    <div class="signals-grid">
+      <div class="signal-item">
+        <div class="signal-item__num">01</div>
+        <h4>On the Ground</h4>
+        <p>Vietnam-registered, Vietnam-operating, not a remote advisory firm.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-item__num">02</div>
+        <h4>Both Sides of the Equation</h4>
+        <p>We've built our own business here: distribution, partnerships, campaigns, operations.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-item__num">03</div>
+        <h4>A Network You Can Trust</h4>
+        <p>Legal partners, distributors, logistics operators, and government-linked contacts.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-item__num">04</div>
+        <h4>MRA-Ready</h4>
+        <p>We understand the grant framework, the documentation, and what EnterpriseSG expects.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-item__num">05</div>
+        <h4>Built for This Bridge</h4>
+        <p>VSON - Việt Sing - was founded with one conviction: Vietnam and Singapore belong closer together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works section">
+  <div class="container">
+    <div class="how-it-works__header">
+      <span class="label">The Process</span>
+      <h2>How it works.</h2>
+    </div>
+    <div class="steps-track">
+      <div class="step">
+        <div class="step__circle">01</div>
+        <h3>Explore</h3>
+        <p>We start with a conversation, understanding your business, your Vietnam goals, and your MRA eligibility. No commitment required.</p>
+      </div>
+      <div class="step">
+        <div class="step__circle">02</div>
+        <h3>Design</h3>
+        <p>We map out your market entry plan across the three MRA pillars, identifying the right partners, set-up requirements, and promotion strategy.</p>
+      </div>
+      <div class="step">
+        <div class="step__circle">03</div>
+        <h3>Deliver</h3>
+        <p>We execute across all three pillars (directly and through our partner network) while keeping your MRA documentation on track.</p>
+      </div>
+      <div class="step">
+        <div class="step__circle">04</div>
+        <h3>Grow</h3>
+        <p>Once you're in market, we stay alongside you, connecting you to the next opportunity as your Vietnam presence matures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Dual -->
+<section class="cta-dual">
+  <div class="container">
+    <div class="cta-dual__inner">
+      <div>
+        <h2>Ready to explore Vietnam?</h2>
+        <p>Talk to our market development team. No obligation, just a conversation about what's possible.</p>
+        <a href="contact.html" class="btn btn--ghost-light arrow">Request a Consultation</a>
+      </div>
+      <div class="cta-dual__secondary">
+        <p>Not yet familiar with the MRA grant? We'll connect you with our Singapore consultant network. They can advise on eligibility before we begin.</p>
+        <a href="contact.html" style="font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">Connect me to the MRA network ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="nav__logo-icon">V</div>
+          <span class="nav__logo-text">VSON</span>
+        </div>
+        <p class="footer__tagline">
+          Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)<br>
+          MST: 0313403180
+        </p>
+        <div class="footer__contact-item">
+          <span>58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>0902.964.858</span>
+        </div>
+        <div class="footer__contact-item">
+          <span>contact@vson.vn</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About VSON</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="activation-solutions.html">Activation Solutions</a></li>
+          <li><a href="market-development.html">Market Development</a></li>
+          <li><a href="store.html">VSON Store</a></li>
+          <li><a href="contact.html">Partner with Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">© 2026 VSON. All rights reserved.</span>
+      <div class="footer__social">
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Facebook">fb</a>
+        <a href="#" class="social-link" aria-label="Zalo">za</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

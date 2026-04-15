@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSON Visual Preview Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --forest-green: #1B4D3E;
+            --digital-emerald: #2E8B57;
+            --tech-mint: #A7FFEB;
+            --mint-white: #F1F8F6;
+            --border-light: rgba(27,77,62,0.12);
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --grid-line: rgba(167,255,235,0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--mint-white);
+            line-height: 1.6;
+        }
+
+        /* ============ HEADER ============ */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0;
+        }
+
+        .header-banner {
+            background: var(--forest-green);
+            color: var(--tech-mint);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--forest-green);
+        }
+
+        .header-date {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ============ LAYOUT ============ */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px 80px;
+        }
+
+        .section {
+            margin: 60px 0;
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .section-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--tech-mint);
+            background: var(--forest-green);
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--forest-green);
+            flex: 1;
+        }
+
+        .section-description {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* ============ TOGGLES & CONTROLS ============ */
+        .controls-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+        }
+
+        .toggle-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toggle-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 8px;
+            background: var(--white);
+            padding: 4px;
+            border-radius: 6px;
+            border: 1px solid var(--border-light);
+        }
+
+        .toggle-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .toggle-btn:hover {
+            background: var(--mint-white);
+            color: var(--digital-emerald);
+        }
+
+        .toggle-btn.active {
+            background: var(--digital-emerald);
+            color: var(--white);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .radio-input {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--digital-emerald);
+            border-radius: 50%;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .radio-input:hover {
+            border-color: var(--tech-mint);
+            box-shadow: 0 0 0 3px rgba(167, 255, 235, 0.1);
+        }
+
+        .radio-input:checked {
+            background: var(--digital-emerald);
+            box-shadow: inset 0 0 0 3px var(--white);
+        }
+
+        .radio-label {
+            flex: 1;
+        }
+
+        .radio-label-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .radio-label-desc {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .hero-left {
+            padding: 20px 0;
+        }
+
+        .hero-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--digital-emerald);
+            margin-bottom: 12px;
+        }
+
+        .hero-headline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--forest-green);
+            margin-bottom: 16px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--tech-mint);
+        }
+
+        .hero-subtext {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            padding: 12px 28px;
+            background: var(--tech-mint);
+            color: var(--forest-green);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary:hover {
+            background: var(--digital-emerald);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(46, 139, 87, 0.2);
+        }
+
+        .btn-secondary {
+            padding: 12px 28px;
+            background: transparent;
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest-green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hero-right {
+            position: relative;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--forest-green);
+        }
+
+        /* Grid background pattern */
+        .hero-right.with-grid::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    var(--grid-line) 0,
+                    var(--grid-line) 1px,
+                    transparent 1px,
+                    transparent 60px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    var(--grid-line) 0,
+                    var(--grid-line) 1px,
+                    transparent 1px,
+                    transparent 60px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Abstract Graphic Option */
+        .abstract-graphic {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .abstract-shapes {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+        }
+
+        .shape-circle-1 {
+            width: 180px;
+            height: 180px;
+            background: rgba(167, 255, 235, 0.15);
+            border-radius: 50%;
+            top: 10%;
+            right: 10%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .shape-circle-2 {
+            width: 140px;
+            height: 140px;
+            background: rgba(46, 139, 87, 0.2);
+            border-radius: 50%;
+            bottom: 15%;
+            left: 5%;
+            animation: float 5s ease-in-out infinite 0.5s;
+        }
+
+        .shape-rect {
+            width: 200px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(167, 255, 235, 0.1), rgba(46, 139, 87, 0.15));
+            top: 50%;
+            left: 20%;
+            transform: translateY(-50%);
+            animation: float 4.5s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Photo Placeholder */
+        .photo-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(167, 255, 235, 0.08), rgba(46, 139, 87, 0.08));
+            border: 2px dashed rgba(167, 255, 235, 0.3);
+            gap: 12px;
+        }
+
+        .placeholder-text {
+            text-align: center;
+            color: rgba(167, 255, 235, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .placeholder-specs {
+            font-size: 12px;
+            color: rgba(167, 255, 235, 0.5);
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .product-cards {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .product-card {
+            position: absolute;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--forest-green);
+            font-size: 13px;
+        }
+
+        .product-card.card-1 {
+            width: 140px;
+            height: 140px;
+            top: 10%;
+            left: 5%;
+            animation: float-card 4s ease-in-out infinite;
+        }
+
+        .product-card.card-2 {
+            width: 160px;
+            height: 160px;
+            top: 25%;
+            right: 10%;
+            animation: float-card 4s ease-in-out infinite 0.7s;
+        }
+
+        .product-card.card-3 {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            left: 20%;
+            animation: float-card 4s ease-in-out infinite 1.4s;
+        }
+
+        .product-card.card-4 {
+            width: 155px;
+            height: 155px;
+            bottom: 20%;
+            right: 5%;
+            animation: float-card 4s ease-in-out infinite 0.35s;
+        }
+
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        /* ============ PAGE HEROES GRID ============ */
+        .heroes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .hero-card {
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .hero-card-preview {
+            height: 200px;
+            background: var(--forest-green);
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+            color: var(--tech-mint);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .hero-card-preview.with-grid::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    var(--grid-line) 0,
+                    var(--grid-line) 1px,
+                    transparent 1px,
+                    transparent 60px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    var(--grid-line) 0,
+                    var(--grid-line) 1px,
+                    transparent 1px,
+                    transparent 60px
+                );
+            pointer-events: none;
+        }
+
+        .hero-card-preview.with-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.3), rgba(46, 139, 87, 0.5));
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-card-preview-text {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-card-name {
+            padding: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--forest-green);
+        }
+
+        .hero-card-controls {
+            padding: 16px;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-card-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            color: var(--text-dark);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-card-btn:hover {
+            border-color: var(--digital-emerald);
+            background: var(--mint-white);
+        }
+
+        .hero-card-btn.active {
+            background: var(--digital-emerald);
+            color: var(--white);
+            border-color: var(--digital-emerald);
+        }
+
+        /* ============ CASE STUDY CARDS ============ */
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .case-card {
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .case-card-thumbnail {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            background: var(--forest-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .case-abstract {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .abstract-pattern {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pattern-mint {
+            background: linear-gradient(135deg, rgba(167, 255, 235, 0.15), rgba(167, 255, 235, 0.05));
+        }
+
+        .pattern-green {
+            background: linear-gradient(45deg, rgba(46, 139, 87, 0.15), rgba(46, 139, 87, 0.05));
+        }
+
+        .pattern-emerald {
+            background: linear-gradient(225deg, rgba(27, 77, 62, 0.2), rgba(46, 139, 87, 0.1));
+        }
+
+        .case-photo-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.08), rgba(46, 139, 87, 0.08));
+            border: 2px dashed rgba(167, 255, 235, 0.3);
+            color: rgba(167, 255, 235, 0.7);
+            font-size: 13px;
+            gap: 8px;
+        }
+
+        .case-card-info {
+            padding: 16px;
+        }
+
+        .case-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 12px;
+        }
+
+        .case-card-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .case-card-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            color: var(--text-dark);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .case-card-btn:hover {
+            border-color: var(--digital-emerald);
+            background: var(--mint-white);
+        }
+
+        .case-card-btn.active {
+            background: var(--digital-emerald);
+            color: var(--white);
+            border-color: var(--digital-emerald);
+        }
+
+        /* ============ ABOUT SECTION ============ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .about-zone {
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .about-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--forest-green), var(--digital-emerald));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .about-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(167, 255, 235, 0.08), rgba(46, 139, 87, 0.08));
+            border: 2px dashed rgba(167, 255, 235, 0.3);
+            color: rgba(167, 255, 235, 0.8);
+            font-size: 14px;
+            gap: 12px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-info {
+            padding: 20px;
+        }
+
+        .about-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .about-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .about-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            color: var(--text-dark);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .about-btn:hover {
+            border-color: var(--digital-emerald);
+            background: var(--mint-white);
+        }
+
+        .about-btn.active {
+            background: var(--digital-emerald);
+            color: var(--white);
+            border-color: var(--digital-emerald);
+        }
+
+        /* ============ DECISION SUMMARY ============ */
+        .summary-section {
+            margin: 60px 0;
+            background: linear-gradient(135deg, var(--forest-green), var(--digital-emerald));
+            border-radius: 12px;
+            padding: 40px;
+            color: var(--white);
+        }
+
+        .summary-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: var(--tech-mint);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .summary-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .summary-item-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--tech-mint);
+            margin-bottom: 12px;
+        }
+
+        .summary-item-value {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--white);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px 40px;
+            }
+
+            .section {
+                padding: 24px;
+            }
+
+            .hero-split {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-right {
+                height: 350px;
+            }
+
+            .hero-headline {
+                font-size: 28px;
+            }
+
+            .heroes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .controls-group {
+                flex-direction: column;
+            }
+
+            .toggle-group {
+                width: 100%;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-banner">Preview BANNER</div>
+        <div class="header-content">
+            <div class="header-title">VSON Visual Preview Kit</div>
+            <div class="header-date">12 Apr 2026</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Section 1: Home Hero -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <div>
+                    <div class="section-title">Home Hero</div>
+                    <div class="section-description">Split layout with text and visual decision zone</div>
+                </div>
+            </div>
+
+            <div class="controls-group">
+                <div class="toggle-label">Right-Side Visual:</div>
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" onclick="updateHeroOption('A')">Option A: Abstract</button>
+                    <button class="toggle-btn" onclick="updateHeroOption('B')">Option B: Photo</button>
+                    <button class="toggle-btn" onclick="updateHeroOption('C')">Option C: Products</button>
+                </div>
+            </div>
+
+            <div class="hero-split">
+                <div class="hero-left">
+                    <div class="hero-eyebrow">Phygital Commerce Ecosystem</div>
+                    <h1 class="hero-headline">We bring global brands to Vietnam's <em>phygital</em> frontier</h1>
+                    <p class="hero-subtext">Combining physical retail innovation with digital commerce capabilities to unlock new market opportunities.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary">Get Started</button>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="hero-right with-grid" id="heroRight">
+                    <!-- Option A: Abstract -->
+                    <div class="abstract-graphic" id="optionA">
+                        <div class="abstract-shapes">
+                            <div class="shape shape-circle-1"></div>
+                            <div class="shape shape-circle-2"></div>
+                            <div class="shape shape-rect"></div>
+                        </div>
+                    </div>
+
+                    <!-- Option B: Photo Placeholder -->
+                    <div class="photo-placeholder" id="optionB" style="display: none;">
+                        <div class="placeholder-text">Drop your photo here</div>
+                        <div class="placeholder-specs">Min 800×900px, portrait crop</div>
+                    </div>
+
+                    <!-- Option C: Product Showcase -->
+                    <div class="product-showcase" id="optionC" style="display: none;">
+                        <div class="product-cards">
+                            <div class="product-card card-1">Torayvino</div>
+                            <div class="product-card card-2">Zojirushi</div>
+                            <div class="product-card card-3">Kingbag</div>
+                            <div class="product-card card-4">Nepia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Page Hero Backgrounds -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <div>
+                    <div class="section-title">Page Hero Backgrounds</div>
+                    <div class="section-description">Choose grid pattern or photo overlay for each page</div>
+                </div>
+            </div>
+
+            <div class="heroes-grid">
+                <div class="hero-card">
+                    <div class="hero-card-preview with-grid" id="hero-about">
+                        <div class="hero-card-preview-text">About</div>
+                    </div>
+                    <div class="hero-card-name">About VSON</div>
+                    <div class="hero-card-controls">
+                        <button class="hero-card-btn active" onclick="toggleHeroStyle('about', 'grid')">Grid</button>
+                        <button class="hero-card-btn" onclick="toggleHeroStyle('about', 'overlay')">Photo</button>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-preview with-grid" id="hero-solutions">
+                        <div class="hero-card-preview-text">Solutions</div>
+                    </div>
+                    <div class="hero-card-name">Activation Solutions</div>
+                    <div class="hero-card-controls">
+                        <button class="hero-card-btn active" onclick="toggleHeroStyle('solutions', 'grid')">Grid</button>
+                        <button class="hero-card-btn" onclick="toggleHeroStyle('solutions', 'overlay')">Photo</button>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-preview with-grid" id="hero-market">
+                        <div class="hero-card-preview-text">Market Dev</div>
+                    </div>
+                    <div class="hero-card-name">Market Development</div>
+                    <div class="hero-card-controls">
+                        <button class="hero-card-btn active" onclick="toggleHeroStyle('market', 'grid')">Grid</button>
+                        <button class="hero-card-btn" onclick="toggleHeroStyle('market', 'overlay')">Photo</button>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-preview with-grid" id="hero-store">
+                        <div class="hero-card-preview-text">Store</div>
+                    </div>
+                    <div class="hero-card-name">Store Solutions</div>
+                    <div class="hero-card-controls">
+                        <button class="hero-card-btn active" onclick="toggleHeroStyle('store', 'grid')">Grid</button>
+                        <button class="hero-card-btn" onclick="toggleHeroStyle('store', 'overlay')">Photo</button>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-preview with-grid" id="hero-cases">
+                        <div class="hero-card-preview-text">Case Studies</div>
+                    </div>
+                    <div class="hero-card-name">Case Studies</div>
+                    <div class="hero-card-controls">
+                        <button class="hero-card-btn active" onclick="toggleHeroStyle('cases', 'grid')">Grid</button>
+                        <button class="hero-card-btn" onclick="toggleHeroStyle('cases', 'overlay')">Photo</button>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-preview with-grid" id="hero-contact">
+                        <div class="hero-card-preview-text">Contact</div>
+                    </div>
+                    <div class="hero-card-name">Contact Us</div>
+                    <div class="hero-card-controls">
+                        <button class="hero-card-btn active" onclick="toggleHeroStyle('contact', 'grid')">Grid</button>
+                        <button class="hero-card-btn" onclick="toggleHeroStyle('contact', 'overlay')">Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Case Study Thumbnails -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <div>
+                    <div class="section-title">Case Study Thumbnails</div>
+                    <div class="section-description">Campaign photos or abstract graphics</div>
+                </div>
+            </div>
+
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <div class="case-card-thumbnail">
+                        <div class="case-abstract" id="case-1-visual">
+                            <div class="abstract-pattern pattern-mint"></div>
+                        </div>
+                        <div class="case-photo-placeholder" id="case-1-photo" style="display: none;">
+                            <div>📸</div>
+                            <div>Upload campaign photo</div>
+                        </div>
+                    </div>
+                    <div class="case-card-info">
+                        <div class="case-card-title">Torayvino Case Study</div>
+                        <div class="case-card-controls">
+                            <button class="case-card-btn active" onclick="toggleCaseStyle('case-1', 'graphic')">Abstract</button>
+                            <button class="case-card-btn" onclick="toggleCaseStyle('case-1', 'photo')">Photo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-card-thumbnail">
+                        <div class="case-abstract" id="case-2-visual">
+                            <div class="abstract-pattern pattern-green"></div>
+                        </div>
+                        <div class="case-photo-placeholder" id="case-2-photo" style="display: none;">
+                            <div>📸</div>
+                            <div>Upload campaign photo</div>
+                        </div>
+                    </div>
+                    <div class="case-card-info">
+                        <div class="case-card-title">Zojirushi Case Study</div>
+                        <div class="case-card-controls">
+                            <button class="case-card-btn active" onclick="toggleCaseStyle('case-2', 'graphic')">Abstract</button>
+                            <button class="case-card-btn" onclick="toggleCaseStyle('case-2', 'photo')">Photo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-card-thumbnail">
+                        <div class="case-abstract" id="case-3-visual">
+                            <div class="abstract-pattern pattern-emerald"></div>
+                        </div>
+                        <div class="case-photo-placeholder" id="case-3-photo" style="display: none;">
+                            <div>📸</div>
+                            <div>Upload campaign photo</div>
+                        </div>
+                    </div>
+                    <div class="case-card-info">
+                        <div class="case-card-title">Kingbag Case Study</div>
+                        <div class="case-card-controls">
+                            <button class="case-card-btn active" onclick="toggleCaseStyle('case-3', 'graphic')">Abstract</button>
+                            <button class="case-card-btn" onclick="toggleCaseStyle('case-3', 'photo')">Photo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: About — Company Story -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <div>
+                    <div class="section-title">About — Company Story</div>
+                    <div class="section-description">Two side-by-side image zones with visibility toggles</div>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-zone">
+                    <div class="about-image" id="about-team-image">
+                        <div class="about-placeholder" id="about-team-placeholder">
+                            <div>📸</div>
+                            <div>Team/Office Photo</div>
+                            <div style="font-size: 12px; color: rgba(167, 255, 235, 0.6);">Landscape orientation</div>
+                        </div>
+                    </div>
+                    <div class="about-info">
+                        <div class="about-label">Team/Office Photo</div>
+                        <div class="about-controls">
+                            <button class="about-btn active" onclick="toggleAboutZone('team', 'use')">Use Photo</button>
+                            <button class="about-btn" onclick="toggleAboutZone('team', 'skip')">Skip Zone</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-zone">
+                    <div class="about-image" id="about-vietnam-image">
+                        <div class="about-placeholder" id="about-vietnam-placeholder">
+                            <div>📸</div>
+                            <div>Vietnam Context Visual</div>
+                            <div style="font-size: 12px; color: rgba(167, 255, 235, 0.6);">Landscape orientation</div>
+                        </div>
+                    </div>
+                    <div class="about-info">
+                        <div class="about-label">Vietnam Context</div>
+                        <div class="about-controls">
+                            <button class="about-btn active" onclick="toggleAboutZone('vietnam', 'use')">Use Visual</button>
+                            <button class="about-btn" onclick="toggleAboutZone('vietnam', 'skip')">Skip Zone</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decision Summary -->
+        <div class="summary-section">
+            <div class="summary-title">Decision Summary</div>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-item-title">Home Hero Visual</div>
+                    <div class="summary-item-value" id="summary-hero">Option A: Abstract Graphic</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-item-title">Page Hero Pattern</div>
+                    <div class="summary-item-value" id="summary-hero-pattern">Grid: 6/6 pages | Overlay: 0/6 pages</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-item-title">Case Studies</div>
+                    <div class="summary-item-value" id="summary-cases">Abstract: 3/3 cards | Photos: 0/3 cards</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-item-title">About Section</div>
+                    <div class="summary-item-value" id="summary-about">Team: Show | Vietnam: Show</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        const state = {
+            heroOption: 'A',
+            heroStyles: {
+                about: 'grid',
+                solutions: 'grid',
+                market: 'grid',
+                store: 'grid',
+                cases: 'grid',
+                contact: 'grid'
+            },
+            caseStyles: {
+                'case-1': 'graphic',
+                'case-2': 'graphic',
+                'case-3': 'graphic'
+            },
+            aboutZones: {
+                team: 'use',
+                vietnam: 'use'
+            }
+        };
+
+        // Section 1: Home Hero
+        function updateHeroOption(option) {
+            state.heroOption = option;
+
+            document.getElementById('optionA').style.display = option === 'A' ? 'flex' : 'none';
+            document.getElementById('optionB').style.display = option === 'B' ? 'flex' : 'none';
+            document.getElementById('optionC').style.display = option === 'C' ? 'flex' : 'none';
+
+            const buttons = document.querySelectorAll('.controls-group .toggle-btn');
+            buttons.forEach((btn, idx) => {
+                btn.classList.toggle('active', ['A', 'B', 'C'][idx] === option);
+            });
+
+            updateSummary();
+        }
+
+        // Section 2: Page Heroes
+        function toggleHeroStyle(page, style) {
+            state.heroStyles[page] = style;
+            const element = document.getElementById(`hero-${page}`);
+            element.classList.toggle('with-grid', style === 'grid');
+            element.classList.toggle('with-overlay', style === 'overlay');
+
+            const buttons = element.parentElement.querySelectorAll('.hero-card-btn');
+            buttons.forEach((btn, idx) => {
+                btn.classList.toggle('active', (idx === 0 && style === 'grid') || (idx === 1 && style === 'overlay'));
+            });
+
+            updateSummary();
+        }
+
+        // Section 3: Case Studies
+        function toggleCaseStyle(caseId, style) {
+            state.caseStyles[caseId] = style;
+
+            const visual = document.getElementById(`${caseId}-visual`);
+            const photo = document.getElementById(`${caseId}-photo`);
+
+            visual.style.display = style === 'graphic' ? 'flex' : 'none';
+            photo.style.display = style === 'photo' ? 'flex' : 'none';
+
+            const caseCard = document.querySelector(`#${caseId}-visual`).closest('.case-card');
+            const buttons = caseCard.querySelectorAll('.case-card-btn');
+            buttons.forEach((btn, idx) => {
+                btn.classList.toggle('active', (idx === 0 && style === 'graphic') || (idx === 1 && style === 'photo'));
+            });
+
+            updateSummary();
+        }
+
+        // Section 4: About
+        function toggleAboutZone(zone, action) {
+            state.aboutZones[zone] = action;
+
+            const imageElement = document.getElementById(`about-${zone}-image`);
+            const placeholderElement = document.getElementById(`about-${zone}-placeholder`);
+
+            if (action === 'skip') {
+                imageElement.style.opacity = '0.4';
+                imageElement.style.pointerEvents = 'none';
+                placeholderElement.style.opacity = '0.5';
+            } else {
+                imageElement.style.opacity = '1';
+                imageElement.style.pointerEvents = 'auto';
+                placeholderElement.style.opacity = '1';
+            }
+
+            const zoneElement = imageElement.closest('.about-zone');
+            const buttons = zoneElement.querySelectorAll('.about-btn');
+            buttons.forEach((btn, idx) => {
+                btn.classList.toggle('active', (idx === 0 && action === 'use') || (idx === 1 && action === 'skip'));
+            });
+
+            updateSummary();
+        }
+
+        // Update Decision Summary
+        function updateSummary() {
+            const heroOptionLabels = {
+                A: 'Option A: Abstract Graphic',
+                B: 'Option B: Photo Placeholder',
+                C: 'Option C: Product Showcase'
+            };
+
+            document.getElementById('summary-hero').textContent = heroOptionLabels[state.heroOption];
+
+            const gridCount = Object.values(state.heroStyles).filter(s => s === 'grid').length;
+            const overlayCount = Object.values(state.heroStyles).filter(s => s === 'overlay').length;
+            document.getElementById('summary-hero-pattern').textContent =
+                `Grid: ${gridCount}/6 pages | Overlay: ${overlayCount}/6 pages`;
+
+            const graphicCount = Object.values(state.caseStyles).filter(s => s === 'graphic').length;
+            const photoCount = Object.values(state.caseStyles).filter(s => s === 'photo').length;
+            document.getElementById('summary-cases').textContent =
+                `Abstract: ${graphicCount}/3 cards | Photos: ${photoCount}/3 cards`;
+
+            const teamStatus = state.aboutZones.team === 'use' ? 'Show' : 'Hidden';
+            const vietnamStatus = state.aboutZones.vietnam === 'use' ? 'Show' : 'Hidden';
+            document.getElementById('summary-about').textContent =
+                `Team: ${teamStatus} | Vietnam: ${vietnamStatus}`;
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            updateSummary();
+        });
+    </script>
+</body>
+</html>
