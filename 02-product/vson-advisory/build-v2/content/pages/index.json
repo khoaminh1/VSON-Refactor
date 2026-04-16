@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "VSON Advisory | Strategic Advisory for Cross-Border Scaling",
+    "description": "VSON Advisory is a boutique consulting firm delivering strategic advice, operational transformation, and investment readiness for Vietnamese founders and global partners.",
+    "keywords": "strategic advisory, M&A, investment readiness, Vietnam business, cross-border expansion, operational transformation",
+    "canonical": "https://vsonadvisory.com/",
+    "og": {
+      "title": "VSON Advisory | Strategic Advisory for Cross-Border Scaling",
+      "description": "Operator-backed strategic advisory for high-stakes transformations. Risk to performance to exit value.",
+      "image": "https://vsonadvisory.com/og-home.png",
+      "url": "https://vsonadvisory.com/"
+    }
+  },
+
+  "hero": {
+    "eyebrow": "Vietnam · Singapore · USA",
+    "heading": "We Don't Consult from a Distance.<br/>We Govern <em>Outcomes.</em>",
+    "body": [
+      "Vietnam is one of Asia's most dynamic growth markets, and one of the most difficult to navigate without the right partners on the ground. VSON Advisory is a Singapore-headquartered boutique firm built specifically for this.",
+      "We serve two complementary client groups: mid-market Vietnamese founders who need governance, operational structure, and investment readiness to scale or prepare for strategic transitions; and international investors and brands that need a trusted, execution-capable presence to enter, transact, or grow in Vietnam."
+    ],
+    "cta_primary":   { "label": "Request a Strategic Briefing", "href": "/contact.html" },
+    "cta_secondary": { "label": "Our Approach", "href": "/approach.html" }
+  },
+
+  "value_chain": {
+    "eyebrow": "The Core Value Chain",
+    "heading": "From Risk to Performance<br/>to Exit Value",
+    "body": "VSON is built around a simple belief: enterprise value is created when risk is governed, performance is improved, and the business becomes structurally ready for scale, capital, or exit.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Risk",
+        "body": "Governance, transparency, diligence readiness, vendor discipline, and structured decision-making.",
+        "link": { "label": "Our Approach →", "href": "/approach.html" }
+      },
+      {
+        "number": "02",
+        "title": "Performance",
+        "body": "Operations, CX, data visibility, management reporting, margin discipline, and scalable execution.",
+        "link": { "label": "Our Approach →", "href": "/approach.html" }
+      },
+      {
+        "number": "03",
+        "title": "Exit Value",
+        "body": "Investment readiness, operational readiness for growth, M&A positioning, cross-border expansion, and stronger market positioning.",
+        "link": { "label": "Our Approach →", "href": "/approach.html" }
+      }
+    ]
+  },
+
+  "audience": {
+    "eyebrow": "Three Entry Points into VSON",
+    "heading": "Who We Work With",
+    "items": [
+      {
+        "tag": "Local Enterprises",
+        "title": "For Founders & Operators",
+        "body": "For founder-led and mid-market businesses seeking turnaround, scaling support, stronger governance, or investment readiness.",
+        "link": { "label": "Learn More →", "href": "/contact.html" },
+        "variant": "solid"
+      },
+      {
+        "tag": "Global Capital",
+        "title": "For Investors & Partners",
+        "body": "For investors, family offices, and strategic partners seeking trusted operating context across Vietnam, Singapore, and the USA.",
+        "link": { "label": "Learn More →", "href": "/contact.html" },
+        "variant": "solid"
+      },
+      {
+        "tag": "Experts & Partners",
+        "title": "Join the Expert Network",
+        "body": "Senior operators and specialists who want to contribute to high-trust, cross-border mandates alongside the VSON team.",
+        "link": { "label": "Learn More →", "href": "/contact.html" },
+        "variant": "dashed"
+      }
+    ]
+  },
+
+  "why_vson": {
+    "eyebrow": "Why VSON",
+    "heading": "From Risk to Performance<br/>to Exit Value.",
+    "body": "We are not a generalist consultancy. We are a focused, senior-led firm built for high-trust, high-stakes mandates where execution quality matches strategic intent.",
+    "bullets": [
+      {
+        "strong": "Operator-backed, not slide-driven.",
+        "detail": "We bring practical business judgment, not theoretical frameworks."
+      },
+      {
+        "strong": "Cross-border, but execution-grounded.",
+        "detail": "Regional reach backed by hands-on Vietnam, Singapore, and US operating experience."
+      },
+      {
+        "strong": "Governance, execution, and value creation.",
+        "detail": "We manage the full lifecycle: from diagnostic to exit positioning."
+      },
+      {
+        "strong": "Vendor-agnostic and commercially disciplined.",
+        "detail": "We recommend what's best for the client, not what's most convenient for us."
+      },
+      {
+        "strong": "Selective, senior-led, mandate-focused.",
+        "detail": "We take fewer engagements so every client gets our full attention."
+      }
+    ]
+  },
+
+  "capabilities": {
+    "eyebrow": "What We Do",
+    "heading": "Six Pillars of<br/>Enterprise Value",
+    "body": "VSON operates across a set of capabilities that help businesses reduce risk, improve performance, and become ready for scale, capital, or strategic transition.",
+    "items": [
+      { "number": "01", "title": "Strategic Finance & M&A Integrity",       "body": "We support diligence, structure decisions, improve investment readiness, and reduce execution risk around transactions." },
+      { "number": "02", "title": "Performance Transformation",              "body": "We stabilize underperforming businesses, improve operating control, and build the foundation for scalable growth." },
+      { "number": "03", "title": "CX as a Profit Multiplier",              "body": "We position customer experience as a measurable driver of retention, conversion, loyalty, and enterprise value." },
+      { "number": "04", "title": "Digital Infrastructure & Data",           "body": "We build CDP, BI, and decision systems that create management visibility and investor-ready reporting infrastructure." },
+      { "number": "05", "title": "Global Gateway & Franchise",             "body": "We translate brand standards into disciplined local execution and enable structured cross-border expansion." },
+      { "number": "06", "title": "Investment Readiness & Exit Advisory",    "body": "We prepare businesses for strategic transitions, M&A readiness, and exit execution, structuring the governance, financials, and operational narrative that meet institutional standards." }
+    ]
+  },
+
+  "leadership": {
+    "eyebrow": "Leadership",
+    "heading": "Senior. Operator-Backed.<br/>Mandate-Focused.",
+    "body": "VSON is led by operators and strategic advisors with practical exposure across operations, cross-border work, CX, business transformation, and institutional-facing mandates.",
+    "members": [
+      {
+        "initial": "F",
+        "name": "Frederick Dang",
+        "role": "Managing Partner",
+        "specialisms": "Digital Transformation · Deal Advisory · Firm Operations · Governance",
+        "bio": "Frederick has spent 16 years helping organisations across Southeast Asia transform their operations through technology and structured advisory. He led the deployment of Singapore's national water metering portal, enabling 300,000+ households to monitor real-time consumption, receive leak alerts, and file usage reports. At VSON, Fred leads firm operations, client engagement, and digital transformation mandates."
+      },
+      {
+        "initial": "H",
+        "name": "Henry Hung",
+        "role": "Strategic Partner",
+        "specialisms": "Technology Distribution · Market Entry · Operator Network · Cross-Border",
+        "bio": "Henry brings over 25 years of hands-on operating experience building technology and consumer markets across Vietnam. At FPT, he managed a 1,000+ channel partner network nationwide and launched over 100 brands into the Vietnamese market, leading market share across multiple categories. Now US-based, Henry serves as VSON's bridge for international market entry and cross-border operations."
+      },
+      {
+        "initial": "E",
+        "name": "Emily Vo",
+        "role": "Strategic Partner",
+        "specialisms": "Operational Transformation · Investment Readiness · CX & Revenue Growth",
+        "bio": "Emily brings 18 years of operating and leadership experience in F&B, education, and hospitality. She has served as CEO of multi-unit operations and scaling businesses to institutional readiness across food and beverage, education, and hospitality. Emily's deep network across Vietnam's consumer and retail ecosystem, including ties to the founding circle of the country's leading new retail group, gives VSON direct access to operator-level insight across the country's fastest-moving sectors."
+      }
+    ],
+    "collective_note": "Our managing partners have collectively operated across technology distribution at FPT, CEO-level roles across seven consumer sectors, national-scale digital infrastructure projects, and M&A transactions across Vietnam, Singapore, and the United States.",
+    "cta": { "label": "Meet the Leadership →", "href": "/brain-trust.html" }
+  },
+
+  "vault_preview": {
+    "eyebrow": "The Vault",
+    "heading": "Boardroom-Level Insights",
+    "body": "Selected thinking for founders, operators, and capital partners who need more than generic business commentary.",
+    "articles": [
+      { "tag": "Performance Transformation",      "title": "Why Mid-Market Companies Stall Before Institutional Scale",              "href": "/vault.html" },
+      { "tag": "Digital Infrastructure & Data",    "title": "The Hidden Valuation Cost of Fragmented Data",                          "href": "/vault.html" },
+      { "tag": "Global Gateway & Franchise",       "title": "Cross-Border Expansion Fails When Governance Arrives Too Late",         "href": "/vault.html" },
+      { "tag": "CX as a Profit Multiplier",        "title": "Why CX Should Be Treated as a Revenue System",                         "href": "/vault.html" },
+      { "tag": "Strategic Finance & M&A Integrity", "title": "What Institutional Partners Evaluate Beyond the Pitch Deck",           "href": "/vault.html" }
+    ],
+    "cta": { "label": "Enter The Vault →", "href": "/vault.html" }
+  },
+
+  "cta_band": {
+    "heading": "Start with a Serious Conversation",
+    "body": "Whether you are preparing to scale, exploring a deal, or building institutional readiness, VSON is built for high-trust, high-stakes conversations.",
+    "cta": { "label": "Request a Strategic Briefing", "href": "/contact.html" }
+  }
+}

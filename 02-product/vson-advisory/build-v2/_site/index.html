@@ -1,0 +1,615 @@
+<!--
+  Home page (index.html) — pure assembly shell.
+  All partials inherit the root context (site, nav, footer, page, and the
+  page's own top-level keys spread in by build.js: meta, hero, value_chain, etc.)
+  So hash-param passing is not needed — partials reach for their slice directly.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    BaseHead — shared <head> boilerplate.
+    Page-specific values (title, description, og.*, canonical) come from content/pages/[page].json
+    Build step injects them as: VSON Advisory | Strategic Advisory for Cross-Border Scaling, VSON Advisory is a boutique consulting firm delivering strategic advice, operational transformation, and investment readiness for Vietnamese founders and global partners., etc.
+  
+    Asset paths:
+      - Fonts → /assets/fonts/fonts.css         (loads Inter + Playfair Display)
+      - Icons → /assets/icons/                  (favicon.ico, icon.svg, apple-touch-icon.png)
+      - OG    → /assets/images/og/og-*.png      (path stored in JSON; absolute URL built via https://vsonadvisory.comhttps://vsonadvisory.com/og-home.png)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VSON Advisory | Strategic Advisory for Cross-Border Scaling</title>
+  <meta name="description" content="VSON Advisory is a boutique consulting firm delivering strategic advice, operational transformation, and investment readiness for Vietnamese founders and global partners.">
+  <meta name="keywords" content="strategic advisory, M&amp;A, investment readiness, Vietnam business, cross-border expansion, operational transformation">
+  <link rel="canonical" href="https://vsonadvisory.com/">
+  
+  <!-- Open Graph (absolute URL = site.domain + meta.og.image) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="VSON Advisory | Strategic Advisory for Cross-Border Scaling">
+  <meta property="og:description" content="Operator-backed strategic advisory for high-stakes transformations. Risk to performance to exit value.">
+  <meta property="og:image"       content="https://vsonadvisory.com/og-home.png">
+  <meta property="og:url"         content="https://vsonadvisory.com/">
+  
+  <!-- Favicon set (per SHARED-STANDARDS.md) -->
+  <link rel="icon"             href="/assets/icons/favicon.ico" sizes="32x32">
+  <link rel="icon"             href="/assets/icons/icon.svg"    type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+  <!-- Theme color (mobile browser chrome — uses brand navy) -->
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts (Google Fonts CDN — see /assets/fonts/README.md to self-host) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  
+  <!-- Stylesheets (load order: tokens → reset → utilities → layout → ui → nav/footer → sections) -->
+  <link rel="stylesheet" href="/components/css/tokens.css">
+  <link rel="stylesheet" href="/components/css/reset.css">
+  <link rel="stylesheet" href="/components/css/utilities.css">
+  <link rel="stylesheet" href="/components/css/layout.css">
+  <link rel="stylesheet" href="/components/css/ui.css">
+  <link rel="stylesheet" href="/components/css/nav.css">
+  <link rel="stylesheet" href="/components/css/footer.css">
+  <link rel="stylesheet" href="/components/css/sections.css">
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!--
+    Nav — site navigation.
+    Reads: content/site.json (logo_initial, brand_short, brand_suffix), content/nav.json (links, cta)
+    Iterates: nav.links[] for both desktop and mobile drawer.
+    No hardcoded labels, no hardcoded hrefs.
+  -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+  
+      <a href="/" class="nav__brand" aria-label="VSON Advisory home">
+        <div class="nav__logo-mark">V</div>
+        <div class="nav__brand-name">VSON <span>ADVISORY</span></div>
+      </a>
+  
+      <ul class="nav__links">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/approach.html" class="nav__link">Approach</a></li>
+        <li><a href="/brain-trust.html" class="nav__link">Leadership</a></li>
+        <li><a href="/capabilities.html" class="nav__link">Capabilities</a></li>
+        <li><a href="/vault.html" class="nav__link">The Vault</a></li>
+        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+      </ul>
+  
+      <a href="/contact.html" class="btn btn--primary nav__cta">Request a Strategic Briefing</a>
+  
+      <button class="nav__burger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  
+    <div class="nav__mobile" id="mobile-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/approach.html">Approach</a></li>
+        <li><a href="/brain-trust.html">Leadership</a></li>
+        <li><a href="/capabilities.html">Capabilities</a></li>
+        <li><a href="/vault.html">The Vault</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!--
+      Hero — full-bleed homepage hero with eyebrow, heading (HTML-allowed for <em>/<br>), 2 paragraphs, 2 CTAs.
+      Props (from content/pages/home.json → hero):
+        eyebrow        {string}
+        heading        {html}      may contain <br/> and <em>
+        body           {string[]}  array of paragraph strings
+        cta_primary    { label, href }
+        cta_secondary  { label, href }
+    -->
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Vietnam · Singapore · USA</div>
+        <h1>We Don't Consult from a Distance.<br/>We Govern <em>Outcomes.</em></h1>
+        <p class="hero__body">Vietnam is one of Asia&#x27;s most dynamic growth markets, and one of the most difficult to navigate without the right partners on the ground. VSON Advisory is a Singapore-headquartered boutique firm built specifically for this.</p>
+        <p class="hero__body hero__body--secondary">We serve two complementary client groups: mid-market Vietnamese founders who need governance, operational structure, and investment readiness to scale or prepare for strategic transitions; and international investors and brands that need a trusted, execution-capable presence to enter, transact, or grow in Vietnam.</p>
+        <div class="hero__actions">
+          <a href="/contact.html"   class="btn btn--primary-blue">Request a Strategic Briefing</a>
+          <a href="/approach.html" class="btn btn--ghost-white">Our Approach</a>
+        </div>
+      </div>
+    </section>
+    <!--
+      ValueChain — eyebrow + heading + intro + 3-card grid with numbered cards.
+      Props (from content/pages/home.json → value_chain):
+        eyebrow {string}
+        heading {html}
+        body    {string}
+        items[] { number, title, body, link: { label, href } }
+    -->
+    <section class="section--paper">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">The Core Value Chain</div>
+        <div class="divider"></div>
+        <h2 class="value-chain__heading">From Risk to Performance<br/>to Exit Value</h2>
+        <p class="value-chain__intro">VSON is built around a simple belief: enterprise value is created when risk is governed, performance is improved, and the business becomes structurally ready for scale, capital, or exit.</p>
+        <div class="grid-3">
+          <div class="card" data-fade>
+            <div class="num-badge">01</div>
+            <h3 class="mb-3">Risk</h3>
+            <p>Governance, transparency, diligence readiness, vendor discipline, and structured decision-making.</p>
+            <a href="/approach.html" class="btn--link mt-4">Our Approach →</a>
+          </div>
+          <div class="card" data-fade>
+            <div class="num-badge">02</div>
+            <h3 class="mb-3">Performance</h3>
+            <p>Operations, CX, data visibility, management reporting, margin discipline, and scalable execution.</p>
+            <a href="/approach.html" class="btn--link mt-4">Our Approach →</a>
+          </div>
+          <div class="card" data-fade>
+            <div class="num-badge">03</div>
+            <h3 class="mb-3">Exit Value</h3>
+            <p>Investment readiness, operational readiness for growth, M&amp;A positioning, cross-border expansion, and stronger market positioning.</p>
+            <a href="/approach.html" class="btn--link mt-4">Our Approach →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+      AudienceCards — 3 audience pathway cards. Last card is dashed/coming-soon.
+      Props (from content/pages/home.json → audience):
+        eyebrow {string}
+        heading {string}
+        items[] { tag, title, body, link: { label, href }, variant: 'solid'|'dashed' }
+    -->
+    <section class="section--light">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">Three Entry Points into VSON</div>
+        <div class="divider"></div>
+        <h2 class="audience__heading">Who We Work With</h2>
+        <div class="grid-3">
+          <!--
+            Card — generic content card with optional number, tag, title, body, link.
+            Props:
+              number   {string?}  e.g. "01"
+              tag      {string?}  pill label
+              title    {string}   card heading
+              body     {string}   card paragraph
+              link     {object?}  { label, href }
+              variant  {'default'|'dashed'|'dark'}  visual style
+          -->
+          <div class="card" data-fade>
+            
+            <div class="tag mb-4">Local Enterprises</div>
+            <h3 class="mb-3">For Founders &amp; Operators</h3>
+            <p class="mb-4">For founder-led and mid-market businesses seeking turnaround, scaling support, stronger governance, or investment readiness.</p>
+            <a href="/contact.html" class="btn--link">Learn More →</a>
+          </div>
+          <!--
+            Card — generic content card with optional number, tag, title, body, link.
+            Props:
+              number   {string?}  e.g. "01"
+              tag      {string?}  pill label
+              title    {string}   card heading
+              body     {string}   card paragraph
+              link     {object?}  { label, href }
+              variant  {'default'|'dashed'|'dark'}  visual style
+          -->
+          <div class="card" data-fade>
+            
+            <div class="tag mb-4">Global Capital</div>
+            <h3 class="mb-3">For Investors &amp; Partners</h3>
+            <p class="mb-4">For investors, family offices, and strategic partners seeking trusted operating context across Vietnam, Singapore, and the USA.</p>
+            <a href="/contact.html" class="btn--link">Learn More →</a>
+          </div>
+          <!--
+            Card — generic content card with optional number, tag, title, body, link.
+            Props:
+              number   {string?}  e.g. "01"
+              tag      {string?}  pill label
+              title    {string}   card heading
+              body     {string}   card paragraph
+              link     {object?}  { label, href }
+              variant  {'default'|'dashed'|'dark'}  visual style
+          -->
+          <div class="card card--dashed" data-fade>
+            
+            <div class="tag mb-4">Experts &amp; Partners</div>
+            <h3 class="mb-3">Join the Expert Network</h3>
+            <p class="mb-4">Senior operators and specialists who want to contribute to high-trust, cross-border mandates alongside the VSON team.</p>
+            <a href="/contact.html" class="btn--link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+      WhyChecklist — 2-col layout: heading on left, 5 bullets with strong+detail on right.
+      Props (from content/pages/home.json → why_vson):
+        eyebrow {string}
+        heading {html}
+        body    {string}
+        bullets[] { strong, detail }
+    -->
+    <section class="section--mid">
+      <div class="container">
+        <div class="why__grid">
+          <div data-fade>
+            <!--
+              Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+              Props:
+                text {string}  the eyebrow label
+            -->
+            <div class="eyebrow">Why VSON</div>
+            <div class="divider"></div>
+            <h2 class="mb-4">From Risk to Performance<br/>to Exit Value.</h2>
+            <p>We are not a generalist consultancy. We are a focused, senior-led firm built for high-trust, high-stakes mandates where execution quality matches strategic intent.</p>
+          </div>
+          <ul class="why__list" data-fade>
+            <li class="why__item">
+              <div class="why__check" aria-hidden="true">✓</div>
+              <div>
+                <strong>Operator-backed, not slide-driven.</strong>
+                <p class="why__detail">We bring practical business judgment, not theoretical frameworks.</p>
+              </div>
+            </li>
+            <li class="why__item">
+              <div class="why__check" aria-hidden="true">✓</div>
+              <div>
+                <strong>Cross-border, but execution-grounded.</strong>
+                <p class="why__detail">Regional reach backed by hands-on Vietnam, Singapore, and US operating experience.</p>
+              </div>
+            </li>
+            <li class="why__item">
+              <div class="why__check" aria-hidden="true">✓</div>
+              <div>
+                <strong>Governance, execution, and value creation.</strong>
+                <p class="why__detail">We manage the full lifecycle: from diagnostic to exit positioning.</p>
+              </div>
+            </li>
+            <li class="why__item">
+              <div class="why__check" aria-hidden="true">✓</div>
+              <div>
+                <strong>Vendor-agnostic and commercially disciplined.</strong>
+                <p class="why__detail">We recommend what&#x27;s best for the client, not what&#x27;s most convenient for us.</p>
+              </div>
+            </li>
+            <li class="why__item">
+              <div class="why__check" aria-hidden="true">✓</div>
+              <div>
+                <strong>Selective, senior-led, mandate-focused.</strong>
+                <p class="why__detail">We take fewer engagements so every client gets our full attention.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--
+      CapabilityGrid — dark navy section with 6 numbered capability cards.
+      Props (from content/pages/home.json → capabilities):
+        eyebrow {string}
+        heading {html}
+        body    {string}
+        items[] { number, title, body }
+    -->
+    <section class="section--dark">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">What We Do</div>
+        <div class="divider"></div>
+        <h2 class="capability__heading">Six Pillars of<br/>Enterprise Value</h2>
+        <p class="capability__intro">VSON operates across a set of capabilities that help businesses reduce risk, improve performance, and become ready for scale, capital, or strategic transition.</p>
+        <div class="grid-3">
+          <div class="card--dark" data-fade>
+            <div class="num-badge">01</div>
+            <h3 class="mb-3">Strategic Finance &amp; M&amp;A Integrity</h3>
+            <p>We support diligence, structure decisions, improve investment readiness, and reduce execution risk around transactions.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">02</div>
+            <h3 class="mb-3">Performance Transformation</h3>
+            <p>We stabilize underperforming businesses, improve operating control, and build the foundation for scalable growth.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">03</div>
+            <h3 class="mb-3">CX as a Profit Multiplier</h3>
+            <p>We position customer experience as a measurable driver of retention, conversion, loyalty, and enterprise value.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">04</div>
+            <h3 class="mb-3">Digital Infrastructure &amp; Data</h3>
+            <p>We build CDP, BI, and decision systems that create management visibility and investor-ready reporting infrastructure.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">05</div>
+            <h3 class="mb-3">Global Gateway &amp; Franchise</h3>
+            <p>We translate brand standards into disciplined local execution and enable structured cross-border expansion.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">06</div>
+            <h3 class="mb-3">Investment Readiness &amp; Exit Advisory</h3>
+            <p>We prepare businesses for strategic transitions, M&amp;A readiness, and exit execution, structuring the governance, financials, and operational narrative that meet institutional standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+      LeadershipCards — 3 leader cards + collective note callout + CTA button.
+      Props (from content/pages/home.json → leadership):
+        eyebrow         {string}
+        heading         {html}
+        body            {string}
+        members[]       { initial, name, role, specialisms, bio }
+        collective_note {string}
+        cta             { label, href }
+    -->
+    <section class="section--light">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">Leadership</div>
+        <div class="divider"></div>
+        <h2 class="leadership__heading">Senior. Operator-Backed.<br/>Mandate-Focused.</h2>
+        <p class="leadership__intro">VSON is led by operators and strategic advisors with practical exposure across operations, cross-border work, CX, business transformation, and institutional-facing mandates.</p>
+    
+        <div class="grid-3 leadership__grid">
+          <!--
+            LeaderCard — leadership team member card.
+            Props:
+              initial      {string}  single-letter avatar
+              name         {string}
+              role         {string}
+              specialisms  {string}  pipe-separated specialisms
+              bio          {string}  paragraph
+          -->
+          <div class="card" data-fade>
+            <div class="leader__avatar">F</div>
+            <h3>Frederick Dang</h3>
+            <div class="leader__role">Managing Partner</div>
+            <div class="leader__specialisms">Digital Transformation · Deal Advisory · Firm Operations · Governance</div>
+            <p class="leader__bio">Frederick has spent 16 years helping organisations across Southeast Asia transform their operations through technology and structured advisory. He led the deployment of Singapore&#x27;s national water metering portal, enabling 300,000+ households to monitor real-time consumption, receive leak alerts, and file usage reports. At VSON, Fred leads firm operations, client engagement, and digital transformation mandates.</p>
+          </div>
+          <!--
+            LeaderCard — leadership team member card.
+            Props:
+              initial      {string}  single-letter avatar
+              name         {string}
+              role         {string}
+              specialisms  {string}  pipe-separated specialisms
+              bio          {string}  paragraph
+          -->
+          <div class="card" data-fade>
+            <div class="leader__avatar">H</div>
+            <h3>Henry Hung</h3>
+            <div class="leader__role">Strategic Partner</div>
+            <div class="leader__specialisms">Technology Distribution · Market Entry · Operator Network · Cross-Border</div>
+            <p class="leader__bio">Henry brings over 25 years of hands-on operating experience building technology and consumer markets across Vietnam. At FPT, he managed a 1,000+ channel partner network nationwide and launched over 100 brands into the Vietnamese market, leading market share across multiple categories. Now US-based, Henry serves as VSON&#x27;s bridge for international market entry and cross-border operations.</p>
+          </div>
+          <!--
+            LeaderCard — leadership team member card.
+            Props:
+              initial      {string}  single-letter avatar
+              name         {string}
+              role         {string}
+              specialisms  {string}  pipe-separated specialisms
+              bio          {string}  paragraph
+          -->
+          <div class="card" data-fade>
+            <div class="leader__avatar">E</div>
+            <h3>Emily Vo</h3>
+            <div class="leader__role">Strategic Partner</div>
+            <div class="leader__specialisms">Operational Transformation · Investment Readiness · CX &amp; Revenue Growth</div>
+            <p class="leader__bio">Emily brings 18 years of operating and leadership experience in F&amp;B, education, and hospitality. She has served as CEO of multi-unit operations and scaling businesses to institutional readiness across food and beverage, education, and hospitality. Emily&#x27;s deep network across Vietnam&#x27;s consumer and retail ecosystem, including ties to the founding circle of the country&#x27;s leading new retail group, gives VSON direct access to operator-level insight across the country&#x27;s fastest-moving sectors.</p>
+          </div>
+        </div>
+    
+        <div class="leadership__note" data-fade>
+          <p>Our managing partners have collectively operated across technology distribution at FPT, CEO-level roles across seven consumer sectors, national-scale digital infrastructure projects, and M&amp;A transactions across Vietnam, Singapore, and the United States.</p>
+        </div>
+    
+        <a href="/brain-trust.html" class="btn btn--ghost" data-fade>Meet the Leadership →</a>
+      </div>
+    </section>
+    <!--
+      VaultPreview — eyebrow + heading + intro + stacked article rows + CTA.
+      Props (from content/pages/home.json → vault_preview):
+        eyebrow    {string}
+        heading    {string}
+        body       {string}
+        articles[] { tag, title, href }
+        cta        { label, href }
+    -->
+    <section class="section--mid">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">The Vault</div>
+        <div class="divider"></div>
+        <h2 class="vault__heading">Boardroom-Level Insights</h2>
+        <p class="vault__intro">Selected thinking for founders, operators, and capital partners who need more than generic business commentary.</p>
+    
+        <div class="vault__list">
+          <!--
+            VaultRow — single article link row in vault list.
+            Props:
+              href  {string}
+              tag   {string}  category label
+              title {string}  article title
+          -->
+          <a href="/vault.html" class="vault__row" data-fade>
+            <div>
+              <div class="tag vault__row-tag">Performance Transformation</div>
+              <h3>Why Mid-Market Companies Stall Before Institutional Scale</h3>
+            </div>
+            <div class="vault__row-arrow" aria-hidden="true">→</div>
+          </a>
+          <!--
+            VaultRow — single article link row in vault list.
+            Props:
+              href  {string}
+              tag   {string}  category label
+              title {string}  article title
+          -->
+          <a href="/vault.html" class="vault__row" data-fade>
+            <div>
+              <div class="tag vault__row-tag">Digital Infrastructure &amp; Data</div>
+              <h3>The Hidden Valuation Cost of Fragmented Data</h3>
+            </div>
+            <div class="vault__row-arrow" aria-hidden="true">→</div>
+          </a>
+          <!--
+            VaultRow — single article link row in vault list.
+            Props:
+              href  {string}
+              tag   {string}  category label
+              title {string}  article title
+          -->
+          <a href="/vault.html" class="vault__row" data-fade>
+            <div>
+              <div class="tag vault__row-tag">Global Gateway &amp; Franchise</div>
+              <h3>Cross-Border Expansion Fails When Governance Arrives Too Late</h3>
+            </div>
+            <div class="vault__row-arrow" aria-hidden="true">→</div>
+          </a>
+          <!--
+            VaultRow — single article link row in vault list.
+            Props:
+              href  {string}
+              tag   {string}  category label
+              title {string}  article title
+          -->
+          <a href="/vault.html" class="vault__row" data-fade>
+            <div>
+              <div class="tag vault__row-tag">CX as a Profit Multiplier</div>
+              <h3>Why CX Should Be Treated as a Revenue System</h3>
+            </div>
+            <div class="vault__row-arrow" aria-hidden="true">→</div>
+          </a>
+          <!--
+            VaultRow — single article link row in vault list.
+            Props:
+              href  {string}
+              tag   {string}  category label
+              title {string}  article title
+          -->
+          <a href="/vault.html" class="vault__row" data-fade>
+            <div>
+              <div class="tag vault__row-tag">Strategic Finance &amp; M&amp;A Integrity</div>
+              <h3>What Institutional Partners Evaluate Beyond the Pitch Deck</h3>
+            </div>
+            <div class="vault__row-arrow" aria-hidden="true">→</div>
+          </a>
+        </div>
+    
+        <a href="/vault.html" class="btn btn--ghost vault__cta" data-fade>Enter The Vault →</a>
+      </div>
+    </section>
+    <!--
+      CtaBand — dark, centred final CTA section. Reused at bottom of every page.
+      Props (from content/pages/[page].json → cta_band):
+        heading {string}
+        body    {string}
+        cta     { label, href }
+    -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Start with a Serious Conversation</h2>
+        <p>Whether you are preparing to scale, exploring a deal, or building institutional readiness, VSON is built for high-trust, high-stakes conversations.</p>
+        <a href="/contact.html" class="btn btn--primary-inverse">Request a Strategic Briefing</a>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Footer — site footer.
+    Reads: content/site.json + content/footer.json
+    Iterates: footer.columns.services[], footer.columns.company[], footer.columns.contact[], footer.legal.links[]
+  -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+  
+        <div class="footer__brand">
+          <div class="footer__brand-row">
+            <div class="nav__logo-mark">V</div>
+            <div class="footer__brand-name">VSON <span>ADVISORY</span></div>
+          </div>
+          <p>Operator-backed advisory for cross-border scaling. From operational friction to institutional value.</p>
+          <div class="footer__locations">Singapore · Vietnam · USA</div>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Services</div>
+          <ul class="footer__links">
+            <li><a href="#">Strategic Finance &amp; M&amp;A</a></li>
+            <li><a href="#">Performance Transformation</a></li>
+            <li><a href="#">CX &amp; Revenue Growth</a></li>
+            <li><a href="#">Digital Infrastructure</a></li>
+            <li><a href="#">Global Gateway</a></li>
+            <li><a href="#">Investment Readiness</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Company</div>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/approach.html">Approach</a></li>
+            <li><a href="/brain-trust.html">Leadership</a></li>
+            <li><a href="/vault.html">The Vault</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:contact@vsonadvisory.com">contact@vsonadvisory.com</a></li>
+            <li><a href="tel:+6588679295">+65 8867 9295</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">Vson Advisory Pte. Ltd. is a management consultancy firm. We do not provide financial advisory, investment advice, or corporate finance services as defined under the Singapore Securities and Futures Act. We do not facilitate the sale of securities or provide regulated financial services.</p>
+        <p class="footer__registration">VSON Pte. Ltd. · UEN 202601234M · Registered at 7 Temasek Boulevard, #12-07 Suntec Tower One, Singapore 038987</p>
+        <div class="footer__bottom-row">
+          <p class="footer__copyright">© 2026 VSON Pte. Ltd. All Rights Reserved.</p>
+          <div class="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!--
+  LeaderCard — leadership team member card.
+  Props:
+    initial      {string}  single-letter avatar
+    name         {string}
+    role         {string}
+    specialisms  {string}  pipe-separated specialisms
+    bio          {string}  paragraph
+-->
+<div class="card" data-fade>
+  <div class="leader__avatar">{{initial}}</div>
+  <h3>{{name}}</h3>
+  <div class="leader__role">{{role}}</div>
+  <div class="leader__specialisms">{{specialisms}}</div>
+  <p class="leader__bio">{{bio}}</p>
+</div>

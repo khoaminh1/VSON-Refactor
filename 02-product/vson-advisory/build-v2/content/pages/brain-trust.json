@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Leadership | VSON Advisory",
+    "description": "Meet VSON Advisory's senior leadership team: operator-backed managing partners and strategic advisors with hands-on experience across cross-border scaling, M&A, and digital transformation.",
+    "keywords": "leadership, team, managing partners, strategic advisors, operator-backed, experience",
+    "canonical": "https://vsonadvisory.com/brain-trust.html",
+    "og": {
+      "title": "Leadership | VSON Advisory",
+      "description": "Senior. Operator-Backed. Mandate-Focused.",
+      "image": "https://vsonadvisory.com/og-leadership.png",
+      "url": "https://vsonadvisory.com/brain-trust.html"
+    }
+  },
+
+  "page_header": {
+    "title": "Leadership",
+    "subtitle": "Senior. Operator-Backed. Mandate-Focused."
+  },
+
+  "leadership_full": {
+    "eyebrow": "VSON Leadership",
+    "heading": "Senior. Operator-Backed.<br/>Mandate-Focused.",
+    "body": "VSON is led by operators and strategic advisors with practical exposure across operations, cross-border work, CX, business transformation, and institutional-facing mandates.",
+
+    "partners_label": "Leadership",
+    "partners": [
+      {
+        "initial": "F",
+        "name": "Frederick Dang",
+        "role": "Managing Partner",
+        "specialisms": "Digital Transformation | Deal Advisory | Firm Operations | Governance",
+        "bio": "Frederick has spent 16 years helping organisations across Southeast Asia transform their operations through technology and structured advisory. He led the deployment of Singapore's national water metering portal, enabling 300,000+ households to monitor real-time consumption, receive leak alerts, and file usage reports. At VSON, Fred leads firm operations, client engagement, and digital transformation mandates."
+      },
+      {
+        "initial": "H",
+        "name": "Henry Hung",
+        "role": "Strategic Partner",
+        "specialisms": "Technology Distribution | Market Entry | Operator Network | Cross-Border",
+        "bio": "Henry brings over 25 years of hands-on operating experience building technology and consumer markets across Vietnam. At FPT, he managed a 1,000+ channel partner network nationwide and launched over 100 brands into the Vietnamese market, leading market share across multiple categories. Now US-based, Henry serves as VSON's bridge for international market entry and cross-border operations."
+      },
+      {
+        "initial": "E",
+        "name": "Emily Vo",
+        "role": "Strategic Partner",
+        "specialisms": "Operational Transformation | Investment Readiness | CX & Revenue Growth",
+        "bio": "Emily brings 18 years of operating and leadership experience in food and beverage, education, and hospitality. She has served as CEO of multi-unit operations and scaling businesses to institutional readiness across food and beverage, education, and hospitality. Emily's deep network across Vietnam's consumer and retail ecosystem, including ties to the founding circle of the country's leading new retail group, gives VSON direct access to operator-level insight across the country's fastest-moving sectors."
+      }
+    ],
+
+    "advisors_label": "Strategic Advisors",
+    "advisors": [
+      {
+        "initial": "H",
+        "name": "Hung Tran",
+        "role": "Strategic Advisor | Finance & Investment",
+        "specialisms": "Strategic Finance | Deal Advisory | Manufacturing | FMCG | Healthcare",
+        "bio": "Hung Tran brings 15 years of experience in strategic finance and investment across manufacturing, industrial, automotive, fintech, infrastructure, FMCG, food and beverage, and healthcare. Based in Vietnam, he brings deep local market knowledge and direct deal experience to VSON's transaction support and investment readiness engagements."
+      },
+      {
+        "initial": "B",
+        "name": "Bernard Lim",
+        "role": "Strategic Advisor | Data & Analytics",
+        "specialisms": "Data Governance | Analytics Infrastructure | Financial Data Systems",
+        "bio": "Bernard Lim brings 16 years of data and analytics experience across financial services, consulting, and consumer sectors. He has worked with OCBC, Haier, PwC, Aberdeen, and Prudential, building expertise in data governance, financial data systems, and analytics frameworks. Currently based in Ho Chi Minh City, Bernard supports VSON's data infrastructure and governance mandates."
+      }
+    ],
+
+    "collective_note": "Our managing partners have collectively operated across technology distribution at FPT, CEO-level roles across seven consumer sectors, national-scale digital infrastructure projects, and M&A transactions across Vietnam, Singapore, and the United States.",
+    "cta": { "label": "Request a Strategic Briefing", "href": "/contact.html" }
+  }
+}

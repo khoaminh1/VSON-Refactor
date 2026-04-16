@@ -1,0 +1,22 @@
+<!--
+  EngagementSteps — 2x2 grid of numbered steps (used on Approach page).
+  Props (from content/pages/approach.json → engagement_steps):
+    eyebrow {string}
+    heading {string}
+    steps[] { number, title, body }
+-->
+<section class="section--light">
+  <div class="container">
+    {{> ui/Eyebrow text=engagement_steps.eyebrow}}
+    <h2 class="mb-12">{{engagement_steps.heading}}</h2>
+    <div class="grid-2 engagement-steps__grid">
+      {{#each engagement_steps.steps}}
+      <div data-fade>
+        <div class="engagement-steps__number">{{this.number}}</div>
+        <h3>{{this.title}}</h3>
+        <p>{{this.body}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

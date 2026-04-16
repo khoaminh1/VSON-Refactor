@@ -1,0 +1,14 @@
+{
+  "links": [
+    { "label": "Home",         "href": "/" },
+    { "label": "Approach",     "href": "/approach.html" },
+    { "label": "Leadership",   "href": "/brain-trust.html" },
+    { "label": "Capabilities", "href": "/capabilities.html" },
+    { "label": "The Vault",    "href": "/vault.html" },
+    { "label": "Contact",      "href": "/contact.html" }
+  ],
+  "cta": {
+    "label": "Request a Strategic Briefing",
+    "href": "/contact.html"
+  }
+}

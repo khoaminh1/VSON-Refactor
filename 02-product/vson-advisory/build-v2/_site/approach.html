@@ -1,0 +1,308 @@
+<!--
+  Approach page — assembly shell. All partials inherit root context.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    BaseHead — shared <head> boilerplate.
+    Page-specific values (title, description, og.*, canonical) come from content/pages/[page].json
+    Build step injects them as: Our Approach | VSON Advisory, VSON&#x27;s 4-layer solution stack and engagement methodology for strategic transformation, from diagnostic to performance realization., etc.
+  
+    Asset paths:
+      - Fonts → /assets/fonts/fonts.css         (loads Inter + Playfair Display)
+      - Icons → /assets/icons/                  (favicon.ico, icon.svg, apple-touch-icon.png)
+      - OG    → /assets/images/og/og-*.png      (path stored in JSON; absolute URL built via https://vsonadvisory.comhttps://vsonadvisory.com/og-approach.png)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Our Approach | VSON Advisory</title>
+  <meta name="description" content="VSON&#x27;s 4-layer solution stack and engagement methodology for strategic transformation, from diagnostic to performance realization.">
+  <meta name="keywords" content="strategic approach, solution methodology, engagement process, transformation framework, 4-layer stack">
+  <link rel="canonical" href="https://vsonadvisory.com/approach.html">
+  
+  <!-- Open Graph (absolute URL = site.domain + meta.og.image) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Our Approach | VSON Advisory">
+  <meta property="og:description" content="The 4-Layer Solution Stack: Govern → Improve → Scale → Position for Exit.">
+  <meta property="og:image"       content="https://vsonadvisory.com/og-approach.png">
+  <meta property="og:url"         content="https://vsonadvisory.com/approach.html">
+  
+  <!-- Favicon set (per SHARED-STANDARDS.md) -->
+  <link rel="icon"             href="/assets/icons/favicon.ico" sizes="32x32">
+  <link rel="icon"             href="/assets/icons/icon.svg"    type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+  <!-- Theme color (mobile browser chrome — uses brand navy) -->
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts (Google Fonts CDN — see /assets/fonts/README.md to self-host) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  
+  <!-- Stylesheets (load order: tokens → reset → utilities → layout → ui → nav/footer → sections) -->
+  <link rel="stylesheet" href="/components/css/tokens.css">
+  <link rel="stylesheet" href="/components/css/reset.css">
+  <link rel="stylesheet" href="/components/css/utilities.css">
+  <link rel="stylesheet" href="/components/css/layout.css">
+  <link rel="stylesheet" href="/components/css/ui.css">
+  <link rel="stylesheet" href="/components/css/nav.css">
+  <link rel="stylesheet" href="/components/css/footer.css">
+  <link rel="stylesheet" href="/components/css/sections.css">
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!--
+    Nav — site navigation.
+    Reads: content/site.json (logo_initial, brand_short, brand_suffix), content/nav.json (links, cta)
+    Iterates: nav.links[] for both desktop and mobile drawer.
+    No hardcoded labels, no hardcoded hrefs.
+  -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+  
+      <a href="/" class="nav__brand" aria-label="VSON Advisory home">
+        <div class="nav__logo-mark">V</div>
+        <div class="nav__brand-name">VSON <span>ADVISORY</span></div>
+      </a>
+  
+      <ul class="nav__links">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/approach.html" class="nav__link">Approach</a></li>
+        <li><a href="/brain-trust.html" class="nav__link">Leadership</a></li>
+        <li><a href="/capabilities.html" class="nav__link">Capabilities</a></li>
+        <li><a href="/vault.html" class="nav__link">The Vault</a></li>
+        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+      </ul>
+  
+      <a href="/contact.html" class="btn btn--primary nav__cta">Request a Strategic Briefing</a>
+  
+      <button class="nav__burger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  
+    <div class="nav__mobile" id="mobile-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/approach.html">Approach</a></li>
+        <li><a href="/brain-trust.html">Leadership</a></li>
+        <li><a href="/capabilities.html">Capabilities</a></li>
+        <li><a href="/vault.html">The Vault</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--
+    PageHeader — interior page header (navy band below sticky nav).
+    Props (from content/pages/[page].json → page_header):
+      title    {string}
+      subtitle {string}
+  -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Approach</h1>
+      <p>A structured methodology for reducing risk, improving performance, and creating institutional value.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!--
+      SolutionStack — 4-card grid (used on Approach page) showing the 4-Layer Solution Stack.
+      Each card has a layer label, title, bullet list, and italic blockquote.
+      Props (from content/pages/approach.json → solution_stack):
+        eyebrow  {string}
+        heading  {string}
+        body     {string}
+        layers[] { layer, title, bullets[], quote }
+    -->
+    <section class="section--paper">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">The VSON Framework</div>
+        <div class="divider"></div>
+        <h2 class="mb-6">The 4-Layer Solution Stack</h2>
+        <p class="solution-stack__intro">Every VSON engagement is structured around a modular solution architecture. We start where the client is, and build toward the value they need.</p>
+        <div class="grid-2">
+          <div class="card solution-stack__card" data-fade>
+            <div class="solution-stack__label">Layer 01: Foundation</div>
+            <h3 class="mb-4">Govern First</h3>
+            <ul class="solution-stack__bullets">
+              <li><span class="solution-stack__dot">•</span> Financial transparency</li>
+              <li><span class="solution-stack__dot">•</span> Data structure (CDP/BI)</li>
+              <li><span class="solution-stack__dot">•</span> Governance basics</li>
+              <li><span class="solution-stack__dot">•</span> Compliance alignment</li>
+            </ul>
+            <blockquote class="solution-stack__quote">&quot;We stabilise the base before we build.&quot;</blockquote>
+          </div>
+          <div class="card solution-stack__card" data-fade>
+            <div class="solution-stack__label">Layer 02: Performance</div>
+            <h3 class="mb-4">Improve What Exists</h3>
+            <ul class="solution-stack__bullets">
+              <li><span class="solution-stack__dot">•</span> Operations redesign</li>
+              <li><span class="solution-stack__dot">•</span> Cost optimisation</li>
+              <li><span class="solution-stack__dot">•</span> CX improvement</li>
+              <li><span class="solution-stack__dot">•</span> Management reporting</li>
+            </ul>
+            <blockquote class="solution-stack__quote">&quot;We improve what exists before we scale it.&quot;</blockquote>
+          </div>
+          <div class="card solution-stack__card" data-fade>
+            <div class="solution-stack__label">Layer 03: Growth</div>
+            <h3 class="mb-4">Scale What Works</h3>
+            <ul class="solution-stack__bullets">
+              <li><span class="solution-stack__dot">•</span> Cross-border expansion</li>
+              <li><span class="solution-stack__dot">•</span> Franchise development</li>
+              <li><span class="solution-stack__dot">•</span> GTM execution</li>
+              <li><span class="solution-stack__dot">•</span> Market entry structure</li>
+            </ul>
+            <blockquote class="solution-stack__quote">&quot;We scale what&#x27;s working into new markets.&quot;</blockquote>
+          </div>
+          <div class="card solution-stack__card" data-fade>
+            <div class="solution-stack__label">Layer 04: Value</div>
+            <h3 class="mb-4">Position for Exit</h3>
+            <ul class="solution-stack__bullets">
+              <li><span class="solution-stack__dot">•</span> Investment readiness</li>
+              <li><span class="solution-stack__dot">•</span> M&amp;A preparation</li>
+              <li><span class="solution-stack__dot">•</span> Exit strategy</li>
+              <li><span class="solution-stack__dot">•</span> Market positioning narrative</li>
+            </ul>
+            <blockquote class="solution-stack__quote">&quot;We position the business for strategic transition, scale, or exit.&quot;</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+      EngagementSteps — 2x2 grid of numbered steps (used on Approach page).
+      Props (from content/pages/approach.json → engagement_steps):
+        eyebrow {string}
+        heading {string}
+        steps[] { number, title, body }
+    -->
+    <section class="section--light">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">How We Work</div>
+        <div class="divider"></div>
+        <h2 class="mb-12">How Engagements Move</h2>
+        <div class="grid-2 engagement-steps__grid">
+          <div data-fade>
+            <div class="engagement-steps__number">Step 01</div>
+            <h3>Diagnostic</h3>
+            <p>We assess the business situation, decision context, risks, and priorities before recommending anything.</p>
+          </div>
+          <div data-fade>
+            <div class="engagement-steps__number">Step 02</div>
+            <h3>Strategic Blueprint</h3>
+            <p>We define the operating logic, workstreams, and decision structure required to move forward.</p>
+          </div>
+          <div data-fade>
+            <div class="engagement-steps__number">Step 03</div>
+            <h3>Execution Governance</h3>
+            <p>We coordinate stakeholders, maintain alignment, and govern progress throughout implementation.</p>
+          </div>
+          <div data-fade>
+            <div class="engagement-steps__number">Step 04</div>
+            <h3>Performance Realization</h3>
+            <p>We help stabilize, improve, and prepare the business for its next stage of value creation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+      CtaBand — dark, centred final CTA section. Reused at bottom of every page.
+      Props (from content/pages/[page].json → cta_band):
+        heading {string}
+        body    {string}
+        cta     { label, href }
+    -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Ready to Start?</h2>
+        <p>Every engagement begins with a direct, no-obligation conversation about your situation and what you are trying to achieve.</p>
+        <a href="/contact.html" class="btn btn--primary-inverse">Request a Strategic Briefing</a>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Footer — site footer.
+    Reads: content/site.json + content/footer.json
+    Iterates: footer.columns.services[], footer.columns.company[], footer.columns.contact[], footer.legal.links[]
+  -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+  
+        <div class="footer__brand">
+          <div class="footer__brand-row">
+            <div class="nav__logo-mark">V</div>
+            <div class="footer__brand-name">VSON <span>ADVISORY</span></div>
+          </div>
+          <p>Operator-backed advisory for cross-border scaling. From operational friction to institutional value.</p>
+          <div class="footer__locations">Singapore · Vietnam · USA</div>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Services</div>
+          <ul class="footer__links">
+            <li><a href="#">Strategic Finance &amp; M&amp;A</a></li>
+            <li><a href="#">Performance Transformation</a></li>
+            <li><a href="#">CX &amp; Revenue Growth</a></li>
+            <li><a href="#">Digital Infrastructure</a></li>
+            <li><a href="#">Global Gateway</a></li>
+            <li><a href="#">Investment Readiness</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Company</div>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/approach.html">Approach</a></li>
+            <li><a href="/brain-trust.html">Leadership</a></li>
+            <li><a href="/vault.html">The Vault</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:contact@vsonadvisory.com">contact@vsonadvisory.com</a></li>
+            <li><a href="tel:+6588679295">+65 8867 9295</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">Vson Advisory Pte. Ltd. is a management consultancy firm. We do not provide financial advisory, investment advice, or corporate finance services as defined under the Singapore Securities and Futures Act. We do not facilitate the sale of securities or provide regulated financial services.</p>
+        <p class="footer__registration">VSON Pte. Ltd. · UEN 202601234M · Registered at 7 Temasek Boulevard, #12-07 Suntec Tower One, Singapore 038987</p>
+        <div class="footer__bottom-row">
+          <p class="footer__copyright">© 2026 VSON Pte. Ltd. All Rights Reserved.</p>
+          <div class="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!--
+  Capabilities page — assembly shell. Reuses CapabilityGrid from home.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    BaseHead — shared <head> boilerplate.
+    Page-specific values (title, description, og.*, canonical) come from content/pages/[page].json
+    Build step injects them as: Capabilities | VSON Advisory, Six pillars of enterprise value: Strategic Finance, Performance Transformation, CX, Digital Infrastructure, Global Gateway, and Investment Readiness., etc.
+  
+    Asset paths:
+      - Fonts → /assets/fonts/fonts.css         (loads Inter + Playfair Display)
+      - Icons → /assets/icons/                  (favicon.ico, icon.svg, apple-touch-icon.png)
+      - OG    → /assets/images/og/og-*.png      (path stored in JSON; absolute URL built via https://vsonadvisory.comhttps://vsonadvisory.com/og-capabilities.png)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Capabilities | VSON Advisory</title>
+  <meta name="description" content="Six pillars of enterprise value: Strategic Finance, Performance Transformation, CX, Digital Infrastructure, Global Gateway, and Investment Readiness.">
+  <meta name="keywords" content="capabilities, services, strategic finance, performance transformation, CX, digital infrastructure">
+  <link rel="canonical" href="https://vsonadvisory.com/capabilities.html">
+  
+  <!-- Open Graph (absolute URL = site.domain + meta.og.image) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Capabilities | VSON Advisory">
+  <meta property="og:description" content="Enterprise value across six core capabilities.">
+  <meta property="og:image"       content="https://vsonadvisory.com/og-capabilities.png">
+  <meta property="og:url"         content="https://vsonadvisory.com/capabilities.html">
+  
+  <!-- Favicon set (per SHARED-STANDARDS.md) -->
+  <link rel="icon"             href="/assets/icons/favicon.ico" sizes="32x32">
+  <link rel="icon"             href="/assets/icons/icon.svg"    type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+  <!-- Theme color (mobile browser chrome — uses brand navy) -->
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts (Google Fonts CDN — see /assets/fonts/README.md to self-host) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  
+  <!-- Stylesheets (load order: tokens → reset → utilities → layout → ui → nav/footer → sections) -->
+  <link rel="stylesheet" href="/components/css/tokens.css">
+  <link rel="stylesheet" href="/components/css/reset.css">
+  <link rel="stylesheet" href="/components/css/utilities.css">
+  <link rel="stylesheet" href="/components/css/layout.css">
+  <link rel="stylesheet" href="/components/css/ui.css">
+  <link rel="stylesheet" href="/components/css/nav.css">
+  <link rel="stylesheet" href="/components/css/footer.css">
+  <link rel="stylesheet" href="/components/css/sections.css">
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!--
+    Nav — site navigation.
+    Reads: content/site.json (logo_initial, brand_short, brand_suffix), content/nav.json (links, cta)
+    Iterates: nav.links[] for both desktop and mobile drawer.
+    No hardcoded labels, no hardcoded hrefs.
+  -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+  
+      <a href="/" class="nav__brand" aria-label="VSON Advisory home">
+        <div class="nav__logo-mark">V</div>
+        <div class="nav__brand-name">VSON <span>ADVISORY</span></div>
+      </a>
+  
+      <ul class="nav__links">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/approach.html" class="nav__link">Approach</a></li>
+        <li><a href="/brain-trust.html" class="nav__link">Leadership</a></li>
+        <li><a href="/capabilities.html" class="nav__link">Capabilities</a></li>
+        <li><a href="/vault.html" class="nav__link">The Vault</a></li>
+        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+      </ul>
+  
+      <a href="/contact.html" class="btn btn--primary nav__cta">Request a Strategic Briefing</a>
+  
+      <button class="nav__burger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  
+    <div class="nav__mobile" id="mobile-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/approach.html">Approach</a></li>
+        <li><a href="/brain-trust.html">Leadership</a></li>
+        <li><a href="/capabilities.html">Capabilities</a></li>
+        <li><a href="/vault.html">The Vault</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--
+    PageHeader — interior page header (navy band below sticky nav).
+    Props (from content/pages/[page].json → page_header):
+      title    {string}
+      subtitle {string}
+  -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Six Pillars of Enterprise Value</h1>
+      <p>VSON capabilities for reducing risk, improving performance, and building institutional readiness.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!--
+      CapabilityGrid — dark navy section with 6 numbered capability cards.
+      Props (from content/pages/home.json → capabilities):
+        eyebrow {string}
+        heading {html}
+        body    {string}
+        items[] { number, title, body }
+    -->
+    <section class="section--dark">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">What We Do</div>
+        <div class="divider"></div>
+        <h2 class="capability__heading">Enterprise Value Across<br/>Six Core Capabilities</h2>
+        <p class="capability__intro">VSON operates across a set of capabilities that help businesses reduce risk, improve performance, and become ready for scale, capital, or strategic transition.</p>
+        <div class="grid-3">
+          <div class="card--dark" data-fade>
+            <div class="num-badge">01</div>
+            <h3 class="mb-3">Strategic Finance &amp; M&amp;A Integrity</h3>
+            <p>We support diligence, structure decisions, improve investment readiness, and reduce execution risk around transactions.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">02</div>
+            <h3 class="mb-3">Performance Transformation</h3>
+            <p>We stabilize underperforming businesses, improve operating control, and build the foundation for scalable growth.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">03</div>
+            <h3 class="mb-3">CX as a Profit Multiplier</h3>
+            <p>We position customer experience as a measurable driver of retention, conversion, loyalty, and enterprise value.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">04</div>
+            <h3 class="mb-3">Digital Infrastructure &amp; Data</h3>
+            <p>We build CDP, BI, and decision systems that create management visibility and investor-ready reporting infrastructure.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">05</div>
+            <h3 class="mb-3">Global Gateway &amp; Franchise</h3>
+            <p>We translate brand standards into disciplined local execution and enable structured cross-border expansion.</p>
+          </div>
+          <div class="card--dark" data-fade>
+            <div class="num-badge">06</div>
+            <h3 class="mb-3">Investment Readiness &amp; Exit Advisory</h3>
+            <p>We prepare businesses for strategic transitions, M&amp;A readiness, and exit execution, structuring the governance, financials, and operational narrative that meet institutional standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+      CenteredCta — centred CTA section on light background (used on Capabilities page).
+      Differs from CtaBand: light background, single button, no subtitle styling.
+      Props (from content/pages/[page].json → centered_cta):
+        heading {string}
+        body    {string}
+        cta     { label, href }
+    -->
+    <section class="section--light">
+      <div class="container">
+        <div class="centered-cta" data-fade>
+          <h2 class="mb-6">Ready to Explore a Capability?</h2>
+          <p class="centered-cta__body">Connect with us to discuss how VSON can support your business transformation.</p>
+          <a href="/contact.html" class="btn btn--primary">Request a Strategic Briefing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Footer — site footer.
+    Reads: content/site.json + content/footer.json
+    Iterates: footer.columns.services[], footer.columns.company[], footer.columns.contact[], footer.legal.links[]
+  -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+  
+        <div class="footer__brand">
+          <div class="footer__brand-row">
+            <div class="nav__logo-mark">V</div>
+            <div class="footer__brand-name">VSON <span>ADVISORY</span></div>
+          </div>
+          <p>Operator-backed advisory for cross-border scaling. From operational friction to institutional value.</p>
+          <div class="footer__locations">Singapore · Vietnam · USA</div>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Services</div>
+          <ul class="footer__links">
+            <li><a href="#">Strategic Finance &amp; M&amp;A</a></li>
+            <li><a href="#">Performance Transformation</a></li>
+            <li><a href="#">CX &amp; Revenue Growth</a></li>
+            <li><a href="#">Digital Infrastructure</a></li>
+            <li><a href="#">Global Gateway</a></li>
+            <li><a href="#">Investment Readiness</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Company</div>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/approach.html">Approach</a></li>
+            <li><a href="/brain-trust.html">Leadership</a></li>
+            <li><a href="/vault.html">The Vault</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:contact@vsonadvisory.com">contact@vsonadvisory.com</a></li>
+            <li><a href="tel:+6588679295">+65 8867 9295</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">Vson Advisory Pte. Ltd. is a management consultancy firm. We do not provide financial advisory, investment advice, or corporate finance services as defined under the Singapore Securities and Futures Act. We do not facilitate the sale of securities or provide regulated financial services.</p>
+        <p class="footer__registration">VSON Pte. Ltd. · UEN 202601234M · Registered at 7 Temasek Boulevard, #12-07 Suntec Tower One, Singapore 038987</p>
+        <div class="footer__bottom-row">
+          <p class="footer__copyright">© 2026 VSON Pte. Ltd. All Rights Reserved.</p>
+          <div class="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

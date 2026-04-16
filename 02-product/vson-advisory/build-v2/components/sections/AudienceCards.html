@@ -1,0 +1,18 @@
+<!--
+  AudienceCards — 3 audience pathway cards. Last card is dashed/coming-soon.
+  Props (from content/pages/home.json → audience):
+    eyebrow {string}
+    heading {string}
+    items[] { tag, title, body, link: { label, href }, variant: 'solid'|'dashed' }
+-->
+<section class="section--light">
+  <div class="container">
+    {{> ui/Eyebrow text=audience.eyebrow}}
+    <h2 class="audience__heading">{{audience.heading}}</h2>
+    <div class="grid-3">
+      {{#each audience.items}}
+      {{> ui/Card tag=this.tag title=this.title body=this.body link=this.link variant=this.variant}}
+      {{/each}}
+    </div>
+  </div>
+</section>

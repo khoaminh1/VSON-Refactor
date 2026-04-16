@@ -1,0 +1,22 @@
+<!--
+  ThankYou — full-screen confirmation section after form submit.
+  Props (from content/pages/thank-you.json → thank_you):
+    icon            {string}  e.g. "✓"
+    heading         {string}
+    body_primary    {string}
+    body_secondary  {string}
+    cta_primary     { label, href }
+    cta_secondary   { label, href }
+-->
+<main id="main-content" class="thank-you">
+  <div class="container thank-you__inner">
+    <div class="thank-you__icon" aria-hidden="true">{{thank_you.icon}}</div>
+    <h1 class="mb-4">{{thank_you.heading}}</h1>
+    <p class="thank-you__body">{{thank_you.body_primary}}</p>
+    <p class="thank-you__body-muted">{{thank_you.body_secondary}}</p>
+    <div class="thank-you__actions">
+      <a href="{{thank_you.cta_primary.href}}"   class="btn btn--primary">{{thank_you.cta_primary.label}}</a>
+      <a href="{{thank_you.cta_secondary.href}}" class="btn btn--ghost">{{thank_you.cta_secondary.label}}</a>
+    </div>
+  </div>
+</main>

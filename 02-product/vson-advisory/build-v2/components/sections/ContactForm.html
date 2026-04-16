@@ -1,0 +1,110 @@
+<!--
+  ContactForm — main contact section: inquiry-type radios + Netlify form + regional contacts card.
+  Reuses behaviour from shared.js → useContactForm (looks for .contact-form).
+  Props (from content/pages/contact.json → contact_section):
+    eyebrow          {string}
+    heading          {string}
+    inquiry_label    {string}
+    inquiry_types[]  { value, label, default? }
+    form: {
+      fields[]       { id, label, type, name, placeholder, required?, half? }
+      situation: { id, label, name, options[] }
+      message:   { id, label, name, placeholder }
+      submit_label   {string}
+    }
+    regional: {
+      heading        {string}
+      contacts[]     { region, name, role, lines[], email }
+      footnote       {string}
+    }
+-->
+<section class="section--paper">
+  <div class="container">
+    {{> ui/Eyebrow text=contact_section.eyebrow}}
+    <h2 class="mb-12">{{contact_section.heading}}</h2>
+
+    <div class="grid-2 contact__grid">
+
+      <!-- Form column -->
+      <div data-fade>
+        <p class="contact__inquiry-label">{{contact_section.inquiry_label}}</p>
+        <div class="contact__inquiry-list">
+          {{#each contact_section.inquiry_types}}
+          <label class="radio-opt">
+            <input type="radio" name="inquiry-type" value="{{this.value}}"{{#if this.default}} checked{{/if}}>
+            <span>{{this.label}}</span>
+          </label>
+          {{/each}}
+        </div>
+
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you.html"
+          class="contact-form"
+        >
+          <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="contact__field-row">
+            {{#each contact_section.form.fields}}
+            <div class="form-group">
+              <label class="form-label" for="{{this.id}}">{{this.label}}</label>
+              <input
+                class="form-input"
+                id="{{this.id}}"
+                type="{{this.type}}"
+                name="{{this.name}}"
+                placeholder="{{this.placeholder}}"
+                {{#if this.required}}required{{/if}}
+              >
+            </div>
+            {{/each}}
+          </div>
+
+          <div class="form-group mb-4">
+            <label class="form-label" for="{{contact_section.form.situation.id}}">{{contact_section.form.situation.label}}</label>
+            <select class="form-select" id="{{contact_section.form.situation.id}}" name="{{contact_section.form.situation.name}}">
+              {{#each contact_section.form.situation.options}}
+              <option>{{this}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+          <div class="form-group mb-6">
+            <label class="form-label" for="{{contact_section.form.message.id}}">{{contact_section.form.message.label}}</label>
+            <textarea
+              class="form-textarea"
+              id="{{contact_section.form.message.id}}"
+              name="{{contact_section.form.message.name}}"
+              placeholder="{{contact_section.form.message.placeholder}}"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact__submit">{{contact_section.form.submit_label}}</button>
+        </form>
+      </div>
+
+      <!-- Regional contacts column -->
+      <div data-fade>
+        <div class="contact__regional">
+          <h3>{{contact_section.regional.heading}}</h3>
+          {{#each contact_section.regional.contacts}}
+          <div class="contact__region{{#unless @last}} contact__region--bordered{{/unless}}">
+            <div class="contact__region-label">{{this.region}}</div>
+            <div class="contact__region-name">{{this.name}}</div>
+            <div class="contact__region-role">{{this.role}}</div>
+            <div class="contact__region-lines">
+              {{#each this.lines}}{{this}}<br>{{/each}}
+              <a href="mailto:{{this.email}}" class="contact__region-email">{{this.email}}</a>
+            </div>
+          </div>
+          {{/each}}
+          <p class="contact__footnote">{{contact_section.regional.footnote}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

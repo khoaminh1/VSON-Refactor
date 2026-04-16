@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "The Vault | VSON Advisory",
+    "description": "Boardroom-level insights for founders, operators, and capital partners. Coming soon.",
+    "keywords": "insights, vault, boardroom, strategic thinking, founders, operators",
+    "canonical": "https://vsonadvisory.com/vault.html",
+    "og": {
+      "title": "The Vault | VSON Advisory",
+      "description": "Boardroom-level insights coming soon.",
+      "image": "https://vsonadvisory.com/og-vault.png",
+      "url": "https://vsonadvisory.com/vault.html"
+    }
+  },
+
+  "page_header": {
+    "title": "The Vault",
+    "subtitle": "Boardroom-level insights for founders, operators, and capital partners."
+  },
+
+  "coming_soon": {
+    "heading": "Coming Soon",
+    "body": "We're curating boardroom-level insights across our six core capabilities. Get early access to our thinking on strategic finance, performance transformation, CX, digital infrastructure, global expansion, and investment readiness."
+  },
+
+  "vault_preview": {
+    "eyebrow": "Vault Preview",
+    "heading": "Articles Coming to The Vault",
+    "body": "Our first collection will feature deep dives on critical topics for founders and operators seeking institutional scale.",
+    "articles": [
+      { "tag": "Performance Transformation",       "title": "Why Mid-Market Companies Stall Before Institutional Scale",      "href": "#" },
+      { "tag": "Digital Infrastructure & Data",     "title": "The Hidden Valuation Cost of Fragmented Data",                  "href": "#" },
+      { "tag": "Global Gateway & Franchise",        "title": "Cross-Border Expansion Fails When Governance Arrives Too Late", "href": "#" },
+      { "tag": "CX as a Profit Multiplier",         "title": "Why CX Should Be Treated as a Revenue System",                 "href": "#" },
+      { "tag": "Strategic Finance & M&A Integrity", "title": "What Institutional Partners Evaluate Beyond the Pitch Deck",   "href": "#" }
+    ],
+    "cta": { "label": "View All Articles →", "href": "#" }
+  },
+
+  "newsletter": {
+    "heading": "Be First to Access The Vault",
+    "body": "Enter your email below and we'll notify you the moment The Vault launches with its first insights.",
+    "form_name": "vault-notify",
+    "email_label": "Email address",
+    "email_placeholder": "your@email.com",
+    "submit_label": "Notify Me When The Vault Launches",
+    "disclaimer": "We'll send you early access. No spam, just serious insights.",
+    "action": "/thank-you.html"
+  }
+}

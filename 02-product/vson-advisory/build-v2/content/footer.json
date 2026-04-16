@@ -1,0 +1,33 @@
+{
+  "columns": {
+    "services": [
+      { "label": "Strategic Finance & M&A",   "href": "#" },
+      { "label": "Performance Transformation", "href": "#" },
+      { "label": "CX & Revenue Growth",        "href": "#" },
+      { "label": "Digital Infrastructure",      "href": "#" },
+      { "label": "Global Gateway",              "href": "#" },
+      { "label": "Investment Readiness",        "href": "#" }
+    ],
+    "company": [
+      { "label": "Home",       "href": "/" },
+      { "label": "Approach",   "href": "/approach.html" },
+      { "label": "Leadership", "href": "/brain-trust.html" },
+      { "label": "The Vault",  "href": "/vault.html" },
+      { "label": "Contact",    "href": "/contact.html" }
+    ],
+    "contact": [
+      { "label": "contact@vsonadvisory.com", "href": "mailto:contact@vsonadvisory.com" },
+      { "label": "+65 8867 9295",            "href": "tel:+6588679295" },
+      { "label": "LinkedIn",                 "href": "#" }
+    ]
+  },
+  "legal": {
+    "disclaimer": "Vson Advisory Pte. Ltd. is a management consultancy firm. We do not provide financial advisory, investment advice, or corporate finance services as defined under the Singapore Securities and Futures Act. We do not facilitate the sale of securities or provide regulated financial services.",
+    "registration": "VSON Pte. Ltd. · UEN 202601234M · Registered at 7 Temasek Boulevard, #12-07 Suntec Tower One, Singapore 038987",
+    "copyright": "© 2026 VSON Pte. Ltd. All Rights Reserved.",
+    "links": [
+      { "label": "Privacy Policy",  "href": "#" },
+      { "label": "Terms of Service", "href": "#" }
+    ]
+  }
+}

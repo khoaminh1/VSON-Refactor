@@ -1,0 +1,14 @@
+{
+  "name": "vson-advisory-build-v2",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Refactored VSON Advisory — Handlebars-based static build",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx --yes serve _site -p 3000 --no-clipboard",
+    "dev": "node build.js && npx --yes serve _site -p 3000 --no-clipboard"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  }
+}

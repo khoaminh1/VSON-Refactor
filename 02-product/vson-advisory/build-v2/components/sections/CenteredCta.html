@@ -1,0 +1,17 @@
+<!--
+  CenteredCta — centred CTA section on light background (used on Capabilities page).
+  Differs from CtaBand: light background, single button, no subtitle styling.
+  Props (from content/pages/[page].json → centered_cta):
+    heading {string}
+    body    {string}
+    cta     { label, href }
+-->
+<section class="section--light">
+  <div class="container">
+    <div class="centered-cta" data-fade>
+      <h2 class="mb-6">{{centered_cta.heading}}</h2>
+      <p class="centered-cta__body">{{centered_cta.body}}</p>
+      <a href="{{centered_cta.cta.href}}" class="btn btn--primary">{{centered_cta.cta.label}}</a>
+    </div>
+  </div>
+</section>

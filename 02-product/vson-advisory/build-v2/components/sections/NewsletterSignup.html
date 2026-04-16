@@ -1,0 +1,44 @@
+<!--
+  NewsletterSignup — Netlify-form newsletter signup (used on the Vault page).
+  Props (from content/pages/vault.json → newsletter):
+    heading       {string}
+    body          {string}
+    form_name     {string}
+    email_label   {string}  for screen readers
+    email_placeholder {string}
+    submit_label  {string}
+    disclaimer    {string}
+    action        {string}  redirect path on success
+-->
+<section class="section--mid">
+  <div class="container">
+    <div class="newsletter" data-fade>
+      <h2 class="mb-4">{{newsletter.heading}}</h2>
+      <p class="newsletter__intro">{{newsletter.body}}</p>
+
+      <form
+        name="{{newsletter.form_name}}"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="{{newsletter.action}}"
+        class="newsletter__form"
+      >
+        <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            class="form-input"
+            placeholder="{{newsletter.email_placeholder}}"
+            required
+            aria-label="{{newsletter.email_label}}"
+          >
+        </div>
+        <button type="submit" class="btn btn--primary newsletter__submit">{{newsletter.submit_label}}</button>
+      </form>
+
+      <p class="newsletter__disclaimer">{{newsletter.disclaimer}}</p>
+    </div>
+  </div>
+</section>

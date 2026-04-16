@@ -1,0 +1,61 @@
+<!--
+  Footer — site footer.
+  Reads: content/site.json + content/footer.json
+  Iterates: footer.columns.services[], footer.columns.company[], footer.columns.contact[], footer.legal.links[]
+-->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <div class="footer__brand-row">
+          <div class="nav__logo-mark">{{site.logo_initial}}</div>
+          <div class="footer__brand-name">{{site.brand_short}} <span>{{site.brand_suffix}}</span></div>
+        </div>
+        <p>{{site.tagline}}</p>
+        <div class="footer__locations">{{site.locations}}</div>
+      </div>
+
+      <div>
+        <div class="footer__heading">Services</div>
+        <ul class="footer__links">
+          {{#each footer.columns.services}}
+          <li><a href="{{this.href}}">{{this.label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__heading">Company</div>
+        <ul class="footer__links">
+          {{#each footer.columns.company}}
+          <li><a href="{{this.href}}">{{this.label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__heading">Contact</div>
+        <ul class="footer__links">
+          {{#each footer.columns.contact}}
+          <li><a href="{{this.href}}">{{this.label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__disclaimer">{{footer.legal.disclaimer}}</p>
+      <p class="footer__registration">{{footer.legal.registration}}</p>
+      <div class="footer__bottom-row">
+        <p class="footer__copyright">{{footer.legal.copyright}}</p>
+        <div class="footer__legal">
+          {{#each footer.legal.links}}
+          <a href="{{this.href}}">{{this.label}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

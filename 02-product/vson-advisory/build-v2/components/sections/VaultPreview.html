@@ -1,0 +1,24 @@
+<!--
+  VaultPreview — eyebrow + heading + intro + stacked article rows + CTA.
+  Props (from content/pages/home.json → vault_preview):
+    eyebrow    {string}
+    heading    {string}
+    body       {string}
+    articles[] { tag, title, href }
+    cta        { label, href }
+-->
+<section class="section--mid">
+  <div class="container">
+    {{> ui/Eyebrow text=vault_preview.eyebrow}}
+    <h2 class="vault__heading">{{vault_preview.heading}}</h2>
+    <p class="vault__intro">{{vault_preview.body}}</p>
+
+    <div class="vault__list">
+      {{#each vault_preview.articles}}
+      {{> ui/VaultRow href=this.href tag=this.tag title=this.title}}
+      {{/each}}
+    </div>
+
+    <a href="{{vault_preview.cta.href}}" class="btn btn--ghost vault__cta" data-fade>{{vault_preview.cta.label}}</a>
+  </div>
+</section>

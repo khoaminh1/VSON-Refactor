@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "Our Approach | VSON Advisory",
+    "description": "VSON's 4-layer solution stack and engagement methodology for strategic transformation, from diagnostic to performance realization.",
+    "keywords": "strategic approach, solution methodology, engagement process, transformation framework, 4-layer stack",
+    "canonical": "https://vsonadvisory.com/approach.html",
+    "og": {
+      "title": "Our Approach | VSON Advisory",
+      "description": "The 4-Layer Solution Stack: Govern → Improve → Scale → Position for Exit.",
+      "image": "https://vsonadvisory.com/og-approach.png",
+      "url": "https://vsonadvisory.com/approach.html"
+    }
+  },
+
+  "page_header": {
+    "title": "Our Approach",
+    "subtitle": "A structured methodology for reducing risk, improving performance, and creating institutional value."
+  },
+
+  "solution_stack": {
+    "eyebrow": "The VSON Framework",
+    "heading": "The 4-Layer Solution Stack",
+    "body": "Every VSON engagement is structured around a modular solution architecture. We start where the client is, and build toward the value they need.",
+    "layers": [
+      {
+        "layer": "Layer 01: Foundation",
+        "title": "Govern First",
+        "bullets": ["Financial transparency", "Data structure (CDP/BI)", "Governance basics", "Compliance alignment"],
+        "quote": "\"We stabilise the base before we build.\""
+      },
+      {
+        "layer": "Layer 02: Performance",
+        "title": "Improve What Exists",
+        "bullets": ["Operations redesign", "Cost optimisation", "CX improvement", "Management reporting"],
+        "quote": "\"We improve what exists before we scale it.\""
+      },
+      {
+        "layer": "Layer 03: Growth",
+        "title": "Scale What Works",
+        "bullets": ["Cross-border expansion", "Franchise development", "GTM execution", "Market entry structure"],
+        "quote": "\"We scale what's working into new markets.\""
+      },
+      {
+        "layer": "Layer 04: Value",
+        "title": "Position for Exit",
+        "bullets": ["Investment readiness", "M&A preparation", "Exit strategy", "Market positioning narrative"],
+        "quote": "\"We position the business for strategic transition, scale, or exit.\""
+      }
+    ]
+  },
+
+  "engagement_steps": {
+    "eyebrow": "How We Work",
+    "heading": "How Engagements Move",
+    "steps": [
+      { "number": "Step 01", "title": "Diagnostic",              "body": "We assess the business situation, decision context, risks, and priorities before recommending anything." },
+      { "number": "Step 02", "title": "Strategic Blueprint",     "body": "We define the operating logic, workstreams, and decision structure required to move forward." },
+      { "number": "Step 03", "title": "Execution Governance",    "body": "We coordinate stakeholders, maintain alignment, and govern progress throughout implementation." },
+      { "number": "Step 04", "title": "Performance Realization", "body": "We help stabilize, improve, and prepare the business for its next stage of value creation." }
+    ]
+  },
+
+  "cta_band": {
+    "heading": "Ready to Start?",
+    "body": "Every engagement begins with a direct, no-obligation conversation about your situation and what you are trying to achieve.",
+    "cta": { "label": "Request a Strategic Briefing", "href": "/contact.html" }
+  }
+}

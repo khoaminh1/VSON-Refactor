@@ -1,0 +1,47 @@
+<!--
+  LeadershipFull — full leadership page section: managing partners + strategic advisors + collective note + CTA.
+  Reuses LeaderCard ui atom from home page.
+  Props (from content/pages/brain-trust.json → leadership_full):
+    eyebrow                  {string}
+    heading                  {html}
+    body                     {string}
+    partners_label           {string}
+    partners[]               { initial, name, role, specialisms, bio }
+    advisors_label           {string}
+    advisors[]               { initial, name, role, specialisms, bio }
+    collective_note          {string}
+    cta                      { label, href }
+-->
+<section class="section--light">
+  <div class="container">
+    {{> ui/Eyebrow text=leadership_full.eyebrow}}
+    <h2 class="mb-6">{{{leadership_full.heading}}}</h2>
+    <p class="leadership-full__intro">{{leadership_full.body}}</p>
+
+    <div class="leadership-full__group">
+      <div class="leadership-full__group-label">{{leadership_full.partners_label}}</div>
+      <div class="grid-3">
+        {{#each leadership_full.partners}}
+        {{> ui/LeaderCard initial=this.initial name=this.name role=this.role specialisms=this.specialisms bio=this.bio}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="leadership-full__group">
+      <div class="leadership-full__group-label">{{leadership_full.advisors_label}}</div>
+      <div class="grid-2">
+        {{#each leadership_full.advisors}}
+        {{> ui/LeaderCard initial=this.initial name=this.name role=this.role specialisms=this.specialisms bio=this.bio}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="leadership__note" data-fade>
+      <p>{{leadership_full.collective_note}}</p>
+    </div>
+
+    <div class="leadership-full__cta" data-fade>
+      <a href="{{leadership_full.cta.href}}" class="btn btn--primary">{{leadership_full.cta.label}}</a>
+    </div>
+  </div>
+</section>

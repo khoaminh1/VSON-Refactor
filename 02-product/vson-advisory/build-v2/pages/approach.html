@@ -1,0 +1,27 @@
+<!--
+  Approach page — assembly shell. All partials inherit root context.
+-->
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+<head>
+  {{> layout/base-head}}
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  {{> layout/nav}}
+
+  {{> sections/PageHeader}}
+
+  <main id="main-content">
+    {{> sections/SolutionStack}}
+    {{> sections/EngagementSteps}}
+    {{> sections/CtaBand}}
+  </main>
+
+  {{> layout/footer}}
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

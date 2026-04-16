@@ -1,0 +1,17 @@
+<!--
+  Card — generic content card with optional number, tag, title, body, link.
+  Props:
+    number   {string?}  e.g. "01"
+    tag      {string?}  pill label
+    title    {string}   card heading
+    body     {string}   card paragraph
+    link     {object?}  { label, href }
+    variant  {'default'|'dashed'|'dark'}  visual style
+-->
+<div class="card{{#if (eq variant 'dashed')}} card--dashed{{/if}}{{#if (eq variant 'dark')}} card--dark{{/if}}" data-fade>
+  {{#if number}}<div class="num-badge">{{number}}</div>{{/if}}
+  {{#if tag}}<div class="tag mb-4">{{tag}}</div>{{/if}}
+  <h3 class="mb-3">{{title}}</h3>
+  <p class="mb-4">{{body}}</p>
+  {{#if link}}<a href="{{link.href}}" class="btn--link">{{link.label}}</a>{{/if}}
+</div>

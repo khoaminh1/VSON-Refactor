@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Capabilities | VSON Advisory",
+    "description": "Six pillars of enterprise value: Strategic Finance, Performance Transformation, CX, Digital Infrastructure, Global Gateway, and Investment Readiness.",
+    "keywords": "capabilities, services, strategic finance, performance transformation, CX, digital infrastructure",
+    "canonical": "https://vsonadvisory.com/capabilities.html",
+    "og": {
+      "title": "Capabilities | VSON Advisory",
+      "description": "Enterprise value across six core capabilities.",
+      "image": "https://vsonadvisory.com/og-capabilities.png",
+      "url": "https://vsonadvisory.com/capabilities.html"
+    }
+  },
+
+  "page_header": {
+    "title": "Six Pillars of Enterprise Value",
+    "subtitle": "VSON capabilities for reducing risk, improving performance, and building institutional readiness."
+  },
+
+  "capabilities": {
+    "eyebrow": "What We Do",
+    "heading": "Enterprise Value Across<br/>Six Core Capabilities",
+    "body": "VSON operates across a set of capabilities that help businesses reduce risk, improve performance, and become ready for scale, capital, or strategic transition.",
+    "items": [
+      { "number": "01", "title": "Strategic Finance & M&A Integrity",    "body": "We support diligence, structure decisions, improve investment readiness, and reduce execution risk around transactions." },
+      { "number": "02", "title": "Performance Transformation",            "body": "We stabilize underperforming businesses, improve operating control, and build the foundation for scalable growth." },
+      { "number": "03", "title": "CX as a Profit Multiplier",            "body": "We position customer experience as a measurable driver of retention, conversion, loyalty, and enterprise value." },
+      { "number": "04", "title": "Digital Infrastructure & Data",         "body": "We build CDP, BI, and decision systems that create management visibility and investor-ready reporting infrastructure." },
+      { "number": "05", "title": "Global Gateway & Franchise",           "body": "We translate brand standards into disciplined local execution and enable structured cross-border expansion." },
+      { "number": "06", "title": "Investment Readiness & Exit Advisory",  "body": "We prepare businesses for strategic transitions, M&A readiness, and exit execution, structuring the governance, financials, and operational narrative that meet institutional standards." }
+    ]
+  },
+
+  "centered_cta": {
+    "heading": "Ready to Explore a Capability?",
+    "body": "Connect with us to discuss how VSON can support your business transformation.",
+    "cta": { "label": "Request a Strategic Briefing", "href": "/contact.html" }
+  }
+}

@@ -1,0 +1,9 @@
+<!--
+  Button — anchor-based CTA button.
+  Props:
+    href     {string}  destination URL
+    label    {string}  visible text
+    variant  {'primary'|'primary-blue'|'primary-inverse'|'ghost'|'ghost-white'|'link'}
+  Usage: {{> ui/Button href=cta_primary.href label=cta_primary.label variant="primary-blue"}}
+-->
+<a href="{{href}}" class="btn btn--{{variant}}">{{label}}</a>

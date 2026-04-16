@@ -1,0 +1,29 @@
+<!--
+  LeadershipCards — 3 leader cards + collective note callout + CTA button.
+  Props (from content/pages/home.json → leadership):
+    eyebrow         {string}
+    heading         {html}
+    body            {string}
+    members[]       { initial, name, role, specialisms, bio }
+    collective_note {string}
+    cta             { label, href }
+-->
+<section class="section--light">
+  <div class="container">
+    {{> ui/Eyebrow text=leadership.eyebrow}}
+    <h2 class="leadership__heading">{{{leadership.heading}}}</h2>
+    <p class="leadership__intro">{{leadership.body}}</p>
+
+    <div class="grid-3 leadership__grid">
+      {{#each leadership.members}}
+      {{> ui/LeaderCard initial=this.initial name=this.name role=this.role specialisms=this.specialisms bio=this.bio}}
+      {{/each}}
+    </div>
+
+    <div class="leadership__note" data-fade>
+      <p>{{leadership.collective_note}}</p>
+    </div>
+
+    <a href="{{leadership.cta.href}}" class="btn btn--ghost" data-fade>{{leadership.cta.label}}</a>
+  </div>
+</section>

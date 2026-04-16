@@ -1,0 +1,30 @@
+<!--
+  SolutionStack — 4-card grid (used on Approach page) showing the 4-Layer Solution Stack.
+  Each card has a layer label, title, bullet list, and italic blockquote.
+  Props (from content/pages/approach.json → solution_stack):
+    eyebrow  {string}
+    heading  {string}
+    body     {string}
+    layers[] { layer, title, bullets[], quote }
+-->
+<section class="section--paper">
+  <div class="container">
+    {{> ui/Eyebrow text=solution_stack.eyebrow}}
+    <h2 class="mb-6">{{solution_stack.heading}}</h2>
+    <p class="solution-stack__intro">{{solution_stack.body}}</p>
+    <div class="grid-2">
+      {{#each solution_stack.layers}}
+      <div class="card solution-stack__card" data-fade>
+        <div class="solution-stack__label">{{this.layer}}</div>
+        <h3 class="mb-4">{{this.title}}</h3>
+        <ul class="solution-stack__bullets">
+          {{#each this.bullets}}
+          <li><span class="solution-stack__dot">•</span> {{this}}</li>
+          {{/each}}
+        </ul>
+        <blockquote class="solution-stack__quote">{{this.quote}}</blockquote>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

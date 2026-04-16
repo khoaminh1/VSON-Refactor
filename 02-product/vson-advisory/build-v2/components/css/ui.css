@@ -1,0 +1,232 @@
+/* ============================================================
+   UI Atoms — buttons, cards, tags, badges, divider
+   ============================================================ */
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+  min-height: 44px;
+  padding: 0.875rem 1.75rem;
+}
+
+.btn--primary {
+  background: var(--vson-navy);
+  color: var(--vson-white);
+}
+
+.btn--primary:hover {
+  background: var(--slate-800);
+}
+
+.btn--primary-blue {
+  background: var(--vson-blue);
+  color: var(--vson-white);
+}
+
+.btn--primary-blue:hover {
+  background: var(--slate-800);
+}
+
+.btn--primary-inverse {
+  background: var(--vson-white);
+  color: var(--vson-navy);
+}
+
+.btn--primary-inverse:hover {
+  background: var(--slate-100);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--vson-navy);
+  border: 1px solid var(--slate-300);
+}
+
+.btn--ghost:hover {
+  border-color: var(--vson-navy);
+  background: var(--slate-50);
+}
+
+.btn--ghost-white {
+  background: transparent;
+  color: var(--vson-white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn--ghost-white:hover {
+  border-color: var(--vson-white);
+  background: rgba(255,255,255,0.08);
+}
+
+.btn--link {
+  background: transparent;
+  color: var(--vson-blue);
+  padding: 0;
+  font-size: var(--text-xs);
+  min-height: auto;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+  background: var(--vson-white);
+  border: 1px solid var(--slate-200);
+  padding: var(--space-8);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--slate-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card--dashed {
+  border-style: dashed;
+  border-color: var(--slate-300);
+  opacity: 0.75;
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.card--dark {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.card--dark h3 {
+  color: var(--vson-white);
+  margin-bottom: var(--space-3);
+}
+
+.card--dark p {
+  color: var(--slate-400);
+}
+
+/* ── Number Badge ────────────────────────────────────────── */
+.num-badge {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--slate-200);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.section--dark .num-badge,
+.card--dark .num-badge {
+  color: var(--slate-700);
+}
+
+/* ── Tag / Pill ──────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(59,130,246,0.08);
+  color: var(--vson-blue);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(59,130,246,0.2);
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  width: 2.5rem;
+  height: 2px;
+  background: var(--vson-blue);
+  margin-bottom: var(--space-6);
+  margin-top: var(--space-3);
+}
+
+/* ── Form Elements ───────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--vson-navy);
+  background: var(--vson-white);
+  border: 1px solid var(--slate-200);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 44px;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--vson-blue);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* ── Section Tonality ────────────────────────────────────── */
+.section--dark {
+  background: var(--vson-navy);
+  color: var(--vson-white);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--vson-white);
+}
+
+.section--dark p {
+  color: var(--slate-400);
+}
+
+.section--dark .eyebrow {
+  color: var(--slate-600);
+}
+
+.section--light {
+  background: var(--vson-white);
+}
+
+.section--paper {
+  background: var(--vson-paper);
+}
+
+.section--mid {
+  background: var(--slate-100);
+}

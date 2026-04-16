@@ -1,0 +1,39 @@
+/* ============================================================
+   VSON ADVISORY — Font Loading
+   Single source of font loading for the site.
+   Linked from components/layout/base-head.html.
+
+   Currently uses Google Fonts CDN (per ADR-002 — no build step).
+   To self-host:
+     1. Download Inter + Playfair Display WOFF2 files into this folder
+     2. Replace the @import below with @font-face declarations
+     3. Update base-head.html: remove preconnect to Google domains
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ── Self-hosted scaffold (commented out until WOFF2 files exist) ─────
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-VariableFont.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/PlayfairDisplay-VariableFont.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/PlayfairDisplay-Italic.woff2') format('woff2');
+}
+─────────────────────────────────────────────────────────────────────── */

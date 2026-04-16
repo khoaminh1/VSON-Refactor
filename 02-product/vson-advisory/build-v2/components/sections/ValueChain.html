@@ -1,0 +1,25 @@
+<!--
+  ValueChain — eyebrow + heading + intro + 3-card grid with numbered cards.
+  Props (from content/pages/home.json → value_chain):
+    eyebrow {string}
+    heading {html}
+    body    {string}
+    items[] { number, title, body, link: { label, href } }
+-->
+<section class="section--paper">
+  <div class="container">
+    {{> ui/Eyebrow text=value_chain.eyebrow}}
+    <h2 class="value-chain__heading">{{{value_chain.heading}}}</h2>
+    <p class="value-chain__intro">{{value_chain.body}}</p>
+    <div class="grid-3">
+      {{#each value_chain.items}}
+      <div class="card" data-fade>
+        <div class="num-badge">{{this.number}}</div>
+        <h3 class="mb-3">{{this.title}}</h3>
+        <p>{{this.body}}</p>
+        <a href="{{this.link.href}}" class="btn--link mt-4">{{this.link.label}}</a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

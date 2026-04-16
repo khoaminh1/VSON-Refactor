@@ -1,0 +1,22 @@
+<!--
+  Hero — full-bleed homepage hero with eyebrow, heading (HTML-allowed for <em>/<br>), 2 paragraphs, 2 CTAs.
+  Props (from content/pages/home.json → hero):
+    eyebrow        {string}
+    heading        {html}      may contain <br/> and <em>
+    body           {string[]}  array of paragraph strings
+    cta_primary    { label, href }
+    cta_secondary  { label, href }
+-->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">{{hero.eyebrow}}</div>
+    <h1>{{{hero.heading}}}</h1>
+    {{#each hero.body}}
+    <p class="hero__body{{#unless @first}} hero__body--secondary{{/unless}}">{{this}}</p>
+    {{/each}}
+    <div class="hero__actions">
+      <a href="{{hero.cta_primary.href}}"   class="btn btn--primary-blue">{{hero.cta_primary.label}}</a>
+      <a href="{{hero.cta_secondary.href}}" class="btn btn--ghost-white">{{hero.cta_secondary.label}}</a>
+    </div>
+  </div>
+</section>

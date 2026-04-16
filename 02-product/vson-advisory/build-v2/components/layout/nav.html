@@ -1,0 +1,35 @@
+<!--
+  Nav — site navigation.
+  Reads: content/site.json (logo_initial, brand_short, brand_suffix), content/nav.json (links, cta)
+  Iterates: nav.links[] for both desktop and mobile drawer.
+  No hardcoded labels, no hardcoded hrefs.
+-->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+
+    <a href="/" class="nav__brand" aria-label="{{site.name}} home">
+      <div class="nav__logo-mark">{{site.logo_initial}}</div>
+      <div class="nav__brand-name">{{site.brand_short}} <span>{{site.brand_suffix}}</span></div>
+    </a>
+
+    <ul class="nav__links">
+      {{#each nav.links}}
+      <li><a href="{{this.href}}" class="nav__link">{{this.label}}</a></li>
+      {{/each}}
+    </ul>
+
+    <a href="{{nav.cta.href}}" class="btn btn--primary nav__cta">{{nav.cta.label}}</a>
+
+    <button class="nav__burger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="mobile-menu">
+    <ul>
+      {{#each nav.links}}
+      <li><a href="{{this.href}}">{{this.label}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+</nav>

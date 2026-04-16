@@ -1,0 +1,30 @@
+<!--
+  WhyChecklist — 2-col layout: heading on left, 5 bullets with strong+detail on right.
+  Props (from content/pages/home.json → why_vson):
+    eyebrow {string}
+    heading {html}
+    body    {string}
+    bullets[] { strong, detail }
+-->
+<section class="section--mid">
+  <div class="container">
+    <div class="why__grid">
+      <div data-fade>
+        {{> ui/Eyebrow text=why_vson.eyebrow}}
+        <h2 class="mb-4">{{{why_vson.heading}}}</h2>
+        <p>{{why_vson.body}}</p>
+      </div>
+      <ul class="why__list" data-fade>
+        {{#each why_vson.bullets}}
+        <li class="why__item">
+          <div class="why__check" aria-hidden="true">✓</div>
+          <div>
+            <strong>{{this.strong}}</strong>
+            <p class="why__detail">{{this.detail}}</p>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</section>

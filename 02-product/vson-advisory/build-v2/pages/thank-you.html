@@ -1,0 +1,23 @@
+<!--
+  Thank You page — assembly shell.
+  ThankYou section is full-page (replaces <main>); no PageHeader, no CtaBand.
+-->
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+<head>
+  {{> layout/base-head}}
+  {{#if meta.robots}}<meta name="robots" content="{{meta.robots}}">{{/if}}
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  {{> layout/nav}}
+
+  {{> sections/ThankYou}}
+
+  {{> layout/footer}}
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

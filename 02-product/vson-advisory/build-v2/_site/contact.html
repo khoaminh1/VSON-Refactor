@@ -1,0 +1,372 @@
+<!--
+  Contact page — assembly shell.
+  ContactForm ships with .contact-form class → shared.js useContactForm auto-hooks.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    BaseHead — shared <head> boilerplate.
+    Page-specific values (title, description, og.*, canonical) come from content/pages/[page].json
+    Build step injects them as: Contact | VSON Advisory, Start the right conversation about your strategic priorities and current situation. VSON Advisory: boutique consulting for cross-border scaling., etc.
+  
+    Asset paths:
+      - Fonts → /assets/fonts/fonts.css         (loads Inter + Playfair Display)
+      - Icons → /assets/icons/                  (favicon.ico, icon.svg, apple-touch-icon.png)
+      - OG    → /assets/images/og/og-*.png      (path stored in JSON; absolute URL built via https://vsonadvisory.comhttps://vsonadvisory.com/og-contact.png)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contact | VSON Advisory</title>
+  <meta name="description" content="Start the right conversation about your strategic priorities and current situation. VSON Advisory: boutique consulting for cross-border scaling.">
+  <meta name="keywords" content="contact, request briefing, strategic advisory, consultation">
+  <link rel="canonical" href="https://vsonadvisory.com/contact.html">
+  
+  <!-- Open Graph (absolute URL = site.domain + meta.og.image) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Contact | VSON Advisory">
+  <meta property="og:description" content="Request a strategic briefing.">
+  <meta property="og:image"       content="https://vsonadvisory.com/og-contact.png">
+  <meta property="og:url"         content="https://vsonadvisory.com/contact.html">
+  
+  <!-- Favicon set (per SHARED-STANDARDS.md) -->
+  <link rel="icon"             href="/assets/icons/favicon.ico" sizes="32x32">
+  <link rel="icon"             href="/assets/icons/icon.svg"    type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+  <!-- Theme color (mobile browser chrome — uses brand navy) -->
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts (Google Fonts CDN — see /assets/fonts/README.md to self-host) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  
+  <!-- Stylesheets (load order: tokens → reset → utilities → layout → ui → nav/footer → sections) -->
+  <link rel="stylesheet" href="/components/css/tokens.css">
+  <link rel="stylesheet" href="/components/css/reset.css">
+  <link rel="stylesheet" href="/components/css/utilities.css">
+  <link rel="stylesheet" href="/components/css/layout.css">
+  <link rel="stylesheet" href="/components/css/ui.css">
+  <link rel="stylesheet" href="/components/css/nav.css">
+  <link rel="stylesheet" href="/components/css/footer.css">
+  <link rel="stylesheet" href="/components/css/sections.css">
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!--
+    Nav — site navigation.
+    Reads: content/site.json (logo_initial, brand_short, brand_suffix), content/nav.json (links, cta)
+    Iterates: nav.links[] for both desktop and mobile drawer.
+    No hardcoded labels, no hardcoded hrefs.
+  -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+  
+      <a href="/" class="nav__brand" aria-label="VSON Advisory home">
+        <div class="nav__logo-mark">V</div>
+        <div class="nav__brand-name">VSON <span>ADVISORY</span></div>
+      </a>
+  
+      <ul class="nav__links">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/approach.html" class="nav__link">Approach</a></li>
+        <li><a href="/brain-trust.html" class="nav__link">Leadership</a></li>
+        <li><a href="/capabilities.html" class="nav__link">Capabilities</a></li>
+        <li><a href="/vault.html" class="nav__link">The Vault</a></li>
+        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+      </ul>
+  
+      <a href="/contact.html" class="btn btn--primary nav__cta">Request a Strategic Briefing</a>
+  
+      <button class="nav__burger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  
+    <div class="nav__mobile" id="mobile-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/approach.html">Approach</a></li>
+        <li><a href="/brain-trust.html">Leadership</a></li>
+        <li><a href="/capabilities.html">Capabilities</a></li>
+        <li><a href="/vault.html">The Vault</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--
+    PageHeader — interior page header (navy band below sticky nav).
+    Props (from content/pages/[page].json → page_header):
+      title    {string}
+      subtitle {string}
+  -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Start the right conversation about your strategic priorities and current situation.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!--
+      ContactForm — main contact section: inquiry-type radios + Netlify form + regional contacts card.
+      Reuses behaviour from shared.js → useContactForm (looks for .contact-form).
+      Props (from content/pages/contact.json → contact_section):
+        eyebrow          {string}
+        heading          {string}
+        inquiry_label    {string}
+        inquiry_types[]  { value, label, default? }
+        form: {
+          fields[]       { id, label, type, name, placeholder, required?, half? }
+          situation: { id, label, name, options[] }
+          message:   { id, label, name, placeholder }
+          submit_label   {string}
+        }
+        regional: {
+          heading        {string}
+          contacts[]     { region, name, role, lines[], email }
+          footnote       {string}
+        }
+    -->
+    <section class="section--paper">
+      <div class="container">
+        <!--
+          Eyebrow — small uppercase label above a heading. Includes the blue divider underneath.
+          Props:
+            text {string}  the eyebrow label
+        -->
+        <div class="eyebrow">Contact VSON</div>
+        <div class="divider"></div>
+        <h2 class="mb-12">Start the Right Conversation</h2>
+    
+        <div class="grid-2 contact__grid">
+    
+          <!-- Form column -->
+          <div data-fade>
+            <p class="contact__inquiry-label">I am a…</p>
+            <div class="contact__inquiry-list">
+              <label class="radio-opt">
+                <input type="radio" name="inquiry-type" value="founder" checked>
+                <span>Vietnam-Based Founder or Operator</span>
+              </label>
+              <label class="radio-opt">
+                <input type="radio" name="inquiry-type" value="investor">
+                <span>International Partner or Market Entrant</span>
+              </label>
+              <label class="radio-opt">
+                <input type="radio" name="inquiry-type" value="expert">
+                <span>Expert Wanting to Join the Network</span>
+              </label>
+              <label class="radio-opt">
+                <input type="radio" name="inquiry-type" value="corporate">
+                <span>Corporate / Institutional Inquiry</span>
+              </label>
+            </div>
+    
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you.html"
+              class="contact-form"
+            >
+              <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
+    
+              <div class="contact__field-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Name</label>
+                  <input
+                    class="form-input"
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="company">Company</label>
+                  <input
+                    class="form-input"
+                    id="company"
+                    type="text"
+                    name="company"
+                    placeholder="Company name"
+                    
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="role">Role</label>
+                  <input
+                    class="form-input"
+                    id="role"
+                    type="text"
+                    name="role"
+                    placeholder="Your role"
+                    
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="country">Country</label>
+                  <input
+                    class="form-input"
+                    id="country"
+                    type="text"
+                    name="country"
+                    placeholder="Location"
+                    
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <input
+                    class="form-input"
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="you@company.com"
+                    required
+                  >
+                </div>
+              </div>
+    
+              <div class="form-group mb-4">
+                <label class="form-label" for="situation">What kind of situation are you dealing with?</label>
+                <select class="form-select" id="situation" name="situation">
+                  <option>Scaling &amp; Growth</option>
+                  <option>Turnaround &amp; Stabilization</option>
+                  <option>Investment Readiness</option>
+                  <option>Cross-Border Expansion</option>
+                  <option>Other</option>
+                </select>
+              </div>
+    
+              <div class="form-group mb-6">
+                <label class="form-label" for="message">What kind of support are you looking for?</label>
+                <textarea
+                  class="form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Describe your situation briefly…"
+                ></textarea>
+              </div>
+    
+              <button type="submit" class="btn btn--primary contact__submit">Request a Strategic Briefing</button>
+            </form>
+          </div>
+    
+          <!-- Regional contacts column -->
+          <div data-fade>
+            <div class="contact__regional">
+              <h3>Regional Contacts</h3>
+              <div class="contact__region contact__region--bordered">
+                <div class="contact__region-label">Singapore</div>
+                <div class="contact__region-name">Frederick Dang</div>
+                <div class="contact__region-role">Managing Partner</div>
+                <div class="contact__region-lines">
+                  Singapore<br>+65 8867 9295<br>
+                  <a href="mailto:contact@vsonadvisory.com" class="contact__region-email">contact@vsonadvisory.com</a>
+                </div>
+              </div>
+              <div class="contact__region contact__region--bordered">
+                <div class="contact__region-label">United States</div>
+                <div class="contact__region-name">Henry Hung</div>
+                <div class="contact__region-role">Managing Partner</div>
+                <div class="contact__region-lines">
+                  San Francisco, CA<br>
+                  <a href="mailto:contact@vsonadvisory.com" class="contact__region-email">contact@vsonadvisory.com</a>
+                </div>
+              </div>
+              <div class="contact__region">
+                <div class="contact__region-label">Ho Chi Minh City</div>
+                <div class="contact__region-name">Emily Vo</div>
+                <div class="contact__region-role">Managing Partner</div>
+                <div class="contact__region-lines">
+                  Ho Chi Minh City, Vietnam<br>
+                  <a href="mailto:contact@vsonadvisory.com" class="contact__region-email">contact@vsonadvisory.com</a>
+                </div>
+              </div>
+              <p class="contact__footnote">We review opportunities selectively and prioritize situations where governance, execution, and value creation matter most.</p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Footer — site footer.
+    Reads: content/site.json + content/footer.json
+    Iterates: footer.columns.services[], footer.columns.company[], footer.columns.contact[], footer.legal.links[]
+  -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+  
+        <div class="footer__brand">
+          <div class="footer__brand-row">
+            <div class="nav__logo-mark">V</div>
+            <div class="footer__brand-name">VSON <span>ADVISORY</span></div>
+          </div>
+          <p>Operator-backed advisory for cross-border scaling. From operational friction to institutional value.</p>
+          <div class="footer__locations">Singapore · Vietnam · USA</div>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Services</div>
+          <ul class="footer__links">
+            <li><a href="#">Strategic Finance &amp; M&amp;A</a></li>
+            <li><a href="#">Performance Transformation</a></li>
+            <li><a href="#">CX &amp; Revenue Growth</a></li>
+            <li><a href="#">Digital Infrastructure</a></li>
+            <li><a href="#">Global Gateway</a></li>
+            <li><a href="#">Investment Readiness</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Company</div>
+          <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/approach.html">Approach</a></li>
+            <li><a href="/brain-trust.html">Leadership</a></li>
+            <li><a href="/vault.html">The Vault</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <div class="footer__heading">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:contact@vsonadvisory.com">contact@vsonadvisory.com</a></li>
+            <li><a href="tel:+6588679295">+65 8867 9295</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">Vson Advisory Pte. Ltd. is a management consultancy firm. We do not provide financial advisory, investment advice, or corporate finance services as defined under the Singapore Securities and Futures Act. We do not facilitate the sale of securities or provide regulated financial services.</p>
+        <p class="footer__registration">VSON Pte. Ltd. · UEN 202601234M · Registered at 7 Temasek Boulevard, #12-07 Suntec Tower One, Singapore 038987</p>
+        <div class="footer__bottom-row">
+          <p class="footer__copyright">© 2026 VSON Pte. Ltd. All Rights Reserved.</p>
+          <div class="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

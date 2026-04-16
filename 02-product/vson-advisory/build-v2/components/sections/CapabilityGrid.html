@@ -1,0 +1,24 @@
+<!--
+  CapabilityGrid — dark navy section with 6 numbered capability cards.
+  Props (from content/pages/home.json → capabilities):
+    eyebrow {string}
+    heading {html}
+    body    {string}
+    items[] { number, title, body }
+-->
+<section class="section--dark">
+  <div class="container">
+    {{> ui/Eyebrow text=capabilities.eyebrow}}
+    <h2 class="capability__heading">{{{capabilities.heading}}}</h2>
+    <p class="capability__intro">{{capabilities.body}}</p>
+    <div class="grid-3">
+      {{#each capabilities.items}}
+      <div class="card--dark" data-fade>
+        <div class="num-badge">{{this.number}}</div>
+        <h3 class="mb-3">{{this.title}}</h3>
+        <p>{{this.body}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

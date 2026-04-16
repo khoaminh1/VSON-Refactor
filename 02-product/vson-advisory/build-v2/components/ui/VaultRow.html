@@ -1,0 +1,14 @@
+<!--
+  VaultRow — single article link row in vault list.
+  Props:
+    href  {string}
+    tag   {string}  category label
+    title {string}  article title
+-->
+<a href="{{href}}" class="vault__row" data-fade>
+  <div>
+    <div class="tag vault__row-tag">{{tag}}</div>
+    <h3>{{title}}</h3>
+  </div>
+  <div class="vault__row-arrow" aria-hidden="true">→</div>
+</a>

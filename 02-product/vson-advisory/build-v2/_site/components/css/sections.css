@@ -1,0 +1,579 @@
+/* ============================================================
+   Section Components — page-level layout patterns
+   Each class scopes one section component.
+   ============================================================ */
+
+/* ── Hero (homepage) ─────────────────────────────────────── */
+.hero {
+  background: var(--vson-navy);
+  color: var(--vson-white);
+  padding-top: calc(var(--nav-height) + var(--space-16));
+  padding-bottom: var(--space-16);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero .eyebrow {
+  color: var(--slate-400);
+}
+
+.hero h1 {
+  color: var(--vson-white);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.hero h1 em {
+  color: var(--vson-blue);
+  font-style: italic;
+}
+
+.hero__body {
+  font-size: var(--text-lg);
+  color: var(--slate-400);
+  max-width: 640px;
+  margin-bottom: var(--space-4);
+  line-height: 1.75;
+}
+
+.hero__body--secondary {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-8);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+/* ── Page Header (interior pages) ────────────────────────── */
+.page-header {
+  padding-top: calc(var(--nav-height) + var(--space-20));
+  padding-bottom: var(--space-20);
+  background: var(--vson-navy);
+  color: var(--vson-white);
+}
+
+.page-header h1 {
+  color: var(--vson-white);
+  margin-bottom: var(--space-6);
+}
+
+.page-header p {
+  color: var(--slate-400);
+  font-size: var(--text-lg);
+  max-width: 640px;
+}
+
+/* ── Section: Value Chain ────────────────────────────────── */
+.value-chain__intro {
+  max-width: 640px;
+  margin-bottom: var(--space-12);
+}
+
+.value-chain__heading {
+  margin-bottom: var(--space-6);
+}
+
+/* ── Section: Audience Cards ─────────────────────────────── */
+.audience__heading {
+  margin-bottom: var(--space-6);
+}
+
+/* ── Section: Why VSON (checklist) ───────────────────────── */
+.why__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .why__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.why__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  list-style: none;
+}
+
+.why__item {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.why__check {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--vson-blue);
+}
+
+.why__detail {
+  margin-top: var(--space-2);
+  font-size: 0.9375rem;
+}
+
+/* ── Section: Capability Grid ────────────────────────────── */
+.capability__heading {
+  margin-bottom: var(--space-4);
+}
+
+.capability__intro {
+  max-width: 640px;
+  margin-bottom: var(--space-12);
+  color: var(--slate-500);
+}
+
+/* ── Section: Leadership Cards ───────────────────────────── */
+.leadership__heading {
+  margin-bottom: var(--space-4);
+}
+
+.leadership__intro {
+  max-width: 640px;
+  margin-bottom: var(--space-10);
+}
+
+.leadership__grid {
+  margin-bottom: var(--space-8);
+}
+
+.leader__avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--vson-navy);
+  color: var(--vson-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-4);
+}
+
+.leader__role {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vson-blue);
+  margin-bottom: var(--space-3);
+}
+
+.leader__specialisms {
+  font-size: var(--text-sm);
+  color: var(--slate-500);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+}
+
+.leader__bio {
+  font-size: 0.9375rem;
+}
+
+.leadership__note {
+  padding: var(--space-6) var(--space-8);
+  background: var(--slate-100);
+  border-left: 3px solid var(--vson-blue);
+  margin: var(--space-10) 0;
+}
+
+.leadership__note p {
+  font-size: 0.8125rem;
+  color: var(--slate-600);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* ── Section: Vault List ─────────────────────────────────── */
+.vault__heading {
+  margin-bottom: var(--space-4);
+}
+
+.vault__intro {
+  max-width: 640px;
+  margin-bottom: var(--space-10);
+}
+
+.vault__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.vault__row {
+  padding: var(--space-6);
+  background: var(--vson-white);
+  border: 1px solid var(--slate-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+.vault__row:hover {
+  border-color: var(--vson-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.vault__row h3 {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.vault__row-tag {
+  margin-bottom: var(--space-3);
+}
+
+.vault__row-arrow {
+  font-size: var(--text-2xl);
+  flex-shrink: 0;
+  margin-left: var(--space-4);
+}
+
+.vault__cta {
+  margin-top: var(--space-8);
+}
+
+/* ── Section: CTA Band ───────────────────────────────────── */
+.cta-band {
+  background: var(--vson-navy);
+  color: var(--vson-white);
+  text-align: center;
+  padding: var(--space-20) 0;
+}
+
+.cta-band h2 {
+  color: var(--vson-white);
+  margin-bottom: var(--space-4);
+}
+
+.cta-band p {
+  color: var(--slate-400);
+  max-width: 640px;
+  margin: 0 auto var(--space-8);
+  font-size: var(--text-lg);
+}
+
+/* ── Section: Centered CTA (light) ───────────────────────── */
+.centered-cta {
+  text-align: center;
+}
+
+.centered-cta__body {
+  max-width: 640px;
+  margin: 0 auto var(--space-8);
+  font-size: var(--text-lg);
+  color: var(--slate-600);
+}
+
+/* ── Section: Solution Stack (Approach page) ─────────────── */
+.solution-stack__intro {
+  max-width: 640px;
+  margin-bottom: var(--space-12);
+}
+
+.solution-stack__card {
+  border-top: 3px solid var(--vson-blue);
+}
+
+.solution-stack__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  margin-bottom: var(--space-3);
+}
+
+.solution-stack__bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.solution-stack__bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.solution-stack__dot {
+  color: var(--vson-blue);
+  margin-top: 0.25rem;
+}
+
+.solution-stack__quote {
+  border-left: 2px solid var(--slate-300);
+  padding-left: var(--space-4);
+  margin: 0;
+  color: var(--slate-500);
+  font-style: italic;
+  font-size: 0.9375rem;
+}
+
+/* ── Section: Engagement Steps (Approach page) ───────────── */
+.engagement-steps__grid {
+  gap: var(--space-12);
+}
+
+.engagement-steps__number {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--vson-blue);
+  margin-bottom: var(--space-3);
+}
+
+/* ── Section: Leadership Full (brain-trust page) ─────────── */
+.leadership-full__intro {
+  max-width: 640px;
+  margin-bottom: var(--space-12);
+}
+
+.leadership-full__group {
+  margin-bottom: var(--space-16);
+}
+
+.leadership-full__group-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  margin-bottom: var(--space-8);
+}
+
+.leadership-full__cta {
+  text-align: center;
+  margin-top: var(--space-12);
+}
+
+/* ── Section: Vault Coming Soon ──────────────────────────── */
+.vault-coming-soon__inner {
+  text-align: center;
+  padding: var(--space-12) 0;
+}
+
+.vault-coming-soon__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(59,130,246,0.2);
+  border-radius: 50%;
+  margin: 0 auto var(--space-6);
+}
+
+.vault-coming-soon__icon span {
+  font-size: var(--text-4xl);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--vson-blue);
+}
+
+.vault-coming-soon h2 {
+  color: var(--vson-white);
+  margin-bottom: var(--space-4);
+}
+
+.vault-coming-soon p {
+  color: var(--slate-400);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: var(--text-lg);
+  line-height: 1.75;
+}
+
+/* ── Section: Newsletter Signup ──────────────────────────── */
+.newsletter {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter__intro {
+  margin-bottom: var(--space-8);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter__submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.newsletter__disclaimer {
+  font-size: 0.8125rem;
+  color: var(--slate-500);
+  margin-top: var(--space-6);
+}
+
+/* ── Section: Contact Form ───────────────────────────────── */
+.contact__grid {
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.contact__inquiry-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  margin-bottom: var(--space-6);
+}
+
+.contact__inquiry-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.radio-opt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--vson-navy);
+}
+
+.contact__field-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .contact__field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact__submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.contact__regional {
+  background: var(--vson-navy);
+  color: var(--vson-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+}
+
+.contact__regional h3 {
+  color: var(--vson-white);
+  margin-bottom: var(--space-6);
+}
+
+.contact__region {
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.contact__region--bordered {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact__region-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  margin-bottom: var(--space-3);
+}
+
+.contact__region-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--vson-white);
+  margin-bottom: var(--space-1);
+}
+
+.contact__region-role {
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  margin-bottom: var(--space-3);
+}
+
+.contact__region-lines {
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  line-height: 1.6;
+}
+
+.contact__region-email {
+  color: var(--vson-blue);
+}
+
+.contact__footnote {
+  margin-top: var(--space-6);
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  line-height: 1.7;
+}
+
+/* ── Section: Thank You ──────────────────────────────────── */
+.thank-you {
+  padding-top: calc(var(--nav-height) + var(--space-16));
+  padding-bottom: var(--space-16);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.thank-you__inner {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.thank-you__icon {
+  font-size: var(--text-6xl);
+  margin-bottom: var(--space-4);
+  color: var(--vson-blue);
+}
+
+.thank-you__body {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+  line-height: 1.75;
+}
+
+.thank-you__body-muted {
+  color: var(--slate-500);
+  margin-bottom: var(--space-10);
+}
+
+.thank-you__actions {
+  display: flex;
+  gap: var(--space-6);
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "Contact | VSON Advisory",
+    "description": "Start the right conversation about your strategic priorities and current situation. VSON Advisory: boutique consulting for cross-border scaling.",
+    "keywords": "contact, request briefing, strategic advisory, consultation",
+    "canonical": "https://vsonadvisory.com/contact.html",
+    "og": {
+      "title": "Contact | VSON Advisory",
+      "description": "Request a strategic briefing.",
+      "image": "https://vsonadvisory.com/og-contact.png",
+      "url": "https://vsonadvisory.com/contact.html"
+    }
+  },
+
+  "page_header": {
+    "title": "Get in Touch",
+    "subtitle": "Start the right conversation about your strategic priorities and current situation."
+  },
+
+  "contact_section": {
+    "eyebrow": "Contact VSON",
+    "heading": "Start the Right Conversation",
+    "inquiry_label": "I am a…",
+    "inquiry_types": [
+      { "value": "founder",   "label": "Vietnam-Based Founder or Operator",        "default": true },
+      { "value": "investor",  "label": "International Partner or Market Entrant" },
+      { "value": "expert",    "label": "Expert Wanting to Join the Network" },
+      { "value": "corporate", "label": "Corporate / Institutional Inquiry" }
+    ],
+    "form": {
+      "fields": [
+        { "id": "name",    "label": "Name",    "type": "text",  "name": "name",    "placeholder": "Your name",     "required": true },
+        { "id": "company", "label": "Company", "type": "text",  "name": "company", "placeholder": "Company name" },
+        { "id": "role",    "label": "Role",    "type": "text",  "name": "role",    "placeholder": "Your role" },
+        { "id": "country", "label": "Country", "type": "text",  "name": "country", "placeholder": "Location" },
+        { "id": "email",   "label": "Email",   "type": "email", "name": "email",   "placeholder": "you@company.com", "required": true }
+      ],
+      "situation": {
+        "id": "situation",
+        "label": "What kind of situation are you dealing with?",
+        "name": "situation",
+        "options": ["Scaling & Growth", "Turnaround & Stabilization", "Investment Readiness", "Cross-Border Expansion", "Other"]
+      },
+      "message": {
+        "id": "message",
+        "label": "What kind of support are you looking for?",
+        "name": "message",
+        "placeholder": "Describe your situation briefly…"
+      },
+      "submit_label": "Request a Strategic Briefing"
+    },
+    "regional": {
+      "heading": "Regional Contacts",
+      "contacts": [
+        {
+          "region": "Singapore",
+          "name": "Frederick Dang",
+          "role": "Managing Partner",
+          "lines": ["Singapore", "+65 8867 9295"],
+          "email": "contact@vsonadvisory.com"
+        },
+        {
+          "region": "United States",
+          "name": "Henry Hung",
+          "role": "Managing Partner",
+          "lines": ["San Francisco, CA"],
+          "email": "contact@vsonadvisory.com"
+        },
+        {
+          "region": "Ho Chi Minh City",
+          "name": "Emily Vo",
+          "role": "Managing Partner",
+          "lines": ["Ho Chi Minh City, Vietnam"],
+          "email": "contact@vsonadvisory.com"
+        }
+      ],
+      "footnote": "We review opportunities selectively and prioritize situations where governance, execution, and value creation matter most."
+    }
+  }
+}

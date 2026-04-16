@@ -1,0 +1,27 @@
+<!--
+  Vault page — assembly shell. Reuses VaultPreview from home.
+-->
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+<head>
+  {{> layout/base-head}}
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  {{> layout/nav}}
+
+  {{> sections/PageHeader}}
+
+  <main id="main-content">
+    {{> sections/VaultComingSoon}}
+    {{> sections/VaultPreview}}
+    {{> sections/NewsletterSignup}}
+  </main>
+
+  {{> layout/footer}}
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

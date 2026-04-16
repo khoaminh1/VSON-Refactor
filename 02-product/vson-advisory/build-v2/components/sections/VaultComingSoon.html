@@ -1,0 +1,17 @@
+<!--
+  VaultComingSoon — dark "coming soon" banner used on the Vault page.
+  Props (from content/pages/vault.json → coming_soon):
+    heading {string}
+    body    {string}
+-->
+<section class="section--dark vault-coming-soon">
+  <div class="container">
+    <div class="vault-coming-soon__inner" data-fade>
+      <div class="vault-coming-soon__icon" aria-hidden="true">
+        <span>*</span>
+      </div>
+      <h2>{{coming_soon.heading}}</h2>
+      <p>{{coming_soon.body}}</p>
+    </div>
+  </div>
+</section>
