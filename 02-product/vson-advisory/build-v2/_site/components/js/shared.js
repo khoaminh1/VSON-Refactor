@@ -49,18 +49,19 @@
     });
   }
 
-  /* ── useActiveNavLink: highlights the link matching pathname */
+  /* ── useActiveNavLink: highlights the link matching pathname.
+        Normalizes both sides so it works with clean URLs (/approach) AND
+        extensioned URLs (/approach.html) — Netlify, `serve`, and plain
+        Apache all behave differently here. */
   function useActiveNavLink() {
-    const currentPath = window.location.pathname.replace(/\/$/, '') || '/index.html';
+    function normalize(p) {
+      const s = (p || '').replace(/\.html$/, '').replace(/\/$/, '');
+      return s === '' || s === '/index' ? '/' : s;
+    }
+    const currentPath = normalize(window.location.pathname);
     document.querySelectorAll('.nav__link').forEach(function (link) {
-      const href = link.getAttribute('href') || '';
-      const linkPath = href.replace(/\/$/, '');
-      const isMatch =
-        linkPath === currentPath ||
-        (currentPath.endsWith('index.html') && linkPath === '') ||
-        (currentPath === '/' && linkPath === '') ||
-        (linkPath !== '' && currentPath.includes(linkPath));
-      if (isMatch) link.classList.add('nav__link--active');
+      const linkPath = normalize(link.getAttribute('href'));
+      if (linkPath === currentPath) link.classList.add('nav__link--active');
     });
   }
 
