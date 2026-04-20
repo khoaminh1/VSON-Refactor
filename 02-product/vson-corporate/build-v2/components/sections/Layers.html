@@ -1,0 +1,37 @@
+<!--
+  Layers — Activation Solutions: three stacked capability rows.
+  Props (from layers):
+    eyebrow, heading
+    rows: [ { num, type, name, headline, body, features_label, features: [string] } ]
+-->
+<section class="layers section">
+  <div class="container">
+    <div class="layers__header">
+      <span class="label">{{layers.eyebrow}}</span>
+      <h2>{{layers.heading}}</h2>
+    </div>
+    <div class="layers__stack">
+      {{#each layers.rows}}
+        <div class="layer-row">
+          <div class="layer-row__badge">
+            <span class="layer-row__num">{{num}}</span>
+            <span class="layer-row__type">{{type}}</span>
+            <span class="layer-row__name">{{name}}</span>
+          </div>
+          <div class="layer-row__content">
+            <h3>{{headline}}</h3>
+            <p>{{body}}</p>
+          </div>
+          <div class="layer-row__features">
+            <div class="layer-row__features-label">{{features_label}}</div>
+            <ul class="feature-list">
+              {{#each features}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

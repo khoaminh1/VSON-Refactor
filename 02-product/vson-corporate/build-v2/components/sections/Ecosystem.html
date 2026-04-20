@@ -1,0 +1,24 @@
+<!--
+  Ecosystem — homepage 3-item numbered grid (Reach / Activate / Grow).
+  Props (from ecosystem):
+    eyebrow, heading (html — supports <em>)
+    items: [ { number, title, body } ]
+-->
+<section class="ecosystem section">
+  <div class="container">
+    <div class="ecosystem__header">
+      <span class="label">{{ecosystem.eyebrow}}</span>
+      <h2>{{{ecosystem.heading}}}</h2>
+    </div>
+    <div class="ecosystem__grid">
+      {{#each ecosystem.items}}
+        <div class="eco-item">
+          <div class="eco-item__number">{{number}}</div>
+          <div class="eco-item__line"></div>
+          <h3>{{title}}</h3>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "VSON | Case Studies",
+    "description": "Real work, real outcomes. Explore case studies from brand activation campaigns to Vietnam market entry journeys.",
+    "canonical": "https://vson.vn/case-studies.html",
+    "og": {
+      "title": "VSON | Case Studies",
+      "description": "Real work, real outcomes. Explore case studies from brand activation campaigns to Vietnam market entry journeys.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/case-studies.html"
+    }
+  },
+  "page_hero": {
+    "eyebrow": "Our Work",
+    "eyebrow_light": true,
+    "heading": "<em>Real work.</em><br>Real outcomes.",
+    "sub": "From brand activation campaigns to Vietnam market entry journeys, here's what working with VSON looks like in practice."
+  },
+  "cs_filter": {
+    "buttons": [
+      { "label": "All",                  "filter": "all",        "active": true },
+      { "label": "Activation Solutions", "filter": "activation"                  },
+      { "label": "Market Development",   "filter": "market"                      }
+    ],
+    "count_label": "5 case studies"
+  },
+  "cs_grid": {
+    "cards": [
+      {
+        "slug": "01", "filter": "activation", "href": "/cs-01-electronics-retail.html",
+        "image_label": "Activation Solutions", "stat_num": "+250%", "stat_sub": "Customer profiles",
+        "tags": [
+          { "label": "Activation Solutions", "variant": "activation" },
+          { "label": "Customer Data",        "variant": "secondary"  },
+          { "label": "Digital Campaigns",    "variant": "secondary"  }
+        ],
+        "title": "A leading electronics retail chain",
+        "sector": "Consumer electronics | Vietnam",
+        "body": "Unified fragmented customer data across online and offline channels, delivering a 35% improvement in ROAS and a 28% reduction in CPA within 9 months.",
+        "link_label": "Read the story",
+        "anon_note": "Client name anonymised"
+      },
+      {
+        "slug": "02", "filter": "market", "href": "/cs-02-education.html",
+        "image_label": "Market Development", "stat_num": "100+", "stat_sub": "Branches aligned",
+        "tags": [
+          { "label": "Market Development", "variant": "market"     },
+          { "label": "CRM Automation",     "variant": "secondary"  },
+          { "label": "Lead Nurture",       "variant": "secondary"  }
+        ],
+        "title": "A national English education network",
+        "sector": "Education | Vietnam",
+        "body": "Replaced manual follow-up with automated Zalo and SMS lead journeys, improving enrolment conversion and cutting the sales team's manual workload by 40%.",
+        "link_label": "Read the story",
+        "anon_note": "Client name anonymised"
+      },
+      {
+        "slug": "03", "filter": "activation", "href": "/cs-03-fashion-retail.html",
+        "image_label": "Activation Solutions", "stat_num": "+200%", "stat_sub": "Online sales",
+        "tags": [
+          { "label": "Activation Solutions", "variant": "activation" },
+          { "label": "Digital Messaging",    "variant": "secondary"  },
+          { "label": "Segmentation",         "variant": "secondary"  }
+        ],
+        "title": "A fast-growing fashion retailer",
+        "sector": "Fashion &amp; footwear | Vietnam",
+        "body": "Activated segmented Zalo and Viber campaigns against purchase-history audiences, driving 25% of total revenue from digital messaging within 20 days of launch.",
+        "link_label": "Read the story",
+        "anon_note": "Client name anonymised"
+      },
+      {
+        "slug": "04", "filter": "activation", "href": "/cs-04-oem-merchandise.html",
+        "image_label": "Activation Solutions", "stat_num": "5,000+", "stat_sub": "Units delivered",
+        "tags": [
+          { "label": "Activation Solutions", "variant": "activation" },
+          { "label": "OEM Production",       "variant": "secondary"  },
+          { "label": "Corporate Gifting",    "variant": "secondary"  }
+        ],
+        "title": "A global ICT brand: Vietnam partner conference",
+        "sector": "ICT &amp; technology | Vietnam nationwide",
+        "body": "Managed an end-to-end OEM production run of branded bags, polo shirts, and event kits, delivered on time across 20+ locations with zero brand compliance rejections.",
+        "link_label": "Read the story",
+        "anon_note": "Client name anonymised"
+      },
+      {
+        "slug": "05", "filter": "market", "href": "/cs-05-ict-distribution.html",
+        "image_label": "Market Development", "stat_num": "80", "stat_sub": "New reseller partners",
+        "tags": [
+          { "label": "Market Development", "variant": "market"     },
+          { "label": "Channel Expansion",  "variant": "secondary"  },
+          { "label": "Vietnam Entry",      "variant": "secondary"  }
+        ],
+        "title": "A Singapore ICT brand entering Vietnam",
+        "sector": "ICT hardware &amp; distribution | Singapore | Vietnam",
+        "body": "Mapped 150+ reseller partners, ran product training, and activated a sell-through incentive programme, hitting year-1 channel targets 4 months ahead of schedule.",
+        "link_label": "Read the story",
+        "anon_note": "Client name anonymised"
+      }
+    ]
+  },
+  "taxonomy": {
+    "eyebrow": "Taxonomy Reference",
+    "heading": "How we tag our work.",
+    "groups": [
+      {
+        "heading": "Activation Solutions",
+        "variant": "brands",
+        "tags": ["Customer Data", "Digital Campaigns", "Digital Messaging", "Corporate Gifting", "OEM Production", "Trade Marketing"]
+      },
+      {
+        "heading": "Market Development",
+        "variant": "solutions",
+        "tags": ["Market Entry", "Channel Expansion", "CRM Automation", "Lead Nurture", "MRA-backed", "Vietnam Entry"]
+      },
+      {
+        "heading": "Sectors Served",
+        "variant": "services",
+        "tags": ["Consumer Electronics", "Education", "Fashion & Retail", "ICT & Technology", "FMCG", "Financial Services"]
+      }
+    ]
+  },
+  "cta_band": {
+    "heading": "See yourself here? Let's talk.",
+    "body": "Whether you're a brand, a Singapore corporate, or a distribution partner, we'd love to discuss what's possible.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

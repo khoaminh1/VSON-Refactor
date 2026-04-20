@@ -1,0 +1,32 @@
+<!--
+  Nav — fixed top bar with logo, primary links, Solutions dropdown, and CTA pill.
+  Data from content/nav.json. A link with a `children` array renders a dropdown.
+-->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="logo-mark" aria-label="{{site.name}} Home">
+        <div class="logo-mark__icon">{{site.logo_initial}}</div>
+        <span class="logo-mark__text">{{site.brand_short}}</span>
+      </a>
+      <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      <ul class="nav__links" id="nav-menu">
+        {{#each nav.links}}
+          {{#if children}}
+            <li class="nav__dropdown">
+              <span class="nav__dropdown-toggle">{{label}}</span>
+              <div class="nav__dropdown-menu"><div class="nav__dropdown-menu-inner">
+                {{#each children}}
+                  <a href="{{href}}">{{label}}</a>
+                {{/each}}
+              </div></div>
+            </li>
+          {{else}}
+            <li><a href="{{href}}">{{label}}</a></li>
+          {{/if}}
+        {{/each}}
+        <li><a href="{{nav.cta.href}}" class="nav__cta">{{nav.cta.label}}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

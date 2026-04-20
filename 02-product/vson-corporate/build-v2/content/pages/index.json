@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "VSON | Vietnam's Phygital Commerce Ecosystem",
+    "description": "20 years connecting world-class brands to Vietnamese households. VSON powers brand activation, market development, and nationwide distribution.",
+    "canonical": "https://vson.vn/",
+    "og": {
+      "title": "VSON | Vietnam's Phygital Commerce Ecosystem",
+      "description": "20 years connecting world-class brands to Vietnamese households. VSON powers brand activation, market development, and nationwide distribution.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/"
+    }
+  },
+  "hero": {
+    "eyebrow": "Vietnam's Commerce Ecosystem",
+    "heading": "Vietnam's<br><em>Phygital</em><br>Commerce<br>Ecosystem",
+    "sub": "20 years connecting world-class brands to Vietnamese households, powering the campaigns, data, and market entry strategies that drive growth.",
+    "cta_primary":   { "label": "Request a Consultation", "href": "/contact.html" },
+    "cta_secondary": { "label": "Explore Solutions",      "href": "#solutions-activation" },
+    "visual_label": "Hero Visual Placeholder"
+  },
+  "pillars": {
+    "eyebrow": "Our Business",
+    "heading": "Two businesses. One ecosystem.",
+    "store": {
+      "title": "VSON Store",
+      "body": "International-standard health and household products trusted by millions of Vietnamese households.",
+      "cta": { "label": "Visit VSON Store", "href": "/store.html" }
+    },
+    "solutions": {
+      "title": "VSON Solutions",
+      "body": "Brand activation and market development solutions powered by 20 years of on-the-ground expertise and Phygital technology.",
+      "sub_labels": ["Activation Solutions", "Market Development"],
+      "cta": { "label": "Explore Solutions", "href": "/activation-solutions.html" }
+    }
+  },
+  "ecosystem": {
+    "eyebrow": "What We Do",
+    "heading": "<em>One ecosystem.</em> Every channel.",
+    "items": [
+      { "number": "01", "title": "Reach",    "body": "A nationwide distribution network bringing world-class products to millions of Vietnamese households and businesses." },
+      { "number": "02", "title": "Activate", "body": "Brand campaigns and customer experiences that convert awareness into loyalty across retail, events, and digital channels." },
+      { "number": "03", "title": "Grow",     "body": "Market intelligence and development strategies that help brands and businesses scale sustainably in Vietnam." }
+    ]
+  },
+  "heritage": {
+    "eyebrow": "Our Track Record",
+    "heading": "<em>Built on 20 years</em><br>of trust.",
+    "sub": "From our first distribution partnership to powering national brand campaigns, VSON has grown alongside the companies and families we serve.",
+    "proofs": [
+      "Millions of Vietnamese households served",
+      "World-class brand partners across categories",
+      "Nationwide distribution network"
+    ],
+    "cta": { "label": "Read Our Story", "href": "/about.html" },
+    "logo_rows": [
+      { "label": "Brands we distribute", "chips": ["Torayvino", "Zojirushi", "Kingbag", "Nepia"] },
+      { "label": "Clients we've served",  "chips": ["Dell", "HP", "Lenovo", "ASUS"] }
+    ]
+  },
+  "cs_preview": {
+    "eyebrow": "Selected Work",
+    "heading": "Real work. Real outcomes.",
+    "cta": { "label": "View All Case Studies", "href": "/case-studies.html" },
+    "cards": [
+      {
+        "image_label": "Case Study Visual",
+        "track": "Activation Solutions",
+        "title": "A leading international household brand",
+        "body": "Placeholder: outcome-led one-liner describing the campaign result and commercial impact.",
+        "link": { "label": "Read the story", "href": "/case-studies.html" }
+      },
+      {
+        "image_label": "Case Study Visual",
+        "track": "Market Development",
+        "title": "A Singapore financial services firm",
+        "body": "Placeholder: outcome-led one-liner describing the market entry journey and measurable result.",
+        "link": { "label": "Read the story", "href": "/case-studies.html" }
+      }
+    ]
+  },
+  "cta_band": {
+    "heading": "Ready to explore what VSON can do for you?",
+    "body": "Whether you're a brand, a Singapore corporate, or a distribution partner, we're happy to start a conversation.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

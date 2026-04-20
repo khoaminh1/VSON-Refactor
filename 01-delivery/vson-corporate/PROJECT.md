@@ -1,8 +1,8 @@
 # VSON Corporate Website — Project Brief
 
-**Status:** 🟢 Content unblocking — build starts 2026-04-08
+**Status:** 🟢 `build-v2/` refactor complete — 2026-04-18
 **Created:** 2026-03-31
-**Last updated:** 2026-04-03
+**Last updated:** 2026-04-18
 **Owner:** Fred Dang
 **Domain:** vson.vn
 **Language:** English (Phase 1) → Vietnamese at vson.vn/vi/ (Phase 2)
@@ -22,7 +22,7 @@
 | Content — Headshots | 🟡 Collecting | Due 2026-04-07 (Tuesday) |
 | Content — Logo approvals | ✅ Fred has logos | Files available, upload to `_content/_incoming/` |
 | Content — Visual imagery | 🟡 In progress | Hero image being created internally |
-| Production Build | ⏹ Not started | Starts 2026-04-08 — Sprint 1 focus: Home, About, Contact + shared infra |
+| Production Build | 🟢 Refactored to `build-v2/` 2026-04-18 | Handlebars static build mirroring `vson-advisory/build-v2/`. 13 pages render clean; content split into JSON; 8 CSS files. Old `build/` retained for cutover. |
 | QA & Testing | ⏹ Not started | Parallel with build, using Sprint 1 checklist |
 | Launch | ⏹ Not started | Target 2026-05-01 |
 

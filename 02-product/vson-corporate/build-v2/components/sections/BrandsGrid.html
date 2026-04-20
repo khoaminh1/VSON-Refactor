@@ -1,0 +1,28 @@
+<!--
+  BrandsGrid — Store page 4-brand cards.
+  Props (from brands_section):
+    eyebrow, heading (html)
+    brands: [ { image_label, name, origin, desc } ]
+-->
+<section class="brands section">
+  <div class="container">
+    <div class="brands__header">
+      <span class="label">{{brands_section.eyebrow}}</span>
+      <h2>{{{brands_section.heading}}}</h2>
+    </div>
+    <div class="brands__grid">
+      {{#each brands_section.brands}}
+        <div class="brand-card">
+          <div class="brand-card__image">
+            <span class="brand-card__image-label">{{image_label}}</span>
+          </div>
+          <div class="brand-card__body">
+            <div class="brand-card__name">{{name}}</div>
+            <div class="brand-card__origin">{{origin}}</div>
+            <p class="brand-card__desc">{{desc}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

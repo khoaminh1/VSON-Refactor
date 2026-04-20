@@ -1,0 +1,28 @@
+<!--
+  LeadershipCards — 4 leader photo cards (About page).
+  Props (from leadership):
+    eyebrow, heading
+    leaders: [ { initials, name, title, bio } ]
+-->
+<section class="leadership section">
+  <div class="container">
+    <div class="leadership__header">
+      <span class="label">{{leadership.eyebrow}}</span>
+      <h2>{{leadership.heading}}</h2>
+    </div>
+    <div class="leadership__grid">
+      {{#each leadership.leaders}}
+        <div class="leader-card">
+          <div class="leader-card__photo">
+            <span class="leader-card__initials">{{initials}}</span>
+          </div>
+          <div class="leader-card__body">
+            <div class="leader-card__name">{{name}}</div>
+            <div class="leader-card__title">{{{title}}}</div>
+            <p class="leader-card__bio">{{bio}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

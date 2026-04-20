@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "VSON | Market Development",
+    "description": "Market entry support for Singapore companies entering Vietnam. MRA-eligible across all three pillars: business development, market set-up, and market promotion.",
+    "canonical": "https://vson.vn/market-development.html",
+    "og": {
+      "title": "VSON | Market Development",
+      "description": "Market entry support for Singapore companies entering Vietnam. MRA-eligible across all three pillars: business development, market set-up, and market promotion.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/market-development.html"
+    }
+  },
+  "md_hero": {
+    "breadcrumb": "Solutions <span>| Market Development</span>",
+    "heading": "Enter Vietnam<br>with <em>confidence</em><br>and the right partner.",
+    "sub": "VSON helps Singapore companies navigate the Vietnamese market, from finding the right partners to setting up operations and building brand presence. MRA-eligible across all three pillars.",
+    "referral": "Not yet familiar with the MRA grant? We can connect you with our consultant network in Singapore.",
+    "actions": [
+      { "label": "Request a Consultation",           "href": "/contact.html", "variant": "primary",       "arrow": true },
+      { "label": "Talk to Our Singapore Network",    "href": "/contact.html", "variant": "outline-white"                }
+    ],
+    "mra": {
+      "label": "MRA Grant: Up to S$100,000, 70% Funded",
+      "pillars": [
+        "Overseas Business Development",
+        "Overseas Market Set-up",
+        "Overseas Market Promotion"
+      ],
+      "total": ["VSON covers all 3 pillars", "Direct + partner network"]
+    }
+  },
+  "services": {
+    "eyebrow": "Our Services",
+    "heading": "Three services.<br>All three MRA pillars covered.",
+    "cards": [
+      {
+        "num": "01",
+        "mra_tag": "Overseas Business Development",
+        "title": "Find Your Footing",
+        "body": "We identify the right distributors, JV partners, and logistics operators for your business in Vietnam and build the BD strategy to engage them.",
+        "pillar": "MRA Pillar 1"
+      },
+      {
+        "num": "02",
+        "mra_tag": "Overseas Market Set-up",
+        "title": "Set Up Right",
+        "body": "Through our partner network, we facilitate your incorporation, IP protection, and compliance so your Vietnam entity is built on solid ground.",
+        "pillar": "MRA Pillar 2"
+      },
+      {
+        "num": "03",
+        "mra_tag": "Overseas Market Promotion",
+        "title": "Get Known",
+        "body": "We run your market entry campaign in Vietnam, from trade introductions to brand visibility, using the same activation infrastructure we deploy for leading international brands.",
+        "pillar": "MRA Pillar 3"
+      }
+    ]
+  },
+  "why_vson": {
+    "eyebrow": "Why VSON",
+    "heading": "Five reasons to choose<br><em>VSON for Vietnam.</em>",
+    "body": "We're not a consultancy that advises from a distance. We're an operating business in Vietnam, working in this market every single day.",
+    "items": [
+      { "num": "01", "title": "On the Ground",            "body": "Vietnam-registered, Vietnam-operating, not a remote advisory firm." },
+      { "num": "02", "title": "Both Sides of the Equation","body": "We've built our own business here: distribution, partnerships, campaigns, operations." },
+      { "num": "03", "title": "A Network You Can Trust",  "body": "Legal partners, distributors, logistics operators, and government-linked contacts." },
+      { "num": "04", "title": "MRA-Ready",                "body": "We understand the grant framework, the documentation, and what EnterpriseSG expects." },
+      { "num": "05", "title": "Built for This Bridge",    "body": "VSON - Việt Sing - was founded with one conviction: Vietnam and Singapore belong closer together." }
+    ]
+  },
+  "how_it_works": {
+    "eyebrow": "The Process",
+    "heading": "How it works.",
+    "steps": [
+      { "num": "01", "title": "Explore", "body": "We start with a conversation, understanding your business, your Vietnam goals, and your MRA eligibility. No commitment required." },
+      { "num": "02", "title": "Design",  "body": "We map out your market entry plan across the three MRA pillars, identifying the right partners, set-up requirements, and promotion strategy." },
+      { "num": "03", "title": "Deliver", "body": "We execute across all three pillars (directly and through our partner network) while keeping your MRA documentation on track." },
+      { "num": "04", "title": "Grow",    "body": "Once you're in market, we stay alongside you, connecting you to the next opportunity as your Vietnam presence matures." }
+    ]
+  },
+  "cta_dual": {
+    "primary": {
+      "heading": "Ready to explore Vietnam?",
+      "body": "Talk to our market development team. No obligation, just a conversation about what's possible.",
+      "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+    },
+    "secondary": {
+      "body": "Not yet familiar with the MRA grant? We'll connect you with our Singapore consultant network. They can advise on eligibility before we begin.",
+      "link": { "label": "Connect me to the MRA network", "href": "/contact.html" }
+    }
+  }
+}

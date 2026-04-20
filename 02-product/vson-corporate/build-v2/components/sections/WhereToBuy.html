@@ -1,0 +1,28 @@
+<!--
+  WhereToBuy — Store page: copy column + channel link cards.
+  Props (from where_to_buy):
+    eyebrow, heading (html), body
+    channels: [ { abbr, name, sub, href } ]
+-->
+<section class="where-to-buy section">
+  <div class="container">
+    <div class="where-to-buy__inner">
+      <div class="where-to-buy__content">
+        <span class="label">{{where_to_buy.eyebrow}}</span>
+        <h2>{{{where_to_buy.heading}}}</h2>
+        <p>{{where_to_buy.body}}</p>
+      </div>
+      <div class="channels-grid">
+        {{#each where_to_buy.channels}}
+          <a href="{{href}}" class="channel-card">
+            <div class="channel-card__abbr">{{abbr}}</div>
+            <div>
+              <div class="channel-card__name">{{name}}</div>
+              <div class="channel-card__sub">{{sub}}</div>
+            </div>
+          </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

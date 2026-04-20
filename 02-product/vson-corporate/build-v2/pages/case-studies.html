@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+<head>
+  {{> layout/base-head}}
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
+
+  {{> layout/nav}}
+
+  <main>
+    {{> sections/PageHero}}
+    {{> sections/CaseStudyFilter}}
+    {{> sections/CaseStudyGrid}}
+    {{> sections/Taxonomy}}
+    {{> sections/CtaBand}}
+  </main>
+
+  {{> layout/footer}}
+
+  <script src="/components/js/shared.js" defer></script>
+</body>
+</html>

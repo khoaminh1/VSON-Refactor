@@ -1,0 +1,33 @@
+<!--
+  Hero — homepage hero: eyebrow + headline + sub + 2 CTAs + visual placeholder.
+  Props (from content/pages/index.json → hero):
+    eyebrow       {string}
+    heading       {html}     supports <em> and <br>
+    sub           {string}
+    cta_primary   { label, href }
+    cta_secondary { label, href }
+    visual_label  {string}   caption for the placeholder card
+-->
+<section class="hero" id="main-content">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <div class="hero__eyebrow-line"></div>
+          <span class="hero__eyebrow-text">{{hero.eyebrow}}</span>
+        </div>
+        <h1 class="hero__headline">{{{hero.heading}}}</h1>
+        <p class="hero__sub">{{hero.sub}}</p>
+        <div class="hero__actions">
+          <a href="{{hero.cta_primary.href}}" class="btn btn--primary arrow">{{hero.cta_primary.label}}</a>
+          <a href="{{hero.cta_secondary.href}}" class="btn btn--ghost-light">{{hero.cta_secondary.label}}</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__placeholder">
+          <span class="hero__placeholder-label">{{hero.visual_label}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

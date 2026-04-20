@@ -1,0 +1,42 @@
+<!--
+  MdHero — Market Development hero with side-by-side MRA card.
+  Props (from md_hero):
+    breadcrumb (html), heading (html), sub, referral
+    actions: [{ label, href, variant }]
+    mra: { label, pillars: [string], total: [string] }
+-->
+<section class="page-hero md-hero" id="main-content">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div>
+        <div class="page-hero__breadcrumb">{{{md_hero.breadcrumb}}}</div>
+        <h1>{{{md_hero.heading}}}</h1>
+        <p class="page-hero__sub">{{md_hero.sub}}</p>
+        {{#if md_hero.referral}}
+          <p class="page-hero__referral">{{md_hero.referral}}</p>
+        {{/if}}
+        <div class="page-hero__actions">
+          {{#each md_hero.actions}}
+            <a href="{{href}}" class="btn btn--{{variant}}{{#if arrow}} arrow{{/if}}">{{label}}</a>
+          {{/each}}
+        </div>
+      </div>
+      <div class="page-hero__mra">
+        <div class="page-hero__mra-label">{{md_hero.mra.label}}</div>
+        <div class="mra-pillars">
+          {{#each md_hero.mra.pillars}}
+            <div class="mra-pillar">
+              <div class="mra-pillar__dot"></div>
+              <span class="mra-pillar__name">{{this}}</span>
+            </div>
+          {{/each}}
+        </div>
+        <div class="mra-total">
+          {{#each md_hero.mra.total}}
+            <span>{{this}}</span>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

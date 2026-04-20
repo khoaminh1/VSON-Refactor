@@ -1,0 +1,14 @@
+<!--
+  CtaBand — full-bleed green section with heading, body, and a primary CTA.
+  Props (from cta_band):
+    heading {string}
+    body    {string}
+    cta:    { label, href }
+-->
+<section class="cta-band">
+  <div class="container">
+    <h2>{{cta_band.heading}}</h2>
+    <p>{{cta_band.body}}</p>
+    <a href="{{cta_band.cta.href}}" class="btn btn--primary arrow">{{cta_band.cta.label}}</a>
+  </div>
+</section>

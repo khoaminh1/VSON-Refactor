@@ -1,0 +1,58 @@
+<!--
+  CsBody — Case Study detail: 2-column layout with challenge/solution/steps/quote + sidebar.
+  Props (from cs_body):
+    challenge: { heading, paragraphs: [string] }
+    solution:  { heading, body, steps_heading, steps: [string] }
+    quote:     { body, attr }
+    sidebar: { project: { heading, rows: [{key, val}] }, services: { heading, items: [string] } }
+-->
+<section class="cs-body section">
+  <div class="container">
+    <div class="cs-layout">
+      <div class="cs-main">
+        <span class="label">The Challenge</span>
+        <h2>{{cs_body.challenge.heading}}</h2>
+        {{#each cs_body.challenge.paragraphs}}
+          <p>{{this}}</p>
+        {{/each}}
+
+        <span class="label" style="margin-top:48px;display:block;">The Solution</span>
+        <h2>{{cs_body.solution.heading}}</h2>
+        <p>{{cs_body.solution.body}}</p>
+
+        <h3>{{cs_body.solution.steps_heading}}</h3>
+        <ul class="cs-steps">
+          {{#each cs_body.solution.steps}}
+            <li><p>{{this}}</p></li>
+          {{/each}}
+        </ul>
+
+        <div class="cs-quote">
+          <div class="cs-quote__mark">"</div>
+          <p>{{cs_body.quote.body}}</p>
+          <div class="cs-quote__attr">{{cs_body.quote.attr}}</div>
+        </div>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar__card">
+          <h4>{{cs_body.sidebar.project.heading}}</h4>
+          {{#each cs_body.sidebar.project.rows}}
+            <div class="cs-sidebar__row">
+              <span class="cs-sidebar__key">{{key}}</span>
+              <span class="cs-sidebar__val">{{val}}</span>
+            </div>
+          {{/each}}
+        </div>
+        <div class="cs-sidebar__card">
+          <h4>{{cs_body.sidebar.services.heading}}</h4>
+          {{#each cs_body.sidebar.services.items}}
+            <div class="cs-sidebar__row">
+              <span class="cs-sidebar__key">{{this}}</span>
+            </div>
+          {{/each}}
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<!--
+  CsOutcomes — Case Study detail: 3-column outcomes.
+  Props (from cs_outcomes):
+    heading
+    cards: [ { num (html), body } ]
+-->
+<section class="cs-outcomes section">
+  <div class="container">
+    <span class="label">The Outcomes</span>
+    <h2 style="color:var(--forest-green);margin-bottom:40px;">{{cs_outcomes.heading}}</h2>
+    <div class="outcomes-grid">
+      {{#each cs_outcomes.cards}}
+        <div class="outcome-card">
+          <div class="outcome-card__num">{{{num}}}</div>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

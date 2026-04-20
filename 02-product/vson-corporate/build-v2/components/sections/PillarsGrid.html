@@ -1,0 +1,32 @@
+<!--
+  PillarsGrid — homepage "Two Pillars" section (Store + Solutions cards).
+  Props (from pillars):
+    eyebrow, heading
+    store:     { title, body, cta: { label, href } }
+    solutions: { title, body, sub_labels[], cta: { label, href } }
+-->
+<section class="pillars section">
+  <div class="container">
+    <div class="pillars__header">
+      <span class="label">{{pillars.eyebrow}}</span>
+      <h2>{{pillars.heading}}</h2>
+    </div>
+    <div class="pillars__grid">
+      <div class="pillar-card pillar-card--store">
+        <h3>{{pillars.store.title}}</h3>
+        <p>{{pillars.store.body}}</p>
+        <a href="{{pillars.store.cta.href}}" class="btn btn--outline arrow">{{pillars.store.cta.label}}</a>
+      </div>
+      <div class="pillar-card pillar-card--solutions">
+        <h3>{{pillars.solutions.title}}</h3>
+        <p>{{pillars.solutions.body}}</p>
+        <div class="pillar-card__sub-labels">
+          {{#each pillars.solutions.sub_labels}}
+            <span class="sub-label">{{this}}</span>
+          {{/each}}
+        </div>
+        <a href="{{pillars.solutions.cta.href}}" class="btn btn--ghost-light arrow">{{pillars.solutions.cta.label}}</a>
+      </div>
+    </div>
+  </div>
+</section>

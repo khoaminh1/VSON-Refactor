@@ -1,0 +1,43 @@
+/* ============================================================
+   Utilities — container, section, label, divider
+   ============================================================ */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+}
+
+.section       { padding: 96px 0; }
+.section--sm   { padding: 64px 0; }
+
+@media (max-width: 640px) {
+  .section     { padding: 64px 0; }
+  .section--sm { padding: 48px 0; }
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--digital-emerald);
+  margin-bottom: 16px;
+}
+
+.label--light { color: var(--tech-mint); }
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: var(--tech-mint);
+  margin: 0 auto 32px;
+}
+
+.arrow::after { content: ' →'; }

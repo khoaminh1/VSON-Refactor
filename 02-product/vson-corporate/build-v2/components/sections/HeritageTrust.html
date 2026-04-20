@@ -1,0 +1,40 @@
+<!--
+  HeritageTrust — homepage "20 years of trust" section with proof bullets + logo chips.
+  Props (from heritage):
+    eyebrow, heading (html), sub
+    proofs:  [string]
+    cta: { label, href }
+    logo_rows: [ { label, chips: [string] } ]
+-->
+<section class="heritage section">
+  <div class="container">
+    <div class="heritage__inner">
+      <div class="heritage__content">
+        <span class="label label--light">{{heritage.eyebrow}}</span>
+        <h2>{{{heritage.heading}}}</h2>
+        <p class="heritage__sub">{{heritage.sub}}</p>
+        <div class="heritage__proofs">
+          {{#each heritage.proofs}}
+            <div class="proof-item">
+              <div class="proof-dot"></div>
+              <span>{{this}}</span>
+            </div>
+          {{/each}}
+        </div>
+        <a href="{{heritage.cta.href}}" class="btn btn--ghost-light arrow">{{heritage.cta.label}}</a>
+      </div>
+      <div class="heritage__logos">
+        {{#each heritage.logo_rows}}
+          <div class="logo-row">
+            <div class="logo-row__label">{{label}}</div>
+            <div class="logo-row__items">
+              {{#each chips}}
+                <div class="logo-chip">{{this}}</div>
+              {{/each}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

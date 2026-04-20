@@ -1,0 +1,28 @@
+<!--
+  Services — Market Development: 3 service cards aligned to MRA pillars.
+  Props (from services):
+    eyebrow, heading (html)
+    cards: [ { num, mra_tag, title, body, pillar } ]
+-->
+<section class="services section">
+  <div class="container">
+    <div class="services__header">
+      <span class="label">{{services.eyebrow}}</span>
+      <h2>{{{services.heading}}}</h2>
+    </div>
+    <div class="services-grid">
+      {{#each services.cards}}
+        <div class="service-card">
+          <div class="service-card__top" data-num="{{num}}">
+            <span class="service-card__mra-tag">{{mra_tag}}</span>
+            <h3>{{title}}</h3>
+          </div>
+          <div class="service-card__body">
+            <p>{{body}}</p>
+            <span class="service-card__pillar">{{pillar}}</span>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

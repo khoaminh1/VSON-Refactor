@@ -1,0 +1,36 @@
+<!--
+  ContactDetails — Contact page right column (info card + routing card).
+  Props (from contact_details):
+    head:    { heading, body }
+    office:  { heading, items: [ { icon, label, value (html) } ] }
+    routing: { heading, items: [ { label, email } ] }
+-->
+<div class="contact-details">
+  <div class="contact-details__head">
+    <h2>{{contact_details.head.heading}}</h2>
+    <p>{{contact_details.head.body}}</p>
+  </div>
+
+  <div class="contact-info-card">
+    <h3>{{contact_details.office.heading}}</h3>
+    {{#each contact_details.office.items}}
+      <div class="contact-info-item">
+        <div class="contact-info-item__icon">{{icon}}</div>
+        <div>
+          <div class="contact-info-item__label">{{label}}</div>
+          <div class="contact-info-item__value">{{{value}}}</div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="routing-card">
+    <h3>{{contact_details.routing.heading}}</h3>
+    {{#each contact_details.routing.items}}
+      <div class="routing-item">
+        <div class="routing-item__label">{{label}}</div>
+        <div class="routing-item__email">{{email}}</div>
+      </div>
+    {{/each}}
+  </div>
+</div>

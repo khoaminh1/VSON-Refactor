@@ -1,0 +1,43 @@
+{
+  "brand": {
+    "legal_name": "Công ty TNHH Đầu tư công nghệ Việt Sing (VSON)",
+    "registration": "MST: 0313403180",
+    "contact": [
+      "58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam",
+      "0902.964.858",
+      "hello@vson.vn · solutions@vson.vn"
+    ]
+  },
+  "columns": {
+    "company": {
+      "heading": "Company",
+      "links": [
+        { "label": "About VSON",   "href": "/about.html" },
+        { "label": "Case Studies", "href": "/case-studies.html" },
+        { "label": "Contact",      "href": "/contact.html" }
+      ]
+    },
+    "solutions": {
+      "heading": "Solutions",
+      "links": [
+        { "label": "Activation Solutions", "href": "/activation-solutions.html" },
+        { "label": "Market Development",   "href": "/market-development.html" },
+        { "label": "VSON Store",           "href": "/store.html" },
+        { "label": "Partner with Us",      "href": "/contact.html" }
+      ]
+    },
+    "legal": {
+      "heading": "Legal",
+      "links": [
+        { "label": "Privacy Policy", "href": "#" },
+        { "label": "Terms of Use",   "href": "#" }
+      ]
+    }
+  },
+  "copyright": "© 2026 VSON. All rights reserved.",
+  "social": [
+    { "label": "LinkedIn", "abbr": "in", "href": "#" },
+    { "label": "Facebook", "abbr": "fb", "href": "#" },
+    { "label": "Zalo",     "abbr": "za", "href": "#" }
+  ]
+}

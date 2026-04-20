@@ -1,0 +1,47 @@
+<!--
+  BaseHead — shared <head> boilerplate.
+  Page-specific values (title, description, og.*, canonical) come from content/pages/[page].json
+  Build step injects them as: {{meta.title}}, {{meta.description}}, etc.
+
+  Asset paths:
+    - Fonts → /assets/fonts/fonts.css         (loads Montserrat + Inter)
+    - Icons → /assets/icons/                  (favicon.ico, icon.svg, apple-touch-icon.png)
+    - OG    → /assets/images/og/og-*.png      (path stored in JSON; absolute URL built via {{site.domain}}{{meta.og.image}})
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<link rel="canonical" href="{{meta.canonical}}">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="{{meta.og.title}}">
+<meta property="og:description" content="{{meta.og.description}}">
+<meta property="og:image"       content="{{meta.og.image}}">
+<meta property="og:url"         content="{{meta.og.url}}">
+
+<!-- Favicon set -->
+<link rel="icon"             href="/assets/icons/favicon.ico" sizes="32x32">
+<link rel="icon"             href="/assets/icons/icon.svg"    type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+<!-- Theme color (mobile browser chrome — uses brand forest green) -->
+<meta name="theme-color" content="#1B4D3E">
+
+<!-- Fonts (Google Fonts CDN — see /assets/fonts/README.md to self-host) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" as="style">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+
+<!-- Stylesheets (load order: tokens → reset → utilities → layout → ui → nav/footer → sections) -->
+<link rel="stylesheet" href="/components/css/tokens.css">
+<link rel="stylesheet" href="/components/css/reset.css">
+<link rel="stylesheet" href="/components/css/utilities.css">
+<link rel="stylesheet" href="/components/css/layout.css">
+<link rel="stylesheet" href="/components/css/ui.css">
+<link rel="stylesheet" href="/components/css/nav.css">
+<link rel="stylesheet" href="/components/css/footer.css">
+<link rel="stylesheet" href="/components/css/sections.css">

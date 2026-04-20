@@ -1,0 +1,17 @@
+<!--
+  CsSnapshot — 4-stat bar directly below the case study hero.
+  Props (from cs_snapshot):
+    stats: [ { num (html — supports <em>), label } ]
+-->
+<div class="snapshot">
+  <div class="container">
+    <div class="snapshot__inner">
+      {{#each cs_snapshot.stats}}
+        <div class="snapshot__stat">
+          <div class="snapshot__num">{{{num}}}</div>
+          <div class="snapshot__label">{{label}}</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

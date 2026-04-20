@@ -1,0 +1,23 @@
+<!--
+  HowItWorks — Market Development 4-step horizontal process.
+  Props (from how_it_works):
+    eyebrow, heading
+    steps: [ { num, title, body } ]
+-->
+<section class="how-it-works section">
+  <div class="container">
+    <div class="how-it-works__header">
+      <span class="label">{{how_it_works.eyebrow}}</span>
+      <h2>{{how_it_works.heading}}</h2>
+    </div>
+    <div class="steps-track">
+      {{#each how_it_works.steps}}
+        <div class="step">
+          <div class="step__circle">{{num}}</div>
+          <h3>{{title}}</h3>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

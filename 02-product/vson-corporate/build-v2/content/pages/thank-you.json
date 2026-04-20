@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "VSON | Thank You",
+    "description": "Thank you for contacting VSON. We've received your message and will get back to you soon.",
+    "canonical": "https://vson.vn/thank-you.html",
+    "og": {
+      "title": "VSON | Thank You",
+      "description": "Thank you for contacting VSON. We've received your message and will get back to you soon.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/thank-you.html"
+    }
+  },
+  "thank_you": {
+    "heading": "<em>Thank you.</em>",
+    "body": "We've received your message and will get back to you as soon as possible. Our team looks forward to connecting with you.",
+    "cta": { "label": "Back to Home", "href": "/" }
+  }
+}

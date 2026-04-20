@@ -1,0 +1,21 @@
+<!--
+  CtaDual — Market Development 2-column CTA on forest-green.
+  Props (from cta_dual):
+    primary:   { heading, body, cta: { label, href } }
+    secondary: { body, link: { label, href } }
+-->
+<section class="cta-dual">
+  <div class="container">
+    <div class="cta-dual__inner">
+      <div>
+        <h2>{{cta_dual.primary.heading}}</h2>
+        <p>{{cta_dual.primary.body}}</p>
+        <a href="{{cta_dual.primary.cta.href}}" class="btn btn--ghost-light arrow">{{cta_dual.primary.cta.label}}</a>
+      </div>
+      <div class="cta-dual__secondary">
+        <p>{{cta_dual.secondary.body}}</p>
+        <a href="{{cta_dual.secondary.link.href}}" style="font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">{{cta_dual.secondary.link.label}} ›</a>
+      </div>
+    </div>
+  </div>
+</section>

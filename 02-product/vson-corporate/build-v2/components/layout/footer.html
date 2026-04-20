@@ -1,0 +1,52 @@
+<!--
+  Footer — brand column + 3 link columns + legal row.
+  Data from content/footer.json.
+-->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <div class="logo-mark__icon">{{site.logo_initial}}</div>
+          <span class="logo-mark__text">{{site.brand_short}}</span>
+        </div>
+        <p class="footer__tagline">{{{footer.brand.legal_name}}}<br>{{footer.brand.registration}}</p>
+        {{#each footer.brand.contact}}
+          <div class="footer__contact-item"><span>{{{this}}}</span></div>
+        {{/each}}
+      </div>
+      <div class="footer__col">
+        <h4>{{footer.columns.company.heading}}</h4>
+        <ul>
+          {{#each footer.columns.company.links}}
+            <li><a href="{{href}}">{{label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>{{footer.columns.solutions.heading}}</h4>
+        <ul>
+          {{#each footer.columns.solutions.links}}
+            <li><a href="{{href}}">{{label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>{{footer.columns.legal.heading}}</h4>
+        <ul>
+          {{#each footer.columns.legal.links}}
+            <li><a href="{{href}}">{{label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__legal">{{footer.copyright}}</span>
+      <div class="footer__social">
+        {{#each footer.social}}
+          <a href="{{href}}" class="social-link" aria-label="{{label}}">{{abbr}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</footer>

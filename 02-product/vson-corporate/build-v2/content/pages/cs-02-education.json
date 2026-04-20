@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "VSON | Case Study: National English Education Network",
+    "description": "Fewer cold leads. More students ready to enrol. Automated CRM journeys across 100+ branches nationwide.",
+    "canonical": "https://vson.vn/cs-02-education.html",
+    "og": {
+      "title": "VSON | Case Study: National English Education Network",
+      "description": "Fewer cold leads. More students ready to enrol. Automated CRM journeys across 100+ branches nationwide.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/cs-02-education.html"
+    }
+  },
+  "cs_hero": {
+    "slug": "02",
+    "breadcrumb": "<a href=\"/case-studies.html\">Case Studies</a> <span>/ Education</span>",
+    "heading": "Fewer cold leads. More students <em>ready to enrol.</em>",
+    "track": "Market Development",
+    "sector": "Education | Vietnam"
+  },
+  "cs_snapshot": {
+    "stats": [
+      { "num": "<em>100</em>+", "label": "Branches aligned on one campaign system" },
+      { "num": "−<em>40%</em>", "label": "Reduction in manual follow-up workload" },
+      { "num": "<em>3</em>",    "label": "Personalised journey types built and deployed" },
+      { "num": "<em>Q1</em>",   "label": "Enrolment conversion improved in first quarter" }
+    ]
+  },
+  "cs_body": {
+    "challenge": {
+      "heading": "A 100-branch network. Still running on manual phone calls.",
+      "paragraphs": [
+        "The client is a national English-language learning centre, one of Vietnam's most recognised names in the sector with over 100 branches from HCMC to Hanoi. Each year, tens of thousands of people enquire about trial classes. Converting those enquiries into enrolled students was the problem. Follow-up was largely manual: sales staff called leads one by one, or sent the same generic email blast to everyone. Response windows were long. Conversion rates varied wildly between branches.",
+        "Re-enrollment was equally underdeveloped. Students who completed a course level received no automated outreach to continue. The client was leaving a significant share of potential revenue on the table from an audience that already trusted the brand."
+      ]
+    },
+    "solution": {
+      "heading": "Automated journeys. Personalised by level, age, and location.",
+      "body": "VSON designed a CRM-powered lead nurture workflow that replaced the manual follow-up process with automated, personalised communication via Zalo and SMS. Every prospect received a relevant message at the right moment: not a generic blast, but a sequence matched to their learning level, age group, and nearest branch location.",
+      "steps_heading": "What we did, step by step",
+      "steps": [
+        "Audited the existing lead capture and follow-up process across all 100+ branches to identify where leads were being lost.",
+        "Mapped three primary journey types: new enquiry to trial class to enrolment; post-trial non-converter; and programme completer to re-enrolment.",
+        "Built automated Zalo and SMS sequences for each journey, with branching logic based on response behaviour (opened, clicked, no response).",
+        "Personalised message content by learning level (beginner to advanced), age group (children, teens, adults), and branch location.",
+        "Trained branch managers to monitor lead status via a shared dashboard rather than relying on manual phone tracking.",
+        "Launched re-enrolment journey for programme completers, with personalised course recommendations based on their completed level."
+      ]
+    },
+    "quote": {
+      "body": "We had the students. We just weren't staying in touch with them well enough. VSON built journeys that felt personal even at scale. Our enrolment team noticed the difference within the first few weeks; fewer cold leads, more students arriving already ready to say yes.",
+      "attr": "Director of Marketing"
+    },
+    "sidebar": {
+      "project": {
+        "heading": "Project snapshot",
+        "rows": [
+          { "key": "Track",             "val": "Market Development" },
+          { "key": "Sector",            "val": "English language education" },
+          { "key": "Market",            "val": "Vietnam nationwide" },
+          { "key": "Branches covered",  "val": "100+" },
+          { "key": "Channels",          "val": "Zalo | SMS | CRM" }
+        ]
+      },
+      "services": {
+        "heading": "Services used",
+        "items": [
+          "CRM workflow design",
+          "Lead journey automation",
+          "Zalo / SMS sequences",
+          "Audience segmentation",
+          "Re-enrolment campaigns"
+        ]
+      }
+    }
+  },
+  "cs_outcomes": {
+    "heading": "Consistent. Personalised. Measurable.",
+    "cards": [
+      { "num": "<em>100</em>+", "body": "Branches operating on one unified campaign system for the first time" },
+      { "num": "−<em>40%</em>", "body": "Reduction in manual follow-up workload for the sales team, freeing time for higher-value conversations" },
+      { "num": "<em>Q1</em>",   "body": "Measurable improvement in lead-to-enrolment conversion rate achieved within the first quarter" }
+    ]
+  },
+  "cs_nav": {
+    "prev": { "dir": "Previous story", "title": "Electronics Retail Chain", "href": "/cs-01-electronics-retail.html" },
+    "next": { "dir": "Next story",     "title": "Fast-Growing Fashion Retailer", "href": "/cs-03-fashion-retail.html" }
+  },
+  "cta_band": {
+    "heading": "Ready to make every lead count?",
+    "body": "We'll design the journey. You focus on delivering the experience.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

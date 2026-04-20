@@ -1,0 +1,32 @@
+<!--
+  CaseStudiesPreview — homepage 2-card teaser.
+  Props (from cs_preview):
+    eyebrow, heading, cta: { label, href }
+    cards: [ { image_label, track, title, body, link: { label, href } } ]
+-->
+<section class="case-studies section" id="case-studies">
+  <div class="container">
+    <div class="case-studies__header">
+      <div>
+        <span class="label">{{cs_preview.eyebrow}}</span>
+        <h2>{{cs_preview.heading}}</h2>
+      </div>
+      <a href="{{cs_preview.cta.href}}" class="btn btn--outline arrow">{{cs_preview.cta.label}}</a>
+    </div>
+    <div class="cs-preview-grid">
+      {{#each cs_preview.cards}}
+        <div class="cs-preview-card">
+          <div class="cs-preview-card__image">
+            <span class="cs-preview-card__image-label">{{image_label}}</span>
+          </div>
+          <div class="cs-preview-card__body">
+            <span class="cs-preview-card__track">{{track}}</span>
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+            <a href="{{link.href}}" class="cs-preview-card__link arrow">{{link.label}}</a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

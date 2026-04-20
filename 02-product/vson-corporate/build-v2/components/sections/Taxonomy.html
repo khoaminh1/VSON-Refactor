@@ -1,0 +1,24 @@
+<!--
+  Taxonomy — Case Studies index: grouped tag reference.
+  Props (from taxonomy):
+    eyebrow, heading
+    groups: [ { heading, variant ('brands'|'solutions'|'services'), tags: [string] } ]
+-->
+<section class="taxonomy section">
+  <div class="container">
+    <div class="taxonomy__header">
+      <span class="label">{{taxonomy.eyebrow}}</span>
+      <h2>{{taxonomy.heading}}</h2>
+    </div>
+    <div class="taxonomy__grid">
+      {{#each taxonomy.groups}}
+        <div class="taxonomy-group">
+          <h4>{{heading}}</h4>
+          {{#each tags}}
+            <span class="taxonomy-tag taxonomy-tag--{{../variant}}">{{this}}</span>
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

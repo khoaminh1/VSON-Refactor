@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "VSON | Case Study: ICT Distribution Channel Expansion",
+    "description": "80 active reseller partners across Vietnam in 4 months. From zero to channel velocity ahead of schedule.",
+    "canonical": "https://vson.vn/cs-05-ict-distribution.html",
+    "og": {
+      "title": "VSON | Case Study: ICT Distribution Channel Expansion",
+      "description": "80 active reseller partners across Vietnam in 4 months. From zero to channel velocity ahead of schedule.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/cs-05-ict-distribution.html"
+    }
+  },
+  "cs_hero": {
+    "slug": "05",
+    "breadcrumb": "<a href=\"/case-studies.html\">Case Studies</a> <span>/ ICT Distribution</span>",
+    "heading": "<em>80 active reseller partners</em> across Vietnam in 4 months.",
+    "track": "Market Development",
+    "sector": "ICT Hardware | Singapore | Vietnam"
+  },
+  "cs_snapshot": {
+    "stats": [
+      { "num": "<em>80</em>",      "label": "New active reseller partners onboarded" },
+      { "num": "<em>150</em>+",    "label": "Partners mapped across Vietnam" },
+      { "num": "<em>3</em>",       "label": "Major cities with co-branded POS coverage" },
+      { "num": "<em>4</em> mths",  "label": "Ahead of schedule on year-1 sell-through targets" }
+    ]
+  },
+  "cs_body": {
+    "challenge": {
+      "heading": "Strong product. No Vietnam channel. Tight regional timeline.",
+      "paragraphs": [
+        "A Singapore-headquartered ICT hardware brand had a well-established product line and regional distribution in the Singapore market. Vietnam was a clear growth opportunity: a large, fast-growing market for ICT hardware but the brand had limited local presence and no existing reseller relationships on the ground.",
+        "The APAC team needed a trusted local partner to do what would have taken years of relationship-building: map the reseller landscape, qualify and onboard channel partners quickly, and activate sell-through at store level within a launch window aligned to the brand's broader APAC rollout schedule. Getting to market slowly was not an option."
+      ]
+    },
+    "solution": {
+      "heading": "Reseller mapping. Partner onboarding. Sell-through activation.",
+      "body": "VSON conducted a structured reseller mapping exercise across Ho Chi Minh City, Hanoi, and Da Nang, identifying and qualifying 150+ potential channel partners by tier, customer footfall, product-category fit, and operational readiness. From that list, VSON designed and ran a tiered partner onboarding programme that moved the strongest prospects to active, selling status in under four months.",
+      "steps_heading": "What we did, step by step",
+      "steps": [
+        "Conducted market mapping across HCMC, Hanoi, and Da Nang: identifying 150+ potential reseller partners across consumer electronics, B2B IT supply, and corporate gifting channels.",
+        "Qualified partners against a defined scorecard: customer footfall, technical capability, brand-fit, and willingness to carry dedicated stock.",
+        "Designed a tiered partner programme: Tier 1 (flagship), Tier 2 (authorised reseller), Tier 3 (referral partner), with different stock requirements, incentive structures, and support levels per tier.",
+        "Ran product training sessions for all onboarded partners, covering product positioning, key specifications, competitive comparisons, and customer objection handling.",
+        "Produced and deployed co-branded POS materials: counter cards, product display units, and partner signage across all active partner locations in three cities.",
+        "Launched a sell-through incentive campaign for partners, with tiered quarterly bonuses tied to unit volume and sell-in targets.",
+        "Managed ongoing channel support throughout year one: monthly stock monitoring, reorder management, and partner performance reporting to the client's Singapore team."
+      ]
+    },
+    "quote": {
+      "body": "We knew Vietnam was a strong market for us. We just didn't have the local relationships to unlock it. VSON brought both the network and the structure. Within four months we had active partners in three cities and real sell-through momentum. It would have taken us two years to build that alone.",
+      "attr": "Country Sales Lead"
+    },
+    "sidebar": {
+      "project": {
+        "heading": "Project snapshot",
+        "rows": [
+          { "key": "Track",              "val": "Market Development" },
+          { "key": "Sector",             "val": "ICT hardware &amp; distribution" },
+          { "key": "Client base",        "val": "Singapore → Vietnam" },
+          { "key": "Cities covered",     "val": "HCMC | Hanoi | Da Nang" },
+          { "key": "Partners onboarded", "val": "80 active (4 months)" }
+        ]
+      },
+      "services": {
+        "heading": "Services used",
+        "items": [
+          "Reseller mapping",
+          "Partner onboarding programme",
+          "Product training sessions",
+          "Co-branded POS materials",
+          "Sell-through incentive campaign",
+          "Channel support &amp; reporting"
+        ]
+      }
+    }
+  },
+  "cs_outcomes": {
+    "heading": "From zero to channel velocity in under 4 months.",
+    "cards": [
+      { "num": "<em>80</em>",         "body": "New active reseller partners onboarded across three major Vietnam cities within 4 months of programme launch" },
+      { "num": "<em>3</em> cities",   "body": "Co-branded POS coverage established in HCMC, Hanoi, and Da Nang simultaneously" },
+      { "num": "Year <em>1</em>",     "body": "Sell-through targets met ahead of schedule with ongoing channel support keeping momentum through Q3 and Q4" }
+    ]
+  },
+  "cs_nav": {
+    "prev": { "dir": "Previous story", "title": "OEM Merchandise: ICT Brand", "href": "/cs-04-oem-merchandise.html" },
+    "next": { "dir": "Back to",        "title": "All Case Studies",            "href": "/case-studies.html" }
+  },
+  "cta_band": {
+    "heading": "Bringing a brand into Vietnam? Let's talk channel strategy.",
+    "body": "We know the landscape, the partners, and what it takes to activate sell-through at speed.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}
