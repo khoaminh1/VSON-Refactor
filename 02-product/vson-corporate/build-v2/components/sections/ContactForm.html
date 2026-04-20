@@ -1,0 +1,51 @@
+<!--
+  ContactForm — Contact page form (Netlify-backed).
+  Props (from contact_form):
+    heading, body
+    form_name, form_rows: [ [ { label, name, type, required, placeholder } ] ]
+    select: { label, name, required, options: [ { value, label } ] }
+    textarea: { label, name, required, placeholder }
+    routing_note   (html) — supports <strong>
+    submit_label
+-->
+<div class="contact-form">
+  <h2>{{contact_form.heading}}</h2>
+  <p>{{contact_form.body}}</p>
+
+  <form name="{{contact_form.form_name}}" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+    {{#each contact_form.form_rows}}
+      <div class="form-row">
+        {{#each this}}
+          <div class="form-field">
+            <label for="{{name}}">{{label}}{{#if required}} *{{/if}}</label>
+            <input type="{{type}}" id="{{name}}" name="{{name}}" placeholder="{{placeholder}}"{{#if required}} required{{/if}} />
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+
+    <div class="form-field">
+      <label for="{{contact_form.select.name}}">{{contact_form.select.label}}{{#if contact_form.select.required}} *{{/if}}</label>
+      <select id="{{contact_form.select.name}}" name="{{contact_form.select.name}}"{{#if contact_form.select.required}} required{{/if}}>
+        {{#each contact_form.select.options}}
+          <option value="{{value}}">{{label}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="{{contact_form.textarea.name}}">{{contact_form.textarea.label}}{{#if contact_form.textarea.required}} *{{/if}}</label>
+      <textarea id="{{contact_form.textarea.name}}" name="{{contact_form.textarea.name}}" placeholder="{{contact_form.textarea.placeholder}}"{{#if contact_form.textarea.required}} required{{/if}}></textarea>
+    </div>
+
+    {{#if contact_form.routing_note}}
+      <div class="form-routing-note">
+        <p>{{{contact_form.routing_note}}}</p>
+      </div>
+    {{/if}}
+
+    <button class="btn btn--primary" style="width:100%; justify-content:center;" type="submit">{{contact_form.submit_label}} →</button>
+  </form>
+</div>

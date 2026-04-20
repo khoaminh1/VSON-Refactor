@@ -1,0 +1,29 @@
+<!--
+  WhyBrands — Activation Solutions "why VSON" split layout.
+  Props (from why_brands):
+    eyebrow, heading (html), body
+    cta: { label, href }
+    items: [ { title, body } ]
+-->
+<section class="why-brands section">
+  <div class="container">
+    <div class="why-brands__inner">
+      <div class="why-brands__content">
+        <span class="label">{{why_brands.eyebrow}}</span>
+        <h2>{{{why_brands.heading}}}</h2>
+        <p>{{why_brands.body}}</p>
+        <a href="{{why_brands.cta.href}}" class="btn btn--primary arrow">{{why_brands.cta.label}}</a>
+      </div>
+      <div class="why-brands__visual">
+        <div class="why-grid">
+          {{#each why_brands.items}}
+            <div class="why-item">
+              <h4>{{title}}</h4>
+              <p>{{body}}</p>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

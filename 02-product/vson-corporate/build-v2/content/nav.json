@@ -1,0 +1,19 @@
+{
+  "links": [
+    { "label": "About",        "href": "/about.html" },
+    {
+      "label": "Solutions",
+      "children": [
+        { "label": "Activation Solutions", "href": "/activation-solutions.html" },
+        { "label": "Market Development",   "href": "/market-development.html" }
+      ]
+    },
+    { "label": "Store",        "href": "/store.html" },
+    { "label": "Case Studies", "href": "/case-studies.html" },
+    { "label": "Contact",      "href": "/contact.html" }
+  ],
+  "cta": {
+    "label": "Request a Consultation",
+    "href": "/contact.html"
+  }
+}

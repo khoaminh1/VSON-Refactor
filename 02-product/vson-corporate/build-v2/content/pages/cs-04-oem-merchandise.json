@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "VSON | Case Study: OEM Corporate Merchandise",
+    "description": "5,000+ branded units produced and delivered to 20+ locations. Zero brand compliance rejections.",
+    "canonical": "https://vson.vn/cs-04-oem-merchandise.html",
+    "og": {
+      "title": "VSON | Case Study: OEM Corporate Merchandise",
+      "description": "5,000+ branded units produced and delivered to 20+ locations. Zero brand compliance rejections.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/cs-04-oem-merchandise.html"
+    }
+  },
+  "cs_hero": {
+    "slug": "04",
+    "breadcrumb": "<a href=\"/case-studies.html\">Case Studies</a> <span>/ OEM Merchandise</span>",
+    "heading": "5,000+ branded units. <em>20+ locations. Zero rejections.</em>",
+    "track": "Activation Solutions",
+    "sector": "ICT &amp; Technology | Vietnam Nationwide"
+  },
+  "cs_snapshot": {
+    "stats": [
+      { "num": "<em>5,000</em>+", "label": "Branded units produced and delivered" },
+      { "num": "<em>20</em>+",    "label": "Event locations across Vietnam" },
+      { "num": "<em>0</em>",      "label": "Brand compliance rejections at QC" },
+      { "num": "<em>3</em>",      "label": "Product types: bags, polo shirts, event kits" }
+    ]
+  },
+  "cs_body": {
+    "challenge": {
+      "heading": "Global brand standards. A Vietnam-wide deadline. No local production partner.",
+      "paragraphs": [
+        "A global ICT brand with a large partner and reseller network across Vietnam needed to produce and deliver custom-branded merchandise for a national partner conference: over 5,000 units of branded laptop bags, polo shirts, and event kits across more than 20 event locations spanning HCMC, Hanoi, Da Nang, and regional cities.",
+        "The brief came with tight timelines, strict global brand guidelines, and no room for delays. The client's regional team in Singapore was responsible for the programme but did not have the Vietnam production relationships or local logistics infrastructure to execute at this scale. A single compliance failure or late delivery to any venue would reflect directly on the brand."
+      ]
+    },
+    "solution": {
+      "heading": "End-to-end production management. On brand. On time. Everywhere.",
+      "body": "VSON took ownership of the full OEM production run: from supplier selection through to last-mile delivery. We managed every stage of the process: material specification, supplier qualification, logo and embroidery sign-off against the client's global brand guidelines, quality control inspections at production, packaging, and delivery coordination to all 20+ event locations across Vietnam.",
+      "steps_heading": "What we did, step by step",
+      "steps": [
+        "Reviewed the client's brand guidelines and created a production compliance checklist covering logo placement, thread colour, stitching spec, and packaging requirements for each product type.",
+        "Qualified and shortlisted certified Vietnamese OEM manufacturers with demonstrable experience in branded corporate merchandise at volume.",
+        "Coordinated pre-production sampling for all three product types: bags, polo shirts, event kits and obtained sign-off from the client's regional marketing team before full run approval.",
+        "Managed quality control inspections at the production facility, including a full compliance review against the approved samples before packing.",
+        "Coordinated packaging and labelling per event location, and managed last-mile delivery logistics to all 20+ venues within the required window.",
+        "Produced a full production brief and supplier documentation package for the client's procurement records, enabling repeat ordering without restarting the sourcing process."
+      ]
+    },
+    "quote": {
+      "body": "Managing a production run of this size across multiple cities is not straightforward in any market. VSON handled every detail: sampling, compliance sign-offs, logistics. We received zero complaints from any of our partner locations. That kind of reliability is rare.",
+      "attr": "Regional Marketing Manager, APAC"
+    },
+    "sidebar": {
+      "project": {
+        "heading": "Project snapshot",
+        "rows": [
+          { "key": "Track",           "val": "Activation Solutions" },
+          { "key": "Sector",          "val": "ICT &amp; technology" },
+          { "key": "Market",          "val": "Vietnam nationwide" },
+          { "key": "Volume",          "val": "5,000+ units" },
+          { "key": "Delivery points", "val": "20+ locations" }
+        ]
+      },
+      "services": {
+        "heading": "Services used",
+        "items": [
+          "OEM supplier management",
+          "Brand compliance review",
+          "Production QC inspection",
+          "Sampling &amp; sign-off loop",
+          "Last-mile logistics"
+        ]
+      }
+    }
+  },
+  "cs_outcomes": {
+    "heading": "On brand. On time. Every location.",
+    "cards": [
+      { "num": "<em>5,000</em>+",     "body": "Branded units produced across 3 product types and delivered to 20+ locations nationwide" },
+      { "num": "<em>0</em> rejections","body": "Zero brand compliance rejections at quality control across all product types and all batches" },
+      { "num": "<em>1</em> template", "body": "Full production brief and supplier documentation adopted by the client as the standard for future Vietnam merchandise campaigns" }
+    ]
+  },
+  "cs_nav": {
+    "prev": { "dir": "Previous story", "title": "Fast-Growing Fashion Retailer",   "href": "/cs-03-fashion-retail.html" },
+    "next": { "dir": "Next story",     "title": "ICT Brand: Vietnam Distribution", "href": "/cs-05-ict-distribution.html" }
+  },
+  "cta_band": {
+    "heading": "Need branded merchandise delivered right across Vietnam?",
+    "body": "We manage production, compliance, and logistics so you don't have to.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

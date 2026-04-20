@@ -1,0 +1,37 @@
+<!--
+  CaseStudyGrid — Case Studies index 5-card grid.
+  Props (from cs_grid):
+    cards: [ {
+      href, slug (01-05, used for gradient variant), filter,
+      image_label, stat_num, stat_sub,
+      tags: [ { label, variant } ],
+      title, sector, body,
+      link_label, anon_note
+    } ]
+-->
+<section class="cs-section section">
+  <div class="container">
+    <div class="cs-grid">
+      {{#each cs_grid.cards}}
+        <a href="{{href}}" class="cs-card cs-card--{{slug}}" data-filter="{{filter}}">
+          <div class="cs-card__image">
+            <span class="cs-card__image-label">{{image_label}}</span>
+            <div class="cs-card__image-stat">{{stat_num}}<span>{{stat_sub}}</span></div>
+          </div>
+          <div class="cs-card__body">
+            <div class="cs-card__tags">
+              {{#each tags}}
+                <span class="cs-tag cs-tag--{{variant}}">{{label}}</span>
+              {{/each}}
+            </div>
+            <h3>{{title}}</h3>
+            <p class="cs-card__sector">{{sector}}</p>
+            <p>{{body}}</p>
+            <span class="cs-card__link">{{link_label}}</span>
+            <div class="cs-card__anon"><div class="cs-card__anon-dot"></div><span>{{anon_note}}</span></div>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<!--
+  PageHero — generic inner-page hero.
+  Props:
+    eyebrow         {string}   optional small caps label above heading
+    eyebrow_light   {boolean}  true when rendered on dark background (tech-mint colour)
+    breadcrumb      {html}     optional, supports <span> for separator
+    heading         {html}     supports <em> and <br>
+    sub             {string}
+    referral        {string}   optional secondary paragraph below sub
+    actions         [{ label, href, variant }]  optional button row
+    tags            [string]   optional pill tags below actions/sub
+-->
+<section class="page-hero" id="main-content">
+  <div class="container">
+    <div class="page-hero__inner">
+      {{#if page_hero.breadcrumb}}
+        <div class="page-hero__breadcrumb">{{{page_hero.breadcrumb}}}</div>
+      {{/if}}
+      {{#if page_hero.eyebrow}}
+        <span class="label{{#if page_hero.eyebrow_light}} label--light{{/if}}">{{page_hero.eyebrow}}</span>
+      {{/if}}
+      <h1>{{{page_hero.heading}}}</h1>
+      {{#if page_hero.sub}}
+        <p class="page-hero__sub">{{page_hero.sub}}</p>
+      {{/if}}
+      {{#if page_hero.referral}}
+        <p class="page-hero__referral">{{page_hero.referral}}</p>
+      {{/if}}
+      {{#if page_hero.actions}}
+        <div class="page-hero__actions">
+          {{#each page_hero.actions}}
+            <a href="{{href}}" class="btn btn--{{variant}}{{#if arrow}} arrow{{/if}}">{{label}}</a>
+          {{/each}}
+        </div>
+      {{/if}}
+      {{#if page_hero.tags}}
+        <div class="page-hero__tags">
+          {{#each page_hero.tags}}
+            <span class="hero-tag">{{this}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</section>

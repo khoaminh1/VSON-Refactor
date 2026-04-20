@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "VSON | Contact Us",
+    "description": "Get in touch with VSON. Contact our team at hello@vson.vn or solutions@vson.vn. We're happy to start a conversation about your business.",
+    "canonical": "https://vson.vn/contact.html",
+    "og": {
+      "title": "VSON | Contact Us",
+      "description": "Get in touch with VSON. Contact our team at hello@vson.vn or solutions@vson.vn.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/contact.html"
+    }
+  },
+  "page_hero": {
+    "eyebrow": "Get in Touch",
+    "eyebrow_light": true,
+    "heading": "<em>Let's talk.</em>",
+    "sub": "Whether you're a brand, a Singapore corporate, a distribution partner, or just exploring, we're happy to start a conversation."
+  },
+  "contact_form": {
+    "heading": "Send us a message",
+    "body": "Fill in the form and we'll route your enquiry to the right person.",
+    "form_name": "contact",
+    "form_rows": [
+      [
+        { "label": "Name",    "name": "name",    "type": "text",  "required": true,  "placeholder": "Your full name" },
+        { "label": "Company", "name": "company", "type": "text",  "required": false, "placeholder": "Your company name" }
+      ],
+      [
+        { "label": "Email",            "name": "email", "type": "email", "required": true,  "placeholder": "your@email.com" },
+        { "label": "Phone (optional)", "name": "phone", "type": "tel",   "required": false, "placeholder": "+84 or +65..." }
+      ]
+    ],
+    "select": {
+      "label": "Enquiry Type",
+      "name": "enquiry-type",
+      "required": true,
+      "options": [
+        { "value": "",                                   "label": "Select one" },
+        { "value": "Activation Solutions",               "label": "Activation Solutions" },
+        { "value": "Market Development",                 "label": "Market Development" },
+        { "value": "Distribution & Store Partnership",   "label": "Distribution &amp; Store Partnership" },
+        { "value": "General Enquiry",                    "label": "General Enquiry" }
+      ]
+    },
+    "textarea": {
+      "label": "Message",
+      "name": "message",
+      "required": true,
+      "placeholder": "Tell us about your business and what you're looking for..."
+    },
+    "routing_note": "<strong>Routing note:</strong> Activation &amp; Market Development enquiries → solutions@vson.vn · Distribution &amp; General → hello@vson.vn",
+    "submit_label": "Send Message"
+  },
+  "contact_details": {
+    "head": {
+      "heading": "Direct contact",
+      "body": "Prefer to reach us directly? All the details you need are below."
+    },
+    "office": {
+      "heading": "Office",
+      "items": [
+        { "icon": "ADR", "label": "Address",              "value": "58 Street 24A, Binh Trung Ward,<br>District 2, Ho Chi Minh City, Vietnam" },
+        { "icon": "TEL", "label": "Phone",                "value": "<a href=\"tel:0902964858\" style=\"color:inherit; text-decoration:none;\">0902.964.858</a>" },
+        { "icon": "GEN", "label": "General Enquiries",    "value": "<a href=\"mailto:hello@vson.vn\" style=\"color:inherit; text-decoration:none;\">hello@vson.vn</a>" },
+        { "icon": "SOL", "label": "Solutions Enquiries",  "value": "<a href=\"mailto:solutions@vson.vn\" style=\"color:inherit; text-decoration:none;\">solutions@vson.vn</a>" },
+        { "icon": "REG", "label": "Company Registration", "value": "MST: 0313403180" }
+      ]
+    },
+    "routing": {
+      "heading": "Enquiry Routing",
+      "items": [
+        { "label": "Activation Solutions",               "email": "solutions@vson.vn" },
+        { "label": "Market Development",                 "email": "solutions@vson.vn" },
+        { "label": "Distribution &amp; Store Partnership", "email": "hello@vson.vn" },
+        { "label": "General Enquiry",                    "email": "hello@vson.vn" }
+      ]
+    }
+  }
+}

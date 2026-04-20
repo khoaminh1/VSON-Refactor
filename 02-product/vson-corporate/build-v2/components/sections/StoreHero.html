@@ -1,0 +1,32 @@
+<!--
+  StoreHero — Store page hero with brand preview cards on the right.
+  Props (from store_hero):
+    breadcrumb, heading (html), sub
+    actions: [{ label, href, variant, arrow? }]
+    brands: [ { initial, name, cat } ]
+-->
+<section class="page-hero store-hero" id="main-content">
+  <div class="container">
+    <div class="page-hero__inner">
+      <div>
+        <div class="page-hero__breadcrumb">{{{store_hero.breadcrumb}}}</div>
+        <h1>{{{store_hero.heading}}}</h1>
+        <p class="page-hero__sub">{{store_hero.sub}}</p>
+        <div class="page-hero__actions">
+          {{#each store_hero.actions}}
+            <a href="{{href}}" class="btn btn--{{variant}}{{#if arrow}} arrow{{/if}}">{{label}}</a>
+          {{/each}}
+        </div>
+      </div>
+      <div class="page-hero__visual">
+        {{#each store_hero.brands}}
+          <div class="brand-preview-card">
+            <div class="brand-preview-card__initial">{{initial}}</div>
+            <div class="brand-preview-card__name">{{name}}</div>
+            <div class="brand-preview-card__cat">{{cat}}</div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

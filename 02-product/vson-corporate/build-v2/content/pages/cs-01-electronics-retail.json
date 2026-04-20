@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "VSON | Case Study: Electronics Retail Chain",
+    "description": "Unified fragmented customer data across online and offline channels, delivering 35% improvement in ROAS and 28% reduction in CPA.",
+    "canonical": "https://vson.vn/cs-01-electronics-retail.html",
+    "og": {
+      "title": "VSON | Case Study: Electronics Retail Chain",
+      "description": "Unified fragmented customer data across online and offline channels, delivering 35% improvement in ROAS and 28% reduction in CPA.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/cs-01-electronics-retail.html"
+    }
+  },
+  "cs_hero": {
+    "slug": "01",
+    "breadcrumb": "<a href=\"/case-studies.html\">Case Studies</a> <span>/ Electronics Retail</span>",
+    "heading": "From data silos to <em>250% growth</em> in unified customer profiles.",
+    "track": "Activation Solutions",
+    "sector": "Consumer Electronics | Vietnam"
+  },
+  "cs_snapshot": {
+    "stats": [
+      { "num": "+<em>250%</em>", "label": "Growth in unified customer profiles" },
+      { "num": "+<em>35%</em>",  "label": "Return on ad spend (ROAS)" },
+      { "num": "−<em>28%</em>",  "label": "Cost per acquisition (CPA)" },
+      { "num": "<em>9</em>",     "label": "Months to full results" }
+    ]
+  },
+  "cs_body": {
+    "challenge": {
+      "heading": "Customer data in silos. Campaigns flying blind.",
+      "paragraphs": [
+        "The client is one of Vietnam's top three consumer electronics retail chains: thousands of daily transactions spanning an e-commerce platform, a mobile app, and a network of physical stores. The problem was that each channel kept its own data. The app had one customer list; the stores had another; the website had a third. No one knew which customers were spending across all three. The marketing team had no way to build campaigns that reflected the full customer picture.",
+        "Repeat purchase rates were below target, and rising digital advertising costs were eroding campaign ROI with every quarter. Manual segmentation limited the team to broad audience buckets. They had to send the same message to everyone and hope enough of it stuck."
+      ]
+    },
+    "solution": {
+      "heading": "One data layer. Automated campaigns that knew who they were talking to.",
+      "body": "VSON implemented a unified customer data platform across all channels, consolidating in-store, app, web, and loyalty programme data into a single view. We then built 460+ audience segments by product category, purchase recency, spend tier, and channel preference and activated personalised campaigns across Zalo, SMS, and push notifications.",
+      "steps_heading": "What we did, step by step",
+      "steps": [
+        "Audited all existing data sources: app, POS, website, loyalty programme and mapped the data gaps between them.",
+        "Implemented the customer data platform and connected all channel feeds, establishing a single customer ID across touchpoints.",
+        "Built 460+ audience segments, from high-value repeat buyers to lapsed one-time purchasers, all queryable in real time.",
+        "Designed and deployed automated campaign journeys across Zalo, SMS, and push, triggered by purchase behaviour, product browsing, and cart abandonment signals.",
+        "Replaced manual broadcast campaigns with always-on retargeting flows, reducing team workload while increasing campaign precision.",
+        "Set up a campaign reporting dashboard so the marketing team could track ROAS, CPA, and segment-level performance week by week."
+      ]
+    },
+    "quote": {
+      "body": "Before VSON, our customer data lived in silos. Our app had one story, the stores had another. Within nine months we had one unified view of every customer, and our campaigns finally reflected that. The improvement in ROAS alone justified the investment several times over.",
+      "attr": "Head of Digital Marketing"
+    },
+    "sidebar": {
+      "project": {
+        "heading": "Project snapshot",
+        "rows": [
+          { "key": "Track",       "val": "Activation Solutions" },
+          { "key": "Sector",      "val": "Consumer electronics retail" },
+          { "key": "Market",      "val": "Vietnam" },
+          { "key": "Timeline",    "val": "9 months" },
+          { "key": "Client size", "val": "Top 3 national chain" }
+        ]
+      },
+      "services": {
+        "heading": "Services used",
+        "items": [
+          "Customer data platform",
+          "Audience segmentation",
+          "Zalo / SMS campaigns",
+          "Campaign automation",
+          "Performance reporting"
+        ]
+      }
+    }
+  },
+  "cs_outcomes": {
+    "heading": "Nine months. Measurable results.",
+    "cards": [
+      { "num": "+<em>250%</em>", "body": "Growth in unified customer profiles consolidated from previously siloed sources" },
+      { "num": "+<em>35%</em>",  "body": "Improvement in return on ad spend across all digital campaign channels" },
+      { "num": "−<em>28%</em>",  "body": "Reduction in cost per acquisition compared to pre-platform baseline" }
+    ]
+  },
+  "cs_nav": {
+    "prev": { "dir": "Back to",   "title": "All Case Studies",             "href": "/case-studies.html" },
+    "next": { "dir": "Next story","title": "National English Education Network", "href": "/cs-02-education.html" }
+  },
+  "cta_band": {
+    "heading": "Want results like these?",
+    "body": "Tell us about your brand and what you're trying to achieve. We'll show you what's possible.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

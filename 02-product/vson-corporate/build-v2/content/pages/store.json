@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "VSON | Store",
+    "description": "VSON Store brings world-class household and health products to Vietnamese consumers. Premium brands: Torayvino, Zojirushi, Kingbag, Nepia. Shop online or across marketplace channels.",
+    "canonical": "https://vson.vn/store.html",
+    "og": {
+      "title": "VSON | Store",
+      "description": "VSON Store brings world-class household and health products to Vietnamese consumers. Premium brands: Torayvino, Zojirushi, Kingbag, Nepia.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/store.html"
+    }
+  },
+  "store_hero": {
+    "breadcrumb": "VSON Store",
+    "heading": "Premium brands.<br><em>Trusted</em> distribution.",
+    "sub": "VSON Store brings world-class household and health products to Vietnamese consumers through our own platform and across the channels where they already shop.",
+    "actions": [
+      { "label": "Shop at store.vson.vn", "href": "#", "variant": "store" },
+      { "label": "Partner with Us",       "href": "#partner", "variant": "ghost-light", "arrow": true }
+    ],
+    "brands": [
+      { "initial": "TR", "name": "Torayvino", "cat": "Water filtration" },
+      { "initial": "ZO", "name": "Zojirushi", "cat": "Kitchen appliances" },
+      { "initial": "KB", "name": "Kingbag",   "cat": "Bags & accessories" },
+      { "initial": "NP", "name": "Nepia",     "cat": "Paper products" }
+    ]
+  },
+  "brands_section": {
+    "eyebrow": "Our Portfolio",
+    "heading": "Four world-class brands.<br>One trusted partner.",
+    "brands": [
+      { "image_label": "Brand Logo", "name": "Torayvino", "origin": "Japan",          "desc": "Japan's leading tap and shower water filtration brand, protecting the health of families across Vietnam." },
+      { "image_label": "Brand Logo", "name": "Zojirushi", "origin": "Japan",          "desc": "Premium Japanese kitchen and home appliances, built to the highest standards of quality and longevity." },
+      { "image_label": "Brand Logo", "name": "Kingbag",   "origin": "Premium Brand",  "desc": "Modern laptop backpacks and crossbody bags designed for style, function, and durability for the urban professional." },
+      { "image_label": "Brand Logo", "name": "Nepia",     "origin": "Japan",          "desc": "Japanese premium tissue and paper products, soft, reliable, and trusted by households across Asia." }
+    ]
+  },
+  "where_to_buy": {
+    "eyebrow": "Where to Buy",
+    "heading": "Find us on<br>every channel.",
+    "body": "Shop VSON brands on our own storefront or on your favourite marketplace, wherever it's most convenient for you.",
+    "channels": [
+      { "abbr": "VS", "name": "VSON Store", "sub": "shop at store.vson.vn ›", "href": "#" },
+      { "abbr": "SP", "name": "Shopee",      "sub": "Find us on Shopee ›",   "href": "#" },
+      { "abbr": "LZ", "name": "Lazada",      "sub": "Find us on Lazada ›",   "href": "#" },
+      { "abbr": "ZL", "name": "Zalo Shop",   "sub": "Find us on Zalo ›",     "href": "#" }
+    ]
+  },
+  "partner": {
+    "eyebrow": "Partnership",
+    "heading": "Looking for a B2C partner<br>in <em>Vietnam?</em>",
+    "body": "If you're a brand (local or international) seeking a trusted distribution partner to reach Vietnamese consumers, VSON Store is built for exactly that.",
+    "offers": [
+      "Retail, e-commerce, and marketplace channel presence",
+      "Operational and logistics infrastructure already in place",
+      "A consumer base that trusts the VSON name"
+    ],
+    "form": {
+      "heading": "Tell us about your brand",
+      "form_name": "store-partner",
+      "submit_label": "Explore a Partnership",
+      "fields": [
+        { "label": "Brand Name",       "name": "brand_name",       "type": "text",     "placeholder": "Your brand name" },
+        { "label": "Product Category", "name": "product_category", "type": "text",     "placeholder": "e.g. Health, Kitchen, Lifestyle" },
+        { "label": "Target Market",    "name": "target_market",    "type": "select",   "options": ["Vietnamese consumers (B2C)", "Corporate buyers (B2B)", "Both"] },
+        { "label": "Current Channels", "name": "current_channels", "type": "text",     "placeholder": "e.g. Shopee, own website" },
+        { "label": "Message",          "name": "message",          "type": "textarea", "placeholder": "Tell us more about your brand and what you're looking for..." }
+      ]
+    }
+  }
+}

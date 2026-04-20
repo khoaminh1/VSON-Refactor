@@ -1,0 +1,18 @@
+<!--
+  CsNav — Case Study detail: previous/next strip.
+  Props (from cs_nav):
+    prev: { dir, title, href }
+    next: { dir, title, href }
+-->
+<section class="cs-nav">
+  <div class="cs-nav__inner">
+    <a href="{{cs_nav.prev.href}}" class="cs-nav__link">
+      <span class="cs-nav__dir">{{cs_nav.prev.dir}}</span>
+      <span class="cs-nav__title">{{cs_nav.prev.title}}</span>
+    </a>
+    <a href="{{cs_nav.next.href}}" class="cs-nav__link cs-nav__link--next">
+      <span class="cs-nav__dir">{{cs_nav.next.dir}}</span>
+      <span class="cs-nav__title">{{cs_nav.next.title}}</span>
+    </a>
+  </div>
+</section>

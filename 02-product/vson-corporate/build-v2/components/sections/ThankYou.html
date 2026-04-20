@@ -1,0 +1,16 @@
+<!--
+  ThankYou — thank-you page centred message and back-home CTA.
+  Props (from thank_you):
+    heading (html — supports <em>)
+    body
+    cta: { label, href }
+-->
+<section class="thank-you-hero" id="main-content">
+  <div class="container">
+    <div class="thank-you-content">
+      <h1>{{{thank_you.heading}}}</h1>
+      <p>{{thank_you.body}}</p>
+      <a href="{{thank_you.cta.href}}" class="btn btn--primary arrow">{{thank_you.cta.label}}</a>
+    </div>
+  </div>
+</section>

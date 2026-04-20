@@ -1,0 +1,50 @@
+<!--
+  PartnerForm — Store page B2C partner-intake section (copy + form).
+  Props (from partner):
+    eyebrow, heading (html), body
+    offers: [string]
+    form: {
+      heading, submit_label, form_name,
+      fields: [ { label, name, type, placeholder, options?, rows? } ]
+    }
+-->
+<section class="partner section" id="partner">
+  <div class="container">
+    <div class="partner__inner">
+      <div class="partner__content">
+        <span class="label label--light">{{partner.eyebrow}}</span>
+        <h2>{{{partner.heading}}}</h2>
+        <p>{{partner.body}}</p>
+        <div class="partner__offers">
+          {{#each partner.offers}}
+            <div class="partner__offer-item">
+              <div class="partner__offer-dot"></div>
+              <span>{{this}}</span>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="partner__form">
+        <h3>{{partner.form.heading}}</h3>
+        <form name="{{partner.form.form_name}}" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          {{#each partner.form.fields}}
+            <div class="partner-form-field">
+              <label>{{label}}</label>
+              {{#if (eq type "select")}}
+                <select name="{{name}}">
+                  {{#each options}}<option>{{this}}</option>{{/each}}
+                </select>
+              {{else}}{{#if (eq type "textarea")}}
+                <textarea name="{{name}}" placeholder="{{placeholder}}"></textarea>
+              {{else}}
+                <input type="{{type}}" name="{{name}}" placeholder="{{placeholder}}" />
+              {{/if}}{{/if}}
+            </div>
+          {{/each}}
+          <button class="btn btn--store" style="width: 100%; justify-content: center;" type="submit">{{partner.form.submit_label}} ›</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

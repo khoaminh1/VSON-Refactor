@@ -1,0 +1,16 @@
+<!--
+  CaseStudyFilter — Case Studies index sticky filter bar.
+  Props (from cs_filter):
+    buttons: [ { label, filter, active? } ]
+    count_label {string}    e.g. "5 case studies"
+-->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-bar__inner">
+      {{#each cs_filter.buttons}}
+        <button class="filter-btn{{#if active}} active{{/if}}" data-filter="{{filter}}" type="button">{{label}}</button>
+      {{/each}}
+      <span class="filter-count">{{cs_filter.count_label}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<!--
+  CsHero — Case Study detail hero. Accepts a slug to vary the gradient.
+  Props (from cs_hero):
+    slug       {string}    '01'..'05' — drives .cs-hero--NN gradient
+    breadcrumb {html}       e.g. <a href="…">Case Studies</a> <span>/ Electronics Retail</span>
+    heading    {html}       supports <em>
+    track      {string}     track tag label
+    sector     {string}     sector tag label
+-->
+<section class="cs-hero cs-hero--{{cs_hero.slug}}" id="main-content">
+  <div class="container">
+    <div class="cs-hero__inner">
+      <div class="cs-hero__breadcrumb">{{{cs_hero.breadcrumb}}}</div>
+      <h1>{{{cs_hero.heading}}}</h1>
+      <div class="cs-hero__meta">
+        <span class="cs-hero__tag cs-hero__tag--track">{{cs_hero.track}}</span>
+        <span class="cs-hero__tag cs-hero__tag--sector">{{cs_hero.sector}}</span>
+      </div>
+    </div>
+  </div>
+</section>

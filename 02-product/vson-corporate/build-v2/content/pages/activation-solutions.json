@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "VSON | Activation Solutions",
+    "description": "Brand activation and market development solutions powered by 20 years of on-the-ground expertise. Three integrated layers: merchandise, data & campaign platform, and marketing automation.",
+    "canonical": "https://vson.vn/activation-solutions.html",
+    "og": {
+      "title": "VSON | Activation Solutions",
+      "description": "Brand activation and market development solutions powered by 20 years of on-the-ground expertise. Three integrated layers: merchandise, data & campaign platform, and marketing automation.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/activation-solutions.html"
+    }
+  },
+  "page_hero": {
+    "breadcrumb": "Solutions <span>| Activation Solutions</span>",
+    "heading": "Activate your brand<br>in <em>Vietnam.</em>",
+    "sub": "From premium merchandise to campaign intelligence, VSON gives brands the tools, the team, and the infrastructure to create real impact with Vietnamese consumers.",
+    "tags": [
+      "Merchandise & Activation",
+      "Data & Campaign Platform",
+      "Marketing & Automation"
+    ]
+  },
+  "layers": {
+    "eyebrow": "Our Capability Stack",
+    "heading": "Three layers. One integrated approach.",
+    "rows": [
+      {
+        "num": "01",
+        "type": "Layer 1: Physical",
+        "name": "Merchandise & Activation",
+        "headline": "Premium branded touchpoints that create real-world presence.",
+        "body": "We design and produce brand merchandise, corporate gifts, and in-market activations that give your brand a physical presence in the moments that matter at retail, at events, and in the hands of your customers.",
+        "features_label": "What this covers",
+        "features": [
+          "Premium branded merchandise design & production",
+          "Corporate gifting programmes",
+          "Retail & event activations",
+          "POSM and in-store display materials"
+        ]
+      },
+      {
+        "num": "02",
+        "type": "Layer 2: Intelligence",
+        "name": "Data & Campaign Platform",
+        "headline": "A connected platform that tracks every touchpoint.",
+        "body": "Our campaign intelligence platform measures what's working across every channel, surfaces actionable insight, and gives brand managers the visibility they need to make faster, smarter decisions in the Vietnamese market.",
+        "features_label": "What this covers",
+        "features": [
+          "Campaign performance tracking & dashboards",
+          "Consumer data capture and profiling",
+          "Omni-channel attribution reporting",
+          "Market intelligence and insight briefs"
+        ]
+      },
+      {
+        "num": "03",
+        "type": "Layer 3: Growth",
+        "name": "Marketing & Automation",
+        "headline": "Automated workflows that turn data into the next action.",
+        "body": "We deploy marketing automation that uses campaign data to reach the right Vietnamese consumers, at the right time, through the right channel, faster and at a scale that manual execution cannot match.",
+        "features_label": "What this covers",
+        "features": [
+          "CRM and lifecycle marketing automation",
+          "Multi-channel campaign deployment",
+          "Audience segmentation and targeting",
+          "Performance optimisation workflows"
+        ]
+      }
+    ]
+  },
+  "why_brands": {
+    "eyebrow": "Why VSON",
+    "heading": "We don't just run campaigns.<br><em>We own the outcome.</em>",
+    "body": "Most activation agencies in Vietnam handle one layer. VSON connects all three, so your brand doesn't lose value between strategy, execution, and insight.",
+    "cta": { "label": "Talk to Our Activation Team", "href": "/contact.html" },
+    "items": [
+      { "title": "On-Ground Network", "body": "Nationwide distribution infrastructure, not just campaign management from a desk." },
+      { "title": "Integrated Stack",  "body": "Physical, data, and automation layers designed to work together from day one." },
+      { "title": "Proven Track Record","body": "Serving Dell, HP, Lenovo, ASUS and leading consumer brands in Vietnam." },
+      { "title": "Phygital Expertise","body": "20 years bridging physical and digital commerce, before it had a name." }
+    ]
+  },
+  "cta_band": {
+    "heading": "Ready to activate?",
+    "body": "Talk to our activation team about what's possible for your brand in Vietnam.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

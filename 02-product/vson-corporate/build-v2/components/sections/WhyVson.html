@@ -1,0 +1,24 @@
+<!--
+  WhyVson — Market Development: 5 numbered signal items on forest-green.
+  Props (from why_vson):
+    eyebrow, heading (html), body
+    items: [ { num, title, body } ]
+-->
+<section class="why-vson section">
+  <div class="container">
+    <div class="why-vson__header">
+      <span class="label label--light">{{why_vson.eyebrow}}</span>
+      <h2>{{{why_vson.heading}}}</h2>
+      <p>{{why_vson.body}}</p>
+    </div>
+    <div class="signals-grid">
+      {{#each why_vson.items}}
+        <div class="signal-item">
+          <div class="signal-item__num">{{num}}</div>
+          <h4>{{title}}</h4>
+          <p>{{body}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

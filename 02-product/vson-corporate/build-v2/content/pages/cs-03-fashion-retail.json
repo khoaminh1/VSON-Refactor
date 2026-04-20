@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "VSON | Case Study: Fast-Growing Fashion Retailer",
+    "description": "25% of total revenue from digital messaging in 20 days. Segmented Zalo and Viber campaigns that drove results fast.",
+    "canonical": "https://vson.vn/cs-03-fashion-retail.html",
+    "og": {
+      "title": "VSON | Case Study: Fast-Growing Fashion Retailer",
+      "description": "25% of total revenue from digital messaging in 20 days. Segmented Zalo and Viber campaigns that drove results fast.",
+      "image": "https://vson.vn/og-image.jpg",
+      "url": "https://vson.vn/cs-03-fashion-retail.html"
+    }
+  },
+  "cs_hero": {
+    "slug": "03",
+    "breadcrumb": "<a href=\"/case-studies.html\">Case Studies</a> <span>/ Fashion Retail</span>",
+    "heading": "<em>25% of total revenue</em> from digital messaging in 20 days.",
+    "track": "Activation Solutions",
+    "sector": "Fashion &amp; Footwear | Vietnam"
+  },
+  "cs_snapshot": {
+    "stats": [
+      { "num": "+<em>200%</em>", "label": "Growth in online sales from digital messaging" },
+      { "num": "<em>25%</em>",   "label": "Of total revenue driven by messaging campaigns" },
+      { "num": "<em>20</em>",    "label": "Days to first full-campaign results" },
+      { "num": "<em>A/B</em>",   "label": "Message and CTA testing across all segments" }
+    ]
+  },
+  "cs_body": {
+    "challenge": {
+      "heading": "A large customer base. A small repeat purchase rate.",
+      "paragraphs": [
+        "The client is a fast-growing Vietnamese fashion and footwear retailer with a national store network and a growing online presence. They had built a sizable customer database over several years. But most customers bought once and didn't come back. The marketing team was running mass broadcast campaigns to the whole list, but open rates were declining and revenue from digital channels remained a fraction of total sales.",
+        "The team knew they had something to work with. What they lacked was the segmentation capability and campaign infrastructure to reach the right customers with the right products at the right moment."
+      ]
+    },
+    "solution": {
+      "heading": "Purchase-history segmentation. Always-on campaigns that stayed relevant.",
+      "body": "VSON activated a segmented digital messaging campaign through Zalo and Viber, targeting customer lists built from purchase history, product category affinity, and recency. Personalised offers were sent at optimal send times per segment. A/B testing on message format and call-to-action helped the team quickly learn what drove clicks and conversions in each audience group.",
+      "steps_heading": "What we did, step by step",
+      "steps": [
+        "Analysed the existing customer database and identified purchase-history segments: active buyers, lapsed buyers (90 days+), and category loyalists.",
+        "Designed a short-cycle campaign calendar: new arrival alerts, restocking notifications, and promotional events, mapped to each segment's likely interests.",
+        "Built Zalo and Viber messaging templates with A/B variants for subject lines, imagery descriptions, and call-to-action wording.",
+        "Set optimal send-time logic per segment based on past engagement patterns.",
+        "Launched the first campaign wave and monitored conversion per segment in real time, reallocating budget to highest-performing audience groups within 48 hours.",
+        "Handed the team a repeatable campaign playbook so future campaign runs required minimal setup time."
+      ]
+    },
+    "quote": {
+      "body": "We went from sending one generic message to everyone to reaching each customer with something that actually matched what they were buying. The online sales number in the first 20 days was a genuine surprise. We hadn't expected results that fast.",
+      "attr": "E-Commerce Manager"
+    },
+    "sidebar": {
+      "project": {
+        "heading": "Project snapshot",
+        "rows": [
+          { "key": "Track",         "val": "Activation Solutions" },
+          { "key": "Sector",        "val": "Fashion &amp; footwear retail" },
+          { "key": "Market",        "val": "Vietnam" },
+          { "key": "Campaign type", "val": "Always-on messaging" },
+          { "key": "Channels",      "val": "Zalo | Viber" }
+        ]
+      },
+      "services": {
+        "heading": "Services used",
+        "items": [
+          "Audience segmentation",
+          "Zalo / Viber campaigns",
+          "A/B message testing",
+          "Campaign calendar",
+          "Playbook handover"
+        ]
+      }
+    }
+  },
+  "cs_outcomes": {
+    "heading": "Fast results. Repeatable system.",
+    "cards": [
+      { "num": "+<em>200%</em>",   "body": "Growth in online sales directly attributable to digital messaging campaigns" },
+      { "num": "<em>25%</em>",     "body": "Of total revenue driven by Zalo and Viber messaging within the first 20 days of full activation" },
+      { "num": "<em>1</em> playbook", "body": "Campaign playbook delivered so the team could run future campaigns independently with minimal effort" }
+    ]
+  },
+  "cs_nav": {
+    "prev": { "dir": "Previous story", "title": "National English Education Network", "href": "/cs-02-education.html" },
+    "next": { "dir": "Next story",     "title": "OEM Merchandise: ICT Brand",         "href": "/cs-04-oem-merchandise.html" }
+  },
+  "cta_band": {
+    "heading": "Ready to turn your customer list into revenue?",
+    "body": "We'll segment your audience, build the journeys, and get campaigns live fast.",
+    "cta": { "label": "Request a Consultation", "href": "/contact.html" }
+  }
+}

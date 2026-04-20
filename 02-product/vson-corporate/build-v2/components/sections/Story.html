@@ -1,0 +1,30 @@
+<!--
+  Story — About page narrative: sticky aside + body paragraphs with a highlight.
+  Props (from story):
+    aside:    { label, heading (html), }
+    paragraphs: [string|html]    -- each renders as <p class="story__para">
+    highlight:  {string}
+    paragraphs_after: [string|html]
+-->
+<section class="story section">
+  <div class="container">
+    <div class="story__inner">
+      <div class="story__aside">
+        <span class="story__aside-label">{{story.aside.label}}</span>
+        <h2>{{{story.aside.heading}}}</h2>
+        <div class="story__aside-line"></div>
+      </div>
+      <div class="story__body">
+        {{#each story.paragraphs}}
+          <p class="story__para">{{{this}}}</p>
+        {{/each}}
+        {{#if story.highlight}}
+          <div class="story__highlight">{{story.highlight}}</div>
+        {{/if}}
+        {{#each story.paragraphs_after}}
+          <p class="story__para">{{{this}}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
